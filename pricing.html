@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="assets/site.webmanifest">
+<meta name="theme-color" content="#60a0a0">
+<title>Pricing, Ace Academic Tutors</title>
+<meta name="description" content="Transparent one-to-one tutoring prices and Classroom Learning. Five simple plans, no hidden fees.">
+<link rel="canonical" href="https://aceacademictutors.com/pricing.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Ace Academic Tutors">
+<meta property="og:title" content="Pricing, Ace Academic Tutors">
+<meta property="og:description" content="Transparent one-to-one tutoring prices and Classroom Learning. Five simple plans, no hidden fees.">
+<meta property="og:url" content="https://aceacademictutors.com/pricing.html">
+<meta property="og:image" content="https://aceacademictutors.com/assets/logo-full.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pricing, Ace Academic Tutors">
+<meta name="twitter:description" content="Transparent one-to-one tutoring prices and Classroom Learning. Five simple plans, no hidden fees.">
+<meta name="twitter:image" content="https://aceacademictutors.com/assets/logo-full.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .page-hero{padding:72px 0 24px;text-align:center;position:relative;overflow:hidden;}
+  .page-hero .glow{position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(96,160,160,.12),transparent 70%);top:-220px;left:50%;transform:translateX(-50%);z-index:0;}
+  .page-hero .in{position:relative;z-index:2;max-width:760px;margin:0 auto;}
+  .page-hero .eyebrow{display:block;margin-bottom:16px;}
+  .page-hero h1{margin-bottom:20px;}
+  .page-hero .lead{max-width:56ch;margin:0 auto;}
+  .breadcrumb{font-size:13.5px;color:var(--muted);margin-bottom:22px;}
+  .breadcrumb a:hover{color:var(--teal-700);}
+
+  .toggle{display:inline-flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-pill);padding:5px;box-shadow:var(--sh-xs);margin-top:30px;}
+  .toggle button{border:none;background:transparent;font-family:var(--sans);font-weight:600;font-size:14.5px;color:var(--muted);padding:11px 24px;border-radius:var(--r-pill);cursor:pointer;transition:all .18s;white-space:nowrap;}
+  .toggle button.on{background:var(--cta-grad);color:#fff;box-shadow:var(--sh-teal);}
+
+  .tiers{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;align-items:stretch;}
+  .tier{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:24px 20px 22px;box-shadow:var(--sh-sm);display:flex;flex-direction:column;position:relative;transition:transform .18s,box-shadow .18s;}
+  .tier:hover{transform:translateY(-3px);box-shadow:var(--sh-md);}
+  .tier.feat{border-color:var(--teal-300);box-shadow:var(--sh-lg);}
+  .tier.feat::before{content:"Most popular";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cta-grad);color:#fff;font-size:11px;font-weight:600;padding:5px 12px;border-radius:var(--r-pill);box-shadow:var(--sh-teal);white-space:nowrap;}
+  .tier .tname{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink);}
+  .tier .ttag{font-size:12.5px;color:var(--teal-700);font-weight:500;margin-top:4px;min-height:34px;}
+  .tier .freq{font-size:12.5px;font-weight:600;color:var(--muted);margin:12px 0 14px;padding-bottom:14px;border-bottom:1px solid var(--line);}
+  .tier .rate{display:flex;align-items:baseline;gap:1px;}
+  .tier .rate .cur{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--ink);}
+  .tier .rate .val{font-family:var(--serif);font-size:32px;font-weight:600;color:var(--ink);line-height:1;letter-spacing:-.02em;}
+  .tier .rate .per{font-size:12px;color:var(--muted);margin-left:3px;}
+  .tier .disc{display:inline-block;font-size:11px;font-weight:700;color:var(--teal-700);background:var(--teal-50);border:1px solid var(--teal-100);border-radius:var(--r-pill);padding:3px 9px;margin-top:9px;min-height:22px;}
+  .tier .disc.none{visibility:hidden;}
+  .tier .month{font-size:13px;color:var(--body);margin-top:12px;}
+  .tier .month b{font-family:var(--serif);font-size:16px;color:var(--ink);font-weight:600;}
+  .tier .upfront{margin-top:12px;background:var(--paper-2);border:1px solid var(--teal-100);border-radius:var(--r-sm);padding:10px 12px;}
+  .tier .upfront .uf-top{font-size:12.5px;color:var(--ink-2);font-weight:600;}
+  .tier .upfront .uf-top b{color:var(--teal-700);}
+  .tier .upfront .uf-sub{font-size:11.5px;color:var(--muted);margin-top:2px;}
+  .tier .tdesc{font-size:12.5px;color:var(--body);line-height:1.5;margin-top:14px;}
+  .tier .cta{margin-top:auto;padding-top:16px;}
+  .tier .cta a{width:100%;}
+
+  .notes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:14px;}
+  .note{display:flex;gap:13px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:20px;box-shadow:var(--sh-xs);}
+  .note svg{width:22px;height:22px;color:var(--teal-500);flex-shrink:0;}
+  .note .nt{font-weight:600;color:var(--ink);font-size:14.5px;margin-bottom:3px;}
+  .note .nd{font-size:13.5px;color:var(--body);line-height:1.5;}
+
+  .classroom-cta{display:grid;grid-template-columns:1.4fr 1fr;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sh-md);}
+  .classroom-cta .cc-l{padding:40px 44px;}
+  .classroom-cta .cc-l .tag{margin-bottom:14px;}
+  .classroom-cta .cc-l h3{font-size:27px;margin-bottom:10px;}
+  .classroom-cta .cc-l p{font-size:15.5px;color:var(--body);line-height:1.6;margin-bottom:18px;max-width:46ch;}
+  .cc-feats{list-style:none;margin:0 0 24px;padding:0;display:flex;flex-direction:column;gap:11px;}
+  .cc-feats li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink-2);line-height:1.5;}
+  .cc-feats li svg{width:18px;height:18px;color:var(--teal-500);flex-shrink:0;margin-top:2px;}
+  .cc-sub{font-size:14px;font-weight:600;color:var(--teal-700);margin-bottom:14px;}
+  .classroom-cta .cc-r{background:var(--cta-grad);color:#fff;padding:40px 36px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
+  .classroom-cta .cc-r::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 120% at 100% 0%,rgba(255,255,255,.08),transparent 55%);}
+  .classroom-cta .cc-r .rin{position:relative;z-index:2;}
+  .classroom-cta .cc-r .big{font-family:var(--serif);font-size:46px;font-weight:600;line-height:1;letter-spacing:-.02em;}
+  .classroom-cta .cc-r .big .u{color:var(--teal-200);font-size:24px;}
+  .classroom-cta .cc-r .sm{font-size:14px;color:rgba(255,255,255,.88);margin-top:10px;line-height:1.5;}
+
+  .cta-band{background:linear-gradient(140deg,#4d8c8c 0%,#3a6e6d 55%,#2f5a59 100%);border-radius:var(--r-xl);padding:64px 56px;position:relative;overflow:hidden;text-align:center;}
+
+  /* ---- calculator ---- */
+  .calc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-md);overflow:hidden;display:grid;grid-template-columns:1.1fr .9fr;}
+  .calc-l{padding:36px 40px;}
+  .calc-l .ck{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-600);margin-bottom:8px;}
+  .calc-l h3{font-size:24px;margin-bottom:6px;}
+  .calc-l .cl{font-size:14.5px;color:var(--body);line-height:1.55;margin-bottom:24px;max-width:42ch;}
+  .calc-seg{display:flex;background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-pill);padding:5px;gap:4px;margin-bottom:22px;}
+  .calc-seg button{flex:1;border:none;background:transparent;font-family:var(--sans);font-weight:600;font-size:15px;color:var(--muted);padding:11px 0;border-radius:var(--r-pill);cursor:pointer;transition:all .16s;}
+  .calc-seg button.on{background:var(--cta-grad);color:#fff;box-shadow:var(--sh-teal);}
+  .calc-opts{display:flex;gap:18px;flex-wrap:wrap;}
+  .calc-opts label{display:flex;align-items:center;gap:9px;font-size:14px;color:var(--ink-2);cursor:pointer;}
+  .calc-opts input{width:18px;height:18px;accent-color:var(--teal-500);}
+  .calc-r{background:var(--cta-grad);color:#fff;padding:36px 40px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
+  .calc-r::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 120% at 100% 0%,rgba(255,255,255,.08),transparent 55%);}
+  .calc-r .rin{position:relative;z-index:2;}
+  .calc-r .plan-name{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-200);}
+  .calc-r .big{font-family:var(--serif);font-size:50px;font-weight:600;line-height:1;letter-spacing:-.02em;margin:10px 0 2px;}
+  .calc-r .big .u{font-size:24px;color:var(--teal-200);}
+  .calc-r .per{font-size:14px;color:rgba(255,255,255,.82);}
+  .calc-r .crow{display:flex;justify-content:space-between;gap:12px;font-size:14px;padding:11px 0;border-top:1px solid rgba(255,255,255,.18);margin-top:18px;}
+  .calc-r .crow:first-of-type{margin-top:20px;}
+  .calc-r .crow b{font-family:var(--serif);font-size:17px;font-weight:600;}
+  .calc-r .save-chip{display:inline-block;margin-top:18px;font-size:12.5px;font-weight:700;background:rgba(255,255,255,.16);border-radius:var(--r-pill);padding:6px 13px;}
+  .calc-r .btn{margin-top:22px;align-self:flex-start;}
+  @media(max-width:760px){.calc{grid-template-columns:1fr;}}
+  .cta-band::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 120% at 50% 0%,rgba(255,255,255,.16),transparent 60%);}
+  .cta-band .inr{position:relative;z-index:2;max-width:640px;margin:0 auto;}
+  .cta-band h2{color:#fff;}
+  .cta-band p{color:rgba(255,255,255,.74);margin:18px auto 30px;max-width:48ch;}
+  .cta-band .row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+  @media(max-width:1000px){.tiers{grid-template-columns:repeat(2,1fr);}.tier.feat::before{display:none;}}
+  @media(max-width:900px){.notes{grid-template-columns:1fr;}.classroom-cta{grid-template-columns:1fr;}.classroom-cta .cc-l{padding:30px 24px;}}
+  @media(max-width:560px){.tiers{grid-template-columns:1fr;}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Ace Academic Tutors","alternateName":"Ace Academic Tutors Ltd","url":"https://aceacademictutors.com/","logo":"https://aceacademictutors.com/assets/logo-icon.png","image":"https://aceacademictutors.com/assets/logo-full.png","email":"info@aceacademictutors.com","telephone":"+44 7454 905330","address":{"@type":"PostalAddress","streetAddress":"61 Lower Mardyke Avenue","addressLocality":"Rainham","postalCode":"RM13 8PR","addressCountry":"GB"},"areaServed":"GB","sameAs":["https://www.facebook.com/profile.php?id=61563738669588","https://www.instagram.com/aceacademictutors","https://www.linkedin.com/company/ace-academic-tutors"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Pricing, Ace Academic Tutors","description":"Transparent one-to-one tutoring prices and Classroom Learning. Five simple plans, no hidden fees.","url":"https://aceacademictutors.com/pricing.html","isPartOf":{"@type":"WebSite","name":"Ace Academic Tutors","url":"https://aceacademictutors.com/"}}</script>
+</head>
+<body data-page="pricing">
+<div id="site-header-slot"></div>
+
+<section class="page-hero">
+  <div class="glow"></div>
+  <div class="wrap in">
+    <div class="breadcrumb"><a href="index.html">Home</a> · Pricing</div>
+    <span class="eyebrow">Transparent pricing</span>
+    <h1 class="display">Clear plans.<br>No <span class="serif-it">hidden</span> fees.</h1>
+    <p class="lead">One-to-one tutoring, priced by how many sessions you book each week. The more regular the lessons, the lower the hourly rate, up to 20% off.</p>
+  </div>
+</section>
+
+<section class="section-sm" style="padding-top:36px;padding-bottom:8px;">
+  <div class="wrap">
+    <div class="calc reveal" id="calc">
+      <div class="calc-l">
+        <div class="ck">Estimate your cost</div>
+        <h3>How often each week?</h3>
+        <p class="cl">One-to-one tuition is priced per 60-minute lesson, the more sessions a week, the lower the hourly rate.</p>
+        <div class="calc-seg" id="calcSeg" role="group" aria-label="Sessions per week">
+          <button data-i="0" aria-pressed="false">1</button>
+          <button data-i="1" aria-pressed="false">2</button>
+          <button class="on" data-i="2" aria-pressed="true">3</button>
+          <button data-i="3" aria-pressed="false">4</button>
+          <button data-i="4" aria-pressed="false">5</button>
+        </div>
+        <div class="calc-opts">
+          <label><input type="checkbox" id="calcUpfront"> Pay monthly upfront <span style="color:var(--muted)">(extra 5% off)</span></label>
+        </div>
+      </div>
+      <div class="calc-r">
+        <div class="rin">
+          <div class="plan-name" id="calcPlan">Essential plan</div>
+          <div class="big"><span class="u">£</span><span id="calcHr">31.50</span><span class="u"> / hr</span></div>
+          <div class="per" id="calcFreq">3 sessions a week</div>
+          <div class="crow"><span id="calcBillLabel">Billed monthly</span><b id="calcMonthly">£378</b></div>
+          <div class="crow"><span>That’s per week</span><b id="calcWeekly">£94.50</b></div>
+          <span class="save-chip" id="calcSave">10% off the standard rate</span>
+          <a href="contact.html" class="btn btn-dark" style="background:#fff;color:var(--teal-800);">Book a free consultation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm" style="padding-top:40px;">
+  <div class="wrap">
+    <div class="tiers" id="tiers"><!-- JS --></div>
+    <p class="center" style="margin-top:18px;font-size:13.5px;color:var(--muted);">All rates are per 60-minute lesson and apply to every level, KS1 to A-Level. Pay monthly upfront to save a further 5%.</p>
+  </div>
+</section>
+
+<!-- NOTES -->
+<section class="section-sm" style="padding-top:8px;">
+  <div class="wrap">
+    <div class="notes">
+      <div class="note reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><div class="nt">Save 5% paying monthly</div><div class="nd">Pay for the month upfront and take a further 5% off the totals above.</div></div>
+      </div>
+      <div class="note reveal" style="transition-delay:.06s">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><div class="nt">24-hour cancellation</div><div class="nd">Cancel up to 24 hours before and reschedule free to your next session.</div></div>
+      </div>
+      <div class="note reveal" style="transition-delay:.12s">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><div class="nt">Free consultation first</div><div class="nd">Every plan starts with a free 15-minute consultation, no card required.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLASSROOM LEARNING -->
+<section class="section">
+  <div class="wrap">
+    <div class="classroom-cta reveal">
+      <div class="cc-l">
+        <span class="tag">Launching soon</span>
+        <h3>Classroom Learning</h3>
+        <div class="cc-sub">Group classes · 5+ students</div>
+        <p>Structured, syllabus-based online group classes, collaborative, level-matched and more affordable than one-to-one. Register your interest and we’ll let you know the moment it opens.</p>
+        <ul class="cc-feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Structured, syllabus-based teaching</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Affordable classroom-style support</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Encourages peer learning &amp; consistency</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Perfect for steady progress through the year</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary">Register interest</a>
+      </div>
+      <div class="cc-r">
+        <div class="rin">
+          <div class="big"><span class="u">£</span>25<span class="u"> / hr</span></div>
+          <div class="sm">per student · 2 hours a week (8 hrs/month)</div>
+          <div style="margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.18);font-size:14px;color:rgba(255,255,255,.78);">Monthly subscription<br><b style="font-family:var(--serif);font-size:30px;color:#fff;font-weight:600;">£200</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-sm">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div class="inr">
+        <h2 class="h-xl">Not sure which plan<br>is right?</h2>
+        <p>Book a free 15-minute consultation and we’ll recommend the right level, subject and frequency for your child.</p>
+        <div class="row">
+          <a href="contact.html" class="btn btn-primary btn-lg">Book a free consultation</a>
+          <a href="services.html" class="btn btn-outline btn-lg" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.25)">See our services</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer-slot"></div>
+<script src="assets/chrome.js"></script>
+<script>
+  const PLANS = [
+    {n:"Starter",tag:"Learn at your own pace",f:"1 session / week",d:"",hr:"35.00",mo:"140",up:"133",save:"7",eff:"33.25",desc:"Entry-level commitment, best for trying us out or light support. A higher hourly rate, as it’s our most flexible option."},
+    {n:"Growth",tag:"Build a steady routine",f:"2 sessions / week",d:"5% off",hr:"33.25",mo:"266",up:"252.70",save:"13.30",eff:"31.59",desc:"A solid routine with a small discount for regular engagement, a great balance of flexibility and consistency."},
+    {n:"Essential",tag:"Our most popular choice",f:"3 sessions / week",d:"10% off",hr:"31.50",mo:"378",up:"359.10",save:"18.90",eff:"29.93",desc:"Best value for most students, steady progress with a meaningful 10% saving. Our most chosen plan for GCSE prep.",feat:true},
+    {n:"Accelerated",tag:"Fast-track your success",f:"4 sessions / week",d:"15% off",hr:"29.75",mo:"476",up:"452.20",save:"23.80",eff:"28.26",desc:"For ambitious learners, intensive support with a generous discount. Perfect for exam season or catching up fast."},
+    {n:"Ultimate",tag:"Achieve excellence, every day",f:"5 sessions / week",d:"20% off",hr:"28.00",mo:"560",up:"532",save:"28",eff:"26.60",desc:"Maximum progress, daily guidance at our lowest hourly rate. Designed for students aiming for top results."}
+  ];
+  document.getElementById('tiers').innerHTML = PLANS.map(t=>`
+      <div class="tier${t.feat?' feat':''}">
+        <div class="tname">${t.n}</div>
+        <div class="ttag">${t.tag}</div>
+        <div class="freq">${t.f}</div>
+        <div class="rate"><span class="cur">£</span><span class="val">${t.hr.split('.')[0]}</span><span class="cur" style="font-size:13px">.${t.hr.split('.')[1]}</span><span class="per">/ hr</span></div>
+        <div class="disc${t.d?'':' none'}">${t.d||'-'}</div>
+        <div class="month">Billed monthly · <b>£${t.mo}</b></div>
+        <div class="upfront">
+          <div class="uf-top">Pay upfront <b>£${t.up}</b></div>
+          <div class="uf-sub">Save £${t.save} · just £${t.eff}/hr</div>
+        </div>
+        <div class="tdesc">${t.desc}</div>
+        <div class="cta"><a href="contact.html" class="btn ${t.feat?'btn-primary':'btn-outline'} btn-block">Get started</a></div>
+      </div>`).join('');
+
+  /* ---------- cost calculator ---------- */
+  (function(){
+    const seg=document.getElementById('calcSeg'); if(!seg) return;
+    const upfront=document.getElementById('calcUpfront');
+    let idx=2;
+    const fmt=n=>{const v=Math.round(parseFloat(n)*100)/100; return Number.isInteger(v)?v.toString():v.toFixed(2);};
+    function render(){
+      const p=PLANS[idx];
+      const hr = upfront.checked ? p.eff : p.hr;
+      const total = upfront.checked ? p.up : p.mo;
+      const weekly = (parseFloat(total)/4);
+      document.getElementById('calcPlan').textContent = p.n+' plan';
+      document.getElementById('calcHr').textContent = fmt(hr);
+      document.getElementById('calcFreq').textContent = (idx+1)+(idx===0?' session a week':' sessions a week');
+      document.getElementById('calcBillLabel').textContent = upfront.checked ? 'Paid monthly upfront' : 'Billed monthly';
+      document.getElementById('calcMonthly').textContent = '£'+fmt(total);
+      document.getElementById('calcWeekly').textContent = '£'+weekly.toFixed(2);
+      const base = idx===0 ? 'Standard flexible rate' : p.d+' the standard rate';
+      document.getElementById('calcSave').textContent = upfront.checked ? (idx===0? '5% off paying upfront' : p.d+' + 5% paying upfront') : base;
+    }
+    seg.addEventListener('click',e=>{
+      const b=e.target.closest('button'); if(!b) return;
+      idx=+b.dataset.i;
+      seg.querySelectorAll('button').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b?'true':'false');});
+      render();
+    });
+    upfront.addEventListener('change',render);
+    render();
+  })();
+</script>
+</body>
+</html>

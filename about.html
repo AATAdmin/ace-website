@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="assets/site.webmanifest">
+<meta name="theme-color" content="#60a0a0">
+<title>About, Ace Academic Tutors</title>
+<meta name="description" content="Expert, personalised online tutoring in Maths, English and Science. See how Ace works and why parents trust us.">
+<link rel="canonical" href="https://aceacademictutors.com/about.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Ace Academic Tutors">
+<meta property="og:title" content="About, Ace Academic Tutors">
+<meta property="og:description" content="Expert, personalised online tutoring in Maths, English and Science. See how Ace works and why parents trust us.">
+<meta property="og:url" content="https://aceacademictutors.com/about.html">
+<meta property="og:image" content="https://aceacademictutors.com/assets/logo-full.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About, Ace Academic Tutors">
+<meta name="twitter:description" content="Expert, personalised online tutoring in Maths, English and Science. See how Ace works and why parents trust us.">
+<meta name="twitter:image" content="https://aceacademictutors.com/assets/logo-full.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .page-hero{padding:72px 0 24px;text-align:center;position:relative;overflow:hidden;}
+  .page-hero .glow{position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(96,160,160,.12),transparent 70%);top:-220px;left:50%;transform:translateX(-50%);z-index:0;}
+  .page-hero .in{position:relative;z-index:2;max-width:780px;margin:0 auto;}
+  .page-hero .eyebrow{display:block;margin-bottom:16px;}
+  .page-hero h1{margin-bottom:20px;}
+  .page-hero .lead{max-width:58ch;margin:0 auto;}
+  .breadcrumb{font-size:13.5px;color:var(--muted);margin-bottom:22px;}
+  .breadcrumb a:hover{color:var(--teal-700);}
+
+  /* why choose */
+  .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .why{display:flex;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px;box-shadow:var(--sh-sm);}
+  .why .wi{width:48px;height:48px;border-radius:14px;background:var(--teal-50);border:1px solid var(--teal-100);display:flex;align-items:center;justify-content:center;color:var(--teal-600);flex-shrink:0;}
+  .why h4{font-family:var(--serif);font-size:18px;margin-bottom:5px;}
+  .why p{font-size:14.5px;color:var(--body);line-height:1.55;}
+
+  /* classroom split */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .feat-list{display:flex;flex-direction:column;gap:22px;margin-top:28px;}
+  .feat{display:flex;gap:16px;}
+  .feat .fi{width:46px;height:46px;border-radius:14px;background:var(--teal-50);border:1px solid var(--teal-100);display:flex;align-items:center;justify-content:center;color:var(--teal-600);flex-shrink:0;}
+  .feat .ft h4{font-family:var(--serif);font-size:18px;margin-bottom:5px;}
+  .feat .ft p{font-size:15px;color:var(--body);line-height:1.55;}
+  .classroom{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-lg);overflow:hidden;}
+  .about-img{display:block;width:100%;height:360px;object-fit:cover;object-position:top center;border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-lg);}
+  .cr-bar{display:flex;align-items:center;gap:9px;padding:14px 18px;border-bottom:1px solid var(--line);background:var(--paper-2);}
+  .cr-bar .d{width:11px;height:11px;border-radius:50%;}
+  .cr-bar .t{margin-left:8px;font-size:13px;font-weight:600;color:var(--body);}
+  .cr-bar .rec{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--teal-700);}
+  .cr-bar .rec i{width:8px;height:8px;border-radius:50%;background:var(--teal-500);}
+  .cr-body{display:grid;grid-template-columns:1fr 132px;}
+  .cr-board{padding:26px;min-height:230px;background:linear-gradient(var(--paper-2) 1px,transparent 1px) 0 0/100% 30px,var(--surface);position:relative;}
+  .cr-eq{font-family:var(--serif);font-size:25px;color:var(--ink);}
+  .cr-eq .hl{color:var(--teal-600);}
+  .cr-ann{position:absolute;font-family:var(--serif);font-style:italic;color:var(--teal-600);font-size:15px;}
+  .cr-side{border-left:1px solid var(--line);padding:18px 14px;display:flex;flex-direction:column;gap:14px;background:var(--paper-2);}
+  .cr-vid{border-radius:14px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:17px;}
+
+  /* timeline */
+  .timeline{max-width:880px;margin:0 auto;display:flex;flex-direction:column;}
+  .tl-step{display:grid;grid-template-columns:88px 1fr;gap:28px;position:relative;padding-bottom:42px;}
+  .tl-step:last-child{padding-bottom:0;}
+  .tl-rail{display:flex;flex-direction:column;align-items:center;}
+  .tl-node{width:62px;height:62px;border-radius:20px;background:var(--cta-grad);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:23px;font-weight:600;box-shadow:var(--sh-teal);flex-shrink:0;}
+  .tl-line{flex:1;width:2px;background:linear-gradient(var(--teal-200),var(--line));margin-top:10px;}
+  .tl-step:last-child .tl-line{display:none;}
+  .tl-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-sm);padding:28px 30px;}
+  .tl-card .step-k{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-600);margin-bottom:8px;}
+  .tl-card h3{font-size:23px;margin-bottom:10px;}
+  .tl-card p{color:var(--body);font-size:15.5px;line-height:1.6;}
+
+  /* trust */
+  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .trust-c{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px;text-align:center;box-shadow:var(--sh-sm);}
+  .trust-c .ti{width:48px;height:48px;border-radius:14px;background:var(--teal-50);border:1px solid var(--teal-100);display:flex;align-items:center;justify-content:center;color:var(--teal-600);margin:0 auto 14px;}
+  .trust-c h4{font-family:var(--serif);font-size:17px;margin-bottom:6px;}
+  .trust-c p{font-size:13.5px;color:var(--body);line-height:1.5;}
+
+  .cta-band{background:linear-gradient(140deg,#4d8c8c 0%,#3a6e6d 55%,#2f5a59 100%);border-radius:var(--r-xl);padding:64px 56px;position:relative;overflow:hidden;text-align:center;}
+  .cta-band::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 120% at 50% 0%,rgba(255,255,255,.16),transparent 60%);}
+  .cta-band .inr{position:relative;z-index:2;max-width:640px;margin:0 auto;}
+  .cta-band h2{color:#fff;}
+  .cta-band p{color:rgba(255,255,255,.74);margin:18px auto 30px;max-width:48ch;}
+  .cta-band .row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+  @media(max-width:900px){
+    .why-grid{grid-template-columns:1fr;}
+    .split{grid-template-columns:1fr;gap:36px;}
+    .trust-grid{grid-template-columns:1fr 1fr;}
+    .tl-step{grid-template-columns:60px 1fr;gap:18px;}
+    .tl-node{width:50px;height:50px;font-size:19px;border-radius:16px;}
+  }
+  @media(max-width:560px){.trust-grid{grid-template-columns:1fr;}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Ace Academic Tutors","alternateName":"Ace Academic Tutors Ltd","url":"https://aceacademictutors.com/","logo":"https://aceacademictutors.com/assets/logo-icon.png","image":"https://aceacademictutors.com/assets/logo-full.png","email":"info@aceacademictutors.com","telephone":"+44 7454 905330","address":{"@type":"PostalAddress","streetAddress":"61 Lower Mardyke Avenue","addressLocality":"Rainham","postalCode":"RM13 8PR","addressCountry":"GB"},"areaServed":"GB","sameAs":["https://www.facebook.com/profile.php?id=61563738669588","https://www.instagram.com/aceacademictutors","https://www.linkedin.com/company/ace-academic-tutors"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"About, Ace Academic Tutors","description":"Expert, personalised online tutoring in Maths, English and Science. See how Ace works and why parents trust us.","url":"https://aceacademictutors.com/about.html","isPartOf":{"@type":"WebSite","name":"Ace Academic Tutors","url":"https://aceacademictutors.com/"}}</script>
+</head>
+<body data-page="about">
+<div id="site-header-slot"></div>
+
+<section class="page-hero">
+  <div class="glow"></div>
+  <div class="wrap in">
+    <div class="breadcrumb"><a href="index.html">Home</a> · About</div>
+    <span class="eyebrow">About Ace Academic Tutors</span>
+    <h1 class="display">Expert tutoring,<br>built around <span class="serif-it">your child.</span></h1>
+    <p class="lead">We help school-age children improve, grow in confidence and achieve better grades, through personalised online lessons in Maths, English and Science, taught by experienced, university-educated tutors.</p>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="section" style="padding-top:40px;">
+  <div class="wrap">
+    <div class="sec-head reveal" style="max-width:640px;margin:0 auto 50px;text-align:center;">
+      <span class="eyebrow" style="display:block;margin-bottom:14px;">Why parents choose us</span>
+      <h2 class="h-xl">A different kind<br>of tutoring</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why reveal">
+        <div class="wi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><h4>A specialist focus</h4><p>We do Maths, English and Science, and only those, so every tutor is a true expert in what they teach.</p></div>
+      </div>
+      <div class="why reveal" style="transition-delay:.06s">
+        <div class="wi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3" stroke-linecap="round"/></svg></div>
+        <div><h4>A real online classroom</h4><p>Live video, a shared interactive whiteboard, screen-sharing and PDFs, a genuine lesson, not just a video call.</p></div>
+      </div>
+      <div class="why reveal" style="transition-delay:.12s">
+        <div class="wi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 12 0v1" stroke-linecap="round"/></svg></div>
+        <div><h4>Truly personalised</h4><p>Lessons are built around one student, one-to-one or in small, level-matched groups, never one-size-fits-all.</p></div>
+      </div>
+      <div class="why reveal" style="transition-delay:.18s">
+        <div class="wi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><h4>Transparent pricing</h4><p>Clear plans and honest rates with no hidden fees, and everything starts with a free consultation.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLASSROOM -->
+<section class="section" style="background:var(--paper-2);">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <span class="eyebrow">The online classroom</span>
+        <h2 class="h-lg" style="margin:14px 0 6px;">A real lesson,<br>not just a video call</h2>
+        <p class="lead" style="margin-top:14px;">Lessons happen in our purpose-built classroom, tutor and student writing on the same whiteboard, sharing screens and working through problems together in real time.</p>
+        <div class="feat-list">
+          <div class="feat">
+            <div class="fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4" stroke-linecap="round"/></svg></div>
+            <div class="ft"><h4>Interactive whiteboard</h4><p>Write, draw and annotate together, maths working, essay plans, diagrams.</p></div>
+          </div>
+          <div class="feat">
+            <div class="fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="ft"><h4>Screen-sharing &amp; PDFs</h4><p>Work through past papers and resources side by side, live in the lesson.</p></div>
+          </div>
+          <div class="feat">
+            <div class="fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14M22 4 12 14.01l-3-3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="ft"><h4>Notes after every lesson</h4><p>Your tutor shares how it went and what to focus on next.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <img class="about-img" src="assets/portal-sessions.jpeg" alt="A session in the ACE portal, showing the schedule and lesson details" loading="lazy" width="760" height="520">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="section" style="background:var(--paper-2);">
+  <div class="wrap">
+    <div class="sec-head reveal" style="max-width:680px;margin:0 auto 50px;text-align:center;">
+      <span class="eyebrow" style="display:block;margin-bottom:14px;">Safe, vetted, accountable</span>
+      <h2 class="h-xl">Trust built into<br>every step</h2>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-c reveal">
+        <div class="ti"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>DBS-checked</h4><p>Every tutor is enhanced DBS-checked before they teach.</p>
+      </div>
+      <div class="trust-c reveal" style="transition-delay:.06s">
+        <div class="ti"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m22 10-10 5L2 10l10-5 10 5z" stroke-linejoin="round"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>University-educated</h4><p>Experienced tutors with degrees in the subjects they teach.</p>
+      </div>
+      <div class="trust-c reveal" style="transition-delay:.12s">
+        <div class="ti"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>Carefully selected</h4><p>Only the strongest applicants make it onto the team.</p>
+      </div>
+      <div class="trust-c reveal" style="transition-delay:.18s">
+        <div class="ti"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>Flexible &amp; fair</h4><p>24-hour cancellation, free rescheduling and no hidden fees.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-sm">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div class="inr">
+        <h2 class="h-xl">See the difference<br>for yourself.</h2>
+        <p>Book a free 15-minute consultation and meet a specialist tutor in Maths, English or Science.</p>
+        <div class="row">
+          <a href="contact.html" class="btn btn-primary btn-lg">Book a free consultation</a>
+          <a href="services.html" class="btn btn-outline btn-lg" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.25)">Our services</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer-slot"></div>
+<script src="assets/chrome.js"></script>
+</body>
+</html>

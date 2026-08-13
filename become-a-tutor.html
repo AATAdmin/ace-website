@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="assets/site.webmanifest">
+<meta name="theme-color" content="#60a0a0">
+<title>Become a Tutor, Ace Academic Tutors</title>
+<meta name="description" content="Join Ace Academic Tutors. We're looking for exceptional Maths, English and Science tutors to teach online.">
+<link rel="canonical" href="https://aceacademictutors.com/become-a-tutor.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Ace Academic Tutors">
+<meta property="og:title" content="Become a Tutor, Ace Academic Tutors">
+<meta property="og:description" content="Join Ace Academic Tutors. We're looking for exceptional Maths, English and Science tutors to teach online.">
+<meta property="og:url" content="https://aceacademictutors.com/become-a-tutor.html">
+<meta property="og:image" content="https://aceacademictutors.com/assets/logo-full.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Become a Tutor, Ace Academic Tutors">
+<meta name="twitter:description" content="Join Ace Academic Tutors. We're looking for exceptional Maths, English and Science tutors to teach online.">
+<meta name="twitter:image" content="https://aceacademictutors.com/assets/logo-full.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .page-hero{padding:72px 0 28px;text-align:center;position:relative;overflow:hidden;}
+  .page-hero .glow{position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(96,160,160,.12),transparent 70%);top:-220px;left:50%;transform:translateX(-50%);z-index:0;}
+  .page-hero .in{position:relative;z-index:2;max-width:760px;margin:0 auto;}
+  .page-hero .eyebrow{display:block;margin-bottom:16px;}
+  .page-hero h1{margin-bottom:20px;}
+  .page-hero .lead{max-width:54ch;margin:0 auto;}
+  .breadcrumb{font-size:13.5px;color:var(--muted);margin-bottom:22px;}
+  .breadcrumb a:hover{color:var(--teal-700);}
+
+  .perks{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .perk{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;box-shadow:var(--sh-sm);}
+  .perk .pi{width:48px;height:48px;border-radius:14px;background:var(--teal-50);border:1px solid var(--teal-100);display:flex;align-items:center;justify-content:center;color:var(--teal-600);margin-bottom:16px;}
+  .perk h3{font-size:19px;margin-bottom:7px;}
+  .perk p{font-size:14.5px;color:var(--body);line-height:1.55;}
+
+  .apply{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:start;}
+  .req-list{display:flex;flex-direction:column;gap:14px;}
+  .req{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:var(--ink-2);line-height:1.5;}
+  .req svg{width:20px;height:20px;color:var(--teal-500);flex-shrink:0;margin-top:2px;}
+  .form-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-md);padding:34px;}
+  .form-card h3{font-size:22px;margin-bottom:6px;}
+  .form-card .fc-sub{font-size:14px;color:var(--muted);margin-bottom:22px;}
+  .field{margin-bottom:16px;}
+  .field label{display:block;font-size:14px;font-weight:600;color:var(--ink-2);margin-bottom:7px;}
+  .field input,.field textarea,.field select{width:100%;font-family:var(--sans);font-size:15.5px;color:var(--ink);background:var(--paper);border:1.5px solid var(--line-2);border-radius:var(--r-sm);padding:13px 15px;transition:all .15s;}
+  .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--teal-400);background:var(--surface);box-shadow:0 0 0 3px rgba(96,160,160,.14);}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .form-ok{display:none;text-align:center;padding:20px 0;}
+  .form-ok.on{display:block;}
+  .form-ok .ck{width:64px;height:64px;border-radius:50%;background:var(--teal-50);border:1px solid var(--teal-100);display:flex;align-items:center;justify-content:center;color:var(--teal-600);margin:0 auto 16px;}
+  .form-ok h3{font-size:22px;margin-bottom:8px;}
+  .form-ok p{font-size:15px;color:var(--body);}
+
+  /* tutor toolkit */
+  .toolkit{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .tk{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;box-shadow:var(--sh-sm);}
+  .tk h3{font-size:17px;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+  .tk .tki{width:38px;height:38px;border-radius:11px;background:var(--cta-grad);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .tk ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;}
+  .tk li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink-2);line-height:1.5;}
+  .tk li svg{width:16px;height:16px;color:var(--teal-500);flex-shrink:0;margin-top:2px;}
+
+  @media(max-width:1000px){.perks{grid-template-columns:repeat(2,1fr);}.toolkit{grid-template-columns:1fr;}}
+  @media(max-width:560px){.perks{grid-template-columns:1fr;}}
+  @media(max-width:900px){.apply{grid-template-columns:1fr;gap:28px;}.field-row{grid-template-columns:1fr;}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Ace Academic Tutors","alternateName":"Ace Academic Tutors Ltd","url":"https://aceacademictutors.com/","logo":"https://aceacademictutors.com/assets/logo-icon.png","image":"https://aceacademictutors.com/assets/logo-full.png","email":"info@aceacademictutors.com","telephone":"+44 7454 905330","address":{"@type":"PostalAddress","streetAddress":"61 Lower Mardyke Avenue","addressLocality":"Rainham","postalCode":"RM13 8PR","addressCountry":"GB"},"areaServed":"GB","sameAs":["https://www.facebook.com/profile.php?id=61563738669588","https://www.instagram.com/aceacademictutors","https://www.linkedin.com/company/ace-academic-tutors"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Become a Tutor, Ace Academic Tutors","description":"Join Ace Academic Tutors. We're looking for exceptional Maths, English and Science tutors to teach online.","url":"https://aceacademictutors.com/become-a-tutor.html","isPartOf":{"@type":"WebSite","name":"Ace Academic Tutors","url":"https://aceacademictutors.com/"}}</script>
+</head>
+<body data-page="tutor">
+<div id="site-header-slot"></div>
+
+<section class="page-hero">
+  <div class="glow"></div>
+  <div class="wrap in">
+    <span class="eyebrow">Join our team</span>
+    <h1 class="h-xl">Teach the subjects you <span class="serif-it">love.</span></h1>
+    <p class="lead">We’re hiring specialist Maths, English and Science tutors to teach online.</p>
+  </div>
+</section>
+
+<!-- PERKS -->
+<section class="section" style="padding-top:44px;">
+  <div class="wrap">
+    <div class="sec-head reveal" style="max-width:620px;margin:0 auto 46px;text-align:center;">
+      <span class="eyebrow" style="display:block;margin-bottom:12px;">Why tutor with Ace</span>
+      <h2 class="h-lg">Good students and the freedom to teach</h2>
+    </div>
+    <div class="perks">
+      <div class="perk reveal">
+        <div class="pi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Competitive pay</h3>
+        <p>Fair, transparent rates and a steady stream of well-matched students, no chasing leads.</p>
+      </div>
+      <div class="perk reveal" style="transition-delay:.06s">
+        <div class="pi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Flexible hours</h3>
+        <p>Teach from anywhere, around your own schedule. Take on as many or as few students as you like.</p>
+      </div>
+      <div class="perk reveal" style="transition-delay:.12s">
+        <div class="pi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3" stroke-linecap="round"/></svg></div>
+        <h3>A real classroom</h3>
+        <p>Whiteboard, video, chat and resources, all built into the browser. No separate software to wrangle.</p>
+      </div>
+      <div class="perk reveal" style="transition-delay:.18s">
+        <div class="pi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Less admin</h3>
+        <p>Auto-generated invoices and two-click lesson notes mean more teaching and far less paperwork.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLKIT -->
+<section class="section" style="background:var(--paper-2);">
+  <div class="wrap">
+    <div class="sec-head reveal" style="max-width:620px;margin:0 auto 46px;text-align:center;">
+      <span class="eyebrow" style="display:block;margin-bottom:12px;">What tutors get</span>
+      <h2 class="h-lg">Everything you need to teach well</h2>
+    </div>
+    <div class="toolkit">
+      <div class="tk reveal">
+        <h3><span class="tki"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4" stroke-linecap="round"/></svg></span> A proper teaching toolkit</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Browser-based classroom, whiteboard, video and chat all built in, no separate software</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Drop in PDFs and images mid-lesson</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Sticky-note homework tools students can revisit</li>
+        </ul>
+      </div>
+      <div class="tk reveal" style="transition-delay:.08s">
+        <h3><span class="tki"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Less admin, more teaching</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Auto-generated monthly invoices with PDFs</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Your hourly rate set once and applied automatically</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Lesson notes submitted in two clicks, plus your schedule across all devices</li>
+        </ul>
+      </div>
+      <div class="tk reveal" style="transition-delay:.16s">
+        <h3><span class="tki"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Professional standards</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> DBS and right-to-work documentation kept on file</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Bank details stored securely</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Transparent session records that build parent trust</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLY -->
+<section class="section" style="background:var(--paper-2);">
+  <div class="wrap">
+    <div class="apply">
+      <div>
+        <span class="eyebrow">What we look for</span>
+        <h2 class="h-lg" style="margin:14px 0 22px;">The right tutors</h2>
+        <div class="req-list">
+          <div class="req"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> A degree in Maths, English, a science, or a closely related subject</div>
+          <div class="req"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Real tutoring or teaching experience with school-age students</div>
+          <div class="req"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Strong knowledge of UK exam boards at GCSE and A-Level</div>
+          <div class="req"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Willingness to complete an enhanced DBS check</div>
+          <div class="req"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Patience, warmth and a genuine love of teaching</div>
+        </div>
+      </div>
+      <div class="form-card">
+        <form id="tutorForm">
+          <h3>Apply to tutor</h3>
+          <p class="fc-sub">Tell us a little about you and we’ll be in touch.</p>
+          <div class="field-row">
+            <div class="field"><label>Full name</label><input name="name" type="text" required placeholder="Your name"></div>
+            <div class="field"><label>Email</label><input name="email" type="email" required placeholder="you@email.com"></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label>Main subject</label>
+              <select name="subject"><option>Maths</option><option>English</option><option>Science (Biology)</option><option>Science (Chemistry)</option><option>Science (Physics)</option></select>
+            </div>
+            <div class="field"><label>Highest level you teach</label>
+              <select name="level"><option>A-Level</option><option>GCSE</option><option>KS3</option><option>KS2</option><option>11+</option></select>
+            </div>
+          </div>
+          <div class="field"><label>Your degree &amp; university</label><input name="degree" type="text" placeholder="e.g. BSc Mathematics, University of Bristol"></div>
+          <div class="field"><label>Tell us about your experience</label><textarea name="experience" rows="3" placeholder="A few lines on your tutoring or teaching background."></textarea></div>
+          <button type="submit" class="btn btn-primary btn-block btn-lg">Submit application</button>
+        </form>
+        <div class="form-ok" id="formOk">
+          <div class="ck"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Thanks, application received!</h3>
+          <p>We review every application carefully and will be in touch by email soon.</p>
+          <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px;">
+            <a href="about.html" class="btn btn-outline">About Ace</a>
+            <a href="portal.html" class="btn btn-ghost">See how we teach</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEE HOW WE WORK -->
+<section class="section-sm">
+  <div class="wrap center">
+    <p class="lead" style="max-width:42ch;margin:0 auto 22px;color:var(--ink-2);">Want to see how we work before you apply?</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="about.html" class="btn btn-outline btn-lg">About Ace</a>
+      <a href="portal.html" class="btn btn-outline btn-lg">See the portal</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer-slot"></div>
+<script src="assets/chrome.js"></script>
+<script>
+  // Tutor applications are sent to the Ace portal. Update PORTAL_ENDPOINT once the
+  // portal's structure is confirmed; until then submissions fail gracefully.
+  const PORTAL_ENDPOINT='https://portal.aceacademictutors.com/api/tutor-application';
+  document.getElementById('tutorForm').addEventListener('submit',async e=>{
+    e.preventDefault();
+    const data=Object.fromEntries(new FormData(e.target).entries());
+    try{ await fetch(PORTAL_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},mode:'cors',body:JSON.stringify({source:'website-tutor-application',...data})}); }catch(err){}
+    document.getElementById('tutorForm').style.display='none';
+    document.getElementById('formOk').classList.add('on');
+  });
+</script>
+</body>
+</html>

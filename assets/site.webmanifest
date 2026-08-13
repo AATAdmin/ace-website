@@ -1,0 +1,23 @@
+{
+  "name": "Ace Academic Tutors",
+  "short_name": "Ace Tutors",
+  "description": "Premium online tutoring in Maths, English & Science, KS1 to A-Level and 11+.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#60a0a0",
+  "icons": [
+    {
+      "src": "assets/logo-icon.png",
+      "sizes": "600x553",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

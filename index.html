@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="assets/site.webmanifest">
+<meta name="theme-color" content="#60a0a0">
+<title>Ace Academic Tutors, Premium online tutoring, KS1 to A-Level</title>
+<meta name="description" content="Specialist UK tutors, hand-matched to your child and their exam board. Book a free consultation.">
+<link rel="canonical" href="https://aceacademictutors.com/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Ace Academic Tutors">
+<meta property="og:title" content="Ace Academic Tutors, Premium online tutoring, KS1 to A-Level">
+<meta property="og:description" content="Specialist UK tutors, hand-matched to your child and their exam board. Book a free consultation.">
+<meta property="og:url" content="https://aceacademictutors.com/">
+<meta property="og:image" content="https://aceacademictutors.com/assets/logo-full.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ace Academic Tutors, Premium online tutoring, KS1 to A-Level">
+<meta name="twitter:description" content="Specialist UK tutors, hand-matched to your child and their exam board. Book a free consultation.">
+<meta name="twitter:image" content="https://aceacademictutors.com/assets/logo-full.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  /* ================= HERO ================= */
+  .hero{position:relative;overflow:hidden;padding:64px 0 84px;}
+  .hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none;}
+  .hero-bg .glow{position:absolute;border-radius:50%;filter:blur(10px);}
+  .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.04fr .96fr;gap:56px;align-items:center;}
+  .hero-copy .pill{margin-bottom:24px;}
+  .hero h1{margin-bottom:22px;}
+  .hero .lead{max-width:46ch;margin-bottom:32px;}
+  .hero-cta{display:flex;align-items:center;gap:14px;margin-bottom:34px;flex-wrap:wrap;}
+  .hero-trust{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+  .htchip{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:500;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:var(--r-pill);padding:8px 14px;box-shadow:var(--sh-xs);}
+  .htchip svg{color:var(--teal-500);}
+  .avatars{display:flex;}
+  .avatars .av{width:40px;height:40px;border-radius:50%;border:2.5px solid var(--paper);margin-left:-12px;
+    display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:13px;font-family:var(--sans);}
+  .avatars .av:first-child{margin-left:0;}
+  .hero-trust .tt{font-size:14px;color:var(--muted);line-height:1.45;}
+  .hero-trust .tt b{color:var(--ink);font-weight:600;}
+
+  /* hero product visual */
+  .showcase{position:relative;}
+  .hero-img{display:block;width:100%;height:478px;position:relative;z-index:2;border-radius:var(--r-xl);box-shadow:var(--sh-lg);}
+  .sc-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-lg);overflow:hidden;position:relative;z-index:2;}
+  .sc-bar{display:flex;align-items:center;gap:8px;padding:14px 18px;border-bottom:1px solid var(--line);background:var(--paper-2);}
+  .sc-bar .d{width:11px;height:11px;border-radius:50%;}
+  .sc-bar .t{margin-left:8px;font-size:13px;font-weight:600;color:var(--body);}
+  .sc-bar .live{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--teal-700);}
+  .sc-bar .live i{width:8px;height:8px;border-radius:50%;background:var(--teal-500);box-shadow:0 0 0 0 rgba(96,160,160,.5);animation:pulse 2s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(96,160,160,.45);}70%{box-shadow:0 0 0 8px rgba(96,160,160,0);}100%{box-shadow:0 0 0 0 rgba(96,160,160,0);}}
+  .sc-stage{display:grid;grid-template-columns:1fr 116px;}
+  .sc-board{padding:26px;min-height:248px;position:relative;background:linear-gradient(var(--paper-2) 1px,transparent 1px) 0 0/100% 30px,var(--surface);}
+  .sc-board .eq{font-family:var(--serif);font-size:23px;color:var(--ink);}
+  .sc-board .eq .hl{color:var(--teal-600);}
+  .sc-board .ann{position:absolute;font-family:var(--serif);font-style:italic;color:var(--teal-600);font-size:14.5px;}
+  .sc-side{border-left:1px solid var(--line);padding:16px 13px;display:flex;flex-direction:column;gap:11px;background:var(--paper-2);}
+  .vtile{border-radius:13px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:14px;}
+  .sc-tools{display:flex;align-items:center;gap:9px;padding:13px 18px;border-top:1px solid var(--line);}
+  .sc-tools .tool{width:34px;height:34px;border-radius:10px;background:var(--paper-2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--teal-600);}
+  .sc-tools .spacer{flex:1;}
+
+  .float{position:absolute;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--sh-md);padding:13px 15px;z-index:3;display:flex;align-items:center;gap:11px;max-width:215px;}
+  .float .fi{width:34px;height:34px;border-radius:10px;background:var(--teal-50);border:1px solid var(--teal-100);display:flex;align-items:center;justify-content:center;color:var(--teal-600);flex-shrink:0;}
+  .float .b{font-weight:600;font-size:13.5px;color:var(--ink);line-height:1.25;}
+  .float .s{font-size:11.5px;color:var(--muted);margin-top:2px;}
+  .float.fa{top:-22px;right:-14px;}
+  .float.fb{bottom:-26px;left:-22px;}
+  .sc-blob{position:absolute;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle at 35% 35%,rgba(96,160,160,.18),rgba(96,160,160,0) 68%);right:-60px;bottom:-50px;z-index:1;}
+
+  /* ================= EXAM BOARD STRIP ================= */
+  .boards{padding:34px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper);}
+  .boards-in{display:flex;align-items:center;justify-content:center;gap:38px;flex-wrap:wrap;}
+  .boards-in .lbl{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);}
+  .board{font-family:var(--serif);font-weight:600;font-size:21px;color:var(--ink-2);opacity:.62;letter-spacing:.01em;transition:opacity .2s;}
+  .board:hover{opacity:1;}
+
+  /* ================= SECTION HEAD ================= */
+  .sec-head{max-width:680px;margin:0 auto 56px;text-align:center;}
+  .sec-head .eyebrow{display:block;margin-bottom:14px;}
+  .sec-head p{margin-top:16px;color:var(--body);}
+
+  /* ================= HOW IT WORKS ================= */
+  .hiw{position:relative;margin-top:8px;}
+  .hiw-rail{position:absolute;top:38px;left:16.66%;right:16.66%;height:2px;z-index:0;
+    background:repeating-linear-gradient(90deg,var(--teal-200) 0 7px,transparent 7px 15px);}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;position:relative;z-index:1;}
+  .step{display:flex;flex-direction:column;align-items:center;}
+  .step .node{width:76px;height:76px;border-radius:24px;background:var(--cta-grad);color:#fff;
+    font-family:var(--serif);font-size:30px;font-weight:600;display:flex;align-items:center;justify-content:center;
+    box-shadow:var(--sh-teal);margin-bottom:26px;position:relative;}
+  .step .node .ring{position:absolute;inset:-7px;border-radius:30px;border:1.5px solid var(--teal-200);}
+  .step .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);
+    box-shadow:var(--sh-sm);padding:30px 28px;width:100%;text-align:left;transition:transform .18s,box-shadow .18s;}
+  .step .card:hover{transform:translateY(-4px);box-shadow:var(--sh-md);}
+  .step .when{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;
+    letter-spacing:.02em;color:var(--teal-700);background:var(--teal-50);border:1px solid var(--teal-100);
+    border-radius:var(--r-pill);padding:5px 12px;margin-bottom:14px;}
+  .step .when svg{width:13px;height:13px;}
+  .step h3{font-size:21px;margin-bottom:9px;}
+  .step .lede{font-size:14.5px;color:var(--body);line-height:1.6;margin-bottom:16px;}
+  .step .dlist{list-style:none;margin:0;padding:16px 0 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px;}
+  .step .dlist li{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink-2);line-height:1.45;}
+  .step .dlist li svg{width:16px;height:16px;color:var(--teal-500);flex-shrink:0;margin-top:1px;}
+
+  /* ================= SUBJECTS ================= */
+  .subjects-panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-md);overflow:hidden;display:grid;grid-template-columns:300px 1fr;}
+  .ks-rail{background:var(--paper-2);border-right:1px solid var(--line);padding:18px;}
+  .ks-btn{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:transparent;border:1px solid transparent;border-radius:var(--r-md);padding:16px 16px;cursor:pointer;transition:all .16s;font-family:var(--sans);}
+  .ks-btn+.ks-btn{margin-top:6px;}
+  .ks-btn .ks-ic{width:40px;height:40px;border-radius:12px;background:var(--surface);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:14px;color:var(--teal-700);flex-shrink:0;transition:all .16s;}
+  .ks-btn .ks-tx{display:flex;flex-direction:column;gap:2px;min-width:0;}
+.ks-btn .ks-tx .kt{font-weight:600;font-size:15.5px;color:var(--ink);}
+  .ks-btn .ks-tx .ka{font-size:12.5px;color:var(--muted);}
+  .ks-btn:hover{background:var(--surface);border-color:var(--line);}
+  .ks-btn.on{background:var(--surface);border-color:var(--teal-200);box-shadow:var(--sh-sm);}
+  .ks-btn.on .ks-ic{background:var(--cta-grad);color:#fff;border-color:transparent;}
+  .ks-body{padding:34px 36px;}
+  .ks-body .kh{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:6px;flex-wrap:wrap;}
+  .ks-body h3{font-size:26px;}
+  .ks-body .age{font-size:13.5px;color:var(--muted);font-weight:500;}
+  .ks-body .kdesc{font-size:15px;color:var(--body);margin-bottom:24px;max-width:60ch;}
+  .subj-grid{display:flex;flex-wrap:wrap;gap:10px;}
+  .subj{display:inline-flex;align-items:center;gap:9px;font-size:14.5px;font-weight:500;color:var(--ink-2);background:var(--paper);border:1px solid var(--line-2);border-radius:var(--r-pill);padding:10px 16px;transition:all .16s;cursor:default;}
+  .subj:hover{border-color:var(--line-2);color:var(--ink-2);background:var(--paper);}
+  .subj .sd{width:7px;height:7px;border-radius:50%;background:var(--teal-400);}
+
+  /* ================= STATS BAND ================= */
+  .stats-band{background:var(--cta-grad);color:#fff;border-radius:var(--r-xl);padding:54px 40px;position:relative;overflow:hidden;}
+  .stats-band::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 140% at 0% 0%,rgba(255,255,255,.07),transparent 50%);}
+  .stats-grid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .stat{text-align:center;padding:0 10px;}
+  .stat .n{font-family:var(--serif);font-size:clamp(34px,4vw,48px);font-weight:600;line-height:1;letter-spacing:-.02em;}
+  .stat .n .u{color:var(--teal-200);}
+  .stat .n.sm{font-size:clamp(26px,2.7vw,34px);}
+  .stat .c{font-size:14px;color:rgba(255,255,255,.85);margin-top:12px;line-height:1.4;}
+  .stat+.stat{border-left:1px solid rgba(255,255,255,.14);}
+
+  /* ================= TUTORS ================= */
+  .tutor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .tcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px;box-shadow:var(--sh-sm);transition:transform .2s ease,box-shadow .2s ease;position:relative;overflow:hidden;}
+  .tcard:hover{transform:translateY(-4px);box-shadow:var(--sh-lg);}
+  .tcard .top{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
+  .tcard .tav{width:60px;height:60px;border-radius:18px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:21px;font-family:var(--sans);flex-shrink:0;box-shadow:var(--sh-sm);}
+  .tcard .tn{font-family:var(--serif);font-weight:600;font-size:18.5px;color:var(--ink);}
+  .tcard .tu{font-size:13px;color:var(--muted);margin-top:2px;}
+  .tcard .trow{display:flex;align-items:center;gap:6px;margin-top:6px;font-size:13px;color:var(--body);}
+  .tcard .tsub{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px;}
+  .tcard .bio{font-size:14px;color:var(--body);line-height:1.6;max-height:0;opacity:0;overflow:hidden;transition:max-height .3s ease,opacity .3s ease,margin .3s ease;margin:0;}
+  .tcard:hover .bio{max-height:120px;opacity:1;margin-bottom:16px;}
+  .tcard .foot{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid var(--line);}
+  .tcard .price{font-size:14px;color:var(--muted);}
+  .tcard .price b{font-family:var(--serif);font-size:18px;color:var(--ink);font-weight:600;}
+  .tcard .link{font-size:14px;font-weight:600;color:var(--teal-700);display:inline-flex;align-items:center;gap:5px;}
+
+  /* ================= PRICING ================= */
+  .price-teaser{display:grid;grid-template-columns:.9fr 1.1fr;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-md);overflow:hidden;margin-top:8px;}
+  .pt-main{background:var(--cta-grad);color:#fff;padding:42px 40px;display:flex;flex-direction:column;justify-content:center;}
+  .pt-label{font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.82);}
+  .pt-amt{font-family:var(--serif);font-weight:600;line-height:1;margin:12px 0 10px;letter-spacing:-.02em;font-size:52px;}
+  .pt-amt .sm{font-size:23px;}
+  .pt-sub{font-size:14px;color:rgba(255,255,255,.85);line-height:1.55;max-width:34ch;}
+  .pt-points{padding:38px 40px;display:flex;flex-direction:column;gap:15px;justify-content:center;}
+  .pt-points .pp{display:flex;align-items:flex-start;gap:11px;font-size:15px;color:var(--ink-2);line-height:1.4;}
+  .pt-points .pp svg{width:18px;height:18px;color:var(--teal-500);flex-shrink:0;margin-top:2px;}
+  .pt-points .btn{margin-top:10px;align-self:flex-start;}
+
+  /* ================= PROMISE ================= */
+  .promise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .promise{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:32px 28px;box-shadow:var(--sh-sm);}
+  .promise .pi{width:52px;height:52px;border-radius:15px;background:var(--teal-50);border:1px solid var(--teal-100);display:flex;align-items:center;justify-content:center;color:var(--teal-600);margin-bottom:18px;}
+  .promise h3{font-size:20px;margin-bottom:9px;}
+  .promise p{font-size:14.5px;color:var(--body);line-height:1.6;}
+
+  /* ================= FAQ ================= */
+  .faq{max-width:780px;margin:0 auto;}
+  .qa{border-bottom:1px solid var(--line);}
+  .qa button{width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;background:transparent;border:none;cursor:pointer;padding:24px 4px;text-align:left;font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink);}
+  .qa .pls{width:30px;height:30px;border-radius:50%;border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;color:var(--teal-700);}
+  .qa.open .pls{background:var(--teal-700);color:#fff;border-color:transparent;transform:rotate(45deg);}
+  .qa .ans{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .qa .ans p{padding:0 4px 24px;font-size:15.5px;line-height:1.65;color:var(--body);max-width:64ch;}
+
+  /* ================= PORTAL ================= */
+  .portal-wrap{display:grid;grid-template-columns:.82fr 1.18fr;gap:30px;align-items:stretch;}
+  .pf-tabs{display:flex;flex-direction:column;gap:10px;}
+  .pf-tab{display:flex;gap:14px;align-items:flex-start;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:17px 18px;cursor:pointer;transition:all .16s;width:100%;font-family:inherit;}
+  .pf-tab:hover{border-color:var(--teal-200);}
+  .pf-tab.on{border-color:var(--teal-400);box-shadow:var(--sh-sm);background:var(--teal-50);}
+  .pf-tab .pf-ic{width:40px;height:40px;border-radius:11px;background:var(--paper-2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--teal-600);flex-shrink:0;}
+  .pf-tab.on .pf-ic{background:var(--cta-grad);color:#fff;border-color:transparent;}
+  .pf-tab .pf-t{display:block;font-weight:600;font-size:15.5px;color:var(--ink);}
+  .pf-tab .pf-d{display:block;font-size:13px;color:var(--muted);margin-top:4px;line-height:1.45;}
+  .pf-panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-md);overflow:hidden;}
+  .pf-view{display:none;}
+  .pf-view.on{display:block;}
+  .pf-bar{display:flex;align-items:center;gap:9px;padding:13px 18px;border-bottom:1px solid var(--line);background:var(--paper-2);}
+  .pf-bar .d{width:11px;height:11px;border-radius:50%;}
+  .pf-bar .t{margin-left:6px;font-size:13px;font-weight:600;color:var(--body);}
+  .pf-bar .meta{margin-left:auto;font-size:12px;color:var(--muted);}
+  .pf-shot{display:block;width:100%;height:auto;min-height:230px;background:var(--paper-2);}
+  /* calendar */
+  .pf-cal{padding:18px 18px 20px;}
+  .pf-days{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;}
+  .pf-col .dh{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:9px;}
+  .pf-pill{border-radius:9px;padding:7px 9px;margin-bottom:7px;font-size:11px;line-height:1.3;}
+  .pf-pill .pt{font-weight:700;}
+  .pf-pill .ps{opacity:.85;}
+  /* lessons */
+  .pf-lesson{padding:0;}
+  .pf-stage{display:grid;grid-template-columns:1fr 110px;}
+  .pf-board{padding:24px;min-height:200px;position:relative;background:linear-gradient(var(--paper-2) 1px,transparent 1px) 0 0/100% 28px,var(--surface);}
+  .pf-board .eq{font-family:var(--serif);font-size:21px;color:var(--ink);}
+  .pf-board .eq .hl{color:var(--teal-600);}
+  .pf-board .ann{position:absolute;font-family:var(--serif);font-style:italic;color:var(--teal-600);font-size:13.5px;}
+  .pf-side{border-left:1px solid var(--line);padding:14px 12px;display:flex;flex-direction:column;gap:10px;background:var(--paper-2);}
+  .pf-vid{border-radius:11px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:12.5px;}
+  .pf-rec{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:600;color:var(--teal-700);margin-top:auto;justify-content:center;}
+  .pf-rec i{width:7px;height:7px;border-radius:50%;background:var(--teal-500);}
+  .pf-reclist{border-top:1px solid var(--line);padding:14px 18px;display:flex;flex-direction:column;gap:10px;}
+  .pf-recrow{display:flex;align-items:center;gap:12px;}
+  .pf-play{width:32px;height:32px;border-radius:9px;background:var(--teal-50);border:1px solid var(--teal-100);display:flex;align-items:center;justify-content:center;color:var(--teal-600);flex-shrink:0;}
+  .pf-recrow .rt{font-size:13.5px;font-weight:600;color:var(--ink);}
+  .pf-recrow .rs{font-size:12px;color:var(--muted);}
+  .pf-recrow .rd{margin-left:auto;font-size:12px;color:var(--muted);}
+  /* reports */
+  .pf-report{padding:20px 22px;}
+  .pf-rephead{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+  .pf-rephead .rh{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--ink);}
+  .pf-chip{font-size:11.5px;font-weight:600;color:var(--teal-700);background:var(--teal-50);border:1px solid var(--teal-100);border-radius:var(--r-pill);padding:4px 10px;}
+  .pf-rrow{display:flex;align-items:center;gap:12px;padding:11px 0;border-top:1px solid var(--line);font-size:14px;color:var(--ink-2);}
+  .pf-rrow svg{width:17px;height:17px;color:var(--teal-500);flex-shrink:0;}
+  .pf-rrow .rv{margin-left:auto;font-weight:600;color:var(--ink);}
+  .pf-note{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-md);padding:14px 16px;margin-top:14px;}
+  .pf-note .nl{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-600);margin-bottom:5px;}
+  .pf-note p{font-size:13.5px;color:var(--body);line-height:1.55;font-style:italic;}
+  @media(max-width:860px){.portal-wrap{grid-template-columns:1fr;}.pf-tabs{flex-direction:row;overflow-x:auto;}.pf-tab{min-width:200px;}.pf-tab .pf-d{display:none;}}
+
+  /* ================= SUBJECT LINK CARDS ================= */
+  .subjlink-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .subjlink{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px 28px;box-shadow:var(--sh-sm);transition:transform .2s ease,box-shadow .2s ease;}
+  .subjlink:hover{transform:translateY(-4px);box-shadow:var(--sh-lg);}
+  .subjlink .si{width:54px;height:54px;border-radius:16px;display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:18px;box-shadow:var(--sh-sm);}
+  .subjlink h3{font-size:22px;margin-bottom:9px;}
+  .subjlink p{font-size:14.5px;color:var(--body);line-height:1.6;margin-bottom:16px;}
+  .subjlink .lv{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px;}
+  .subjlink .lv span{font-size:12px;font-weight:500;color:var(--teal-700);background:var(--teal-50);border:1px solid var(--teal-100);border-radius:var(--r-pill);padding:5px 10px;}
+  .subjlink .go{margin-top:auto;font-size:14.5px;font-weight:600;color:var(--teal-700);display:inline-flex;align-items:center;gap:6px;}
+  .subjlink:hover .go svg{transform:translateX(3px);}
+  .subjlink .go svg{width:16px;height:16px;transition:transform .18s;}
+  .trust-line{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;margin-top:36px;}
+  .trust-line .ti{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--ink-2);}
+  .trust-line .ti svg{width:17px;height:17px;color:var(--teal-500);}
+  .trust-line .sep{width:1px;height:18px;background:var(--line-2);}
+
+  /* ================= TESTIMONIALS ================= */
+  .tm-head{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:42px;flex-wrap:wrap;}
+  .tm-rating{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-pill);padding:9px 18px;box-shadow:var(--sh-xs);}
+  .tm-rating .stars{font-size:16px;}
+  .tm-rating .rt{font-size:14px;color:var(--ink-2);font-weight:500;}
+  .tm-rating .rt b{color:var(--ink);font-weight:700;font-family:var(--serif);}
+  .tm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .tm{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;box-shadow:var(--sh-sm);}
+  .tm .stars{margin-bottom:14px;}
+  .tm blockquote{margin:0 0 20px;font-size:15.5px;line-height:1.62;color:var(--ink-2);font-family:var(--serif);}
+  .tm .who{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:18px;border-top:1px solid var(--line);}
+  .tm .wav{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:15px;flex-shrink:0;}
+  .tm .wn{font-weight:600;font-size:14.5px;color:var(--ink);}
+  .tm .wm{font-size:12.5px;color:var(--muted);margin-top:1px;}
+
+  /* ================= PORTAL CAPTIONS / PROGRESS NOTE ================= */
+  .pf-cap{display:flex;gap:11px;align-items:flex-start;padding:16px 18px;border-top:1px solid var(--line);background:var(--paper-2);}
+  .pf-cap svg{width:18px;height:18px;color:var(--teal-500);flex-shrink:0;margin-top:1px;}
+  .pf-cap .ct{font-size:13.5px;color:var(--ink-2);line-height:1.5;}
+  .pf-cap .ct b{color:var(--ink);font-weight:600;}
+  .note-feature{display:grid;grid-template-columns:1fr .9fr;gap:36px;align-items:center;margin-top:64px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-md);overflow:hidden;}
+  .note-feature .nf-l{padding:40px 12px 40px 44px;}
+  .note-feature .nf-l h3{font-size:26px;margin-bottom:12px;}
+  .note-feature .nf-l p{font-size:15px;color:var(--body);line-height:1.6;max-width:42ch;}
+  .note-feature .nf-r{padding:36px 44px 36px 12px;}
+  .note-sample{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px 24px;box-shadow:var(--sh-xs);}
+  .note-sample .ns-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+  .note-sample .ns-top .nm{font-family:var(--serif);font-weight:600;font-size:16px;color:var(--ink);}
+  .note-sample .ns-rrow{display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-2);}
+  .note-sample .ns-rrow svg{width:16px;height:16px;color:var(--teal-500);flex-shrink:0;}
+  .note-sample .ns-rrow .rv{margin-left:auto;font-weight:600;color:var(--ink);}
+  .note-sample .ns-q{margin-top:14px;font-size:13.5px;font-style:italic;color:var(--body);line-height:1.55;font-family:var(--serif);}
+  @media(max-width:900px){
+    .subjlink-grid{grid-template-columns:1fr;}
+    .tm-grid{grid-template-columns:1fr;}
+    .note-feature{grid-template-columns:1fr;}
+    .note-feature .nf-l{padding:32px 24px 8px;}
+    .note-feature .nf-r{padding:8px 24px 32px;}
+  }
+  /* portal teaser (home) */
+  .portal-teaser{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;}
+  .portal-teaser .pt-shot{width:100%;border-radius:var(--r-xl);border:1px solid var(--line);box-shadow:var(--sh-lg);display:block;}
+  .portal-teaser .chips{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 26px;}
+  @media(max-width:860px){.portal-teaser{grid-template-columns:1fr;gap:32px;}}
+
+  /* ================= FINAL CTA ================= */
+  .cta-band{background:linear-gradient(140deg,#4d8c8c 0%,#3a6e6d 55%,#2f5a59 100%);border-radius:var(--r-xl);padding:64px 56px;position:relative;overflow:hidden;text-align:center;}
+  .cta-band::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 120% at 50% 0%,rgba(255,255,255,.16),transparent 60%);}
+  .cta-band .in{position:relative;z-index:2;max-width:640px;margin:0 auto;}
+  .cta-band h2{color:#fff;}
+  .cta-band p{color:rgba(255,255,255,.74);margin:18px auto 30px;max-width:48ch;}
+  .cta-band .row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .cta-band .micro{margin-top:20px;font-size:13.5px;color:rgba(255,255,255,.55);}
+
+  @media(max-width:980px){
+    .hero-grid{grid-template-columns:1fr;gap:64px;}
+    .showcase{width:100%;max-width:440px;margin:0 auto;}
+    .steps,.tutor-grid{grid-template-columns:1fr;}
+    .price-teaser{grid-template-columns:1fr;}
+    .hiw-rail{display:none;}
+    .subjects-panel{grid-template-columns:1fr;}
+    .ks-rail{display:flex;gap:8px;overflow-x:auto;border-right:none;border-bottom:1px solid var(--line);}
+    .ks-btn+.ks-btn{margin-top:0;}
+    .ks-btn{min-width:200px;}
+    .stats-grid{grid-template-columns:1fr 1fr;gap:32px 0;}
+    .stat:nth-child(3){border-left:none;}
+    .promise-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto;}
+  }
+  @media(max-width:560px){
+    .stats-grid{grid-template-columns:1fr;}
+    .stat+.stat{border-left:none;border-top:1px solid rgba(255,255,255,.14);padding-top:28px;}
+  }
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Ace Academic Tutors","alternateName":"Ace Academic Tutors Ltd","url":"https://aceacademictutors.com/","logo":"https://aceacademictutors.com/assets/logo-icon.png","image":"https://aceacademictutors.com/assets/logo-full.png","email":"info@aceacademictutors.com","telephone":"+44 7454 905330","address":{"@type":"PostalAddress","streetAddress":"61 Lower Mardyke Avenue","addressLocality":"Rainham","postalCode":"RM13 8PR","addressCountry":"GB"},"areaServed":"GB","sameAs":["https://www.facebook.com/profile.php?id=61563738669588","https://www.instagram.com/aceacademictutors","https://www.linkedin.com/company/ace-academic-tutors"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Ace Academic Tutors","url":"https://aceacademictutors.com/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Ace Academic Tutors, Premium online tutoring, KS1 to A-Level","description":"Specialist UK tutors, hand-matched to your child and their exam board. Book a free consultation.","url":"https://aceacademictutors.com/","isPartOf":{"@type":"WebSite","name":"Ace Academic Tutors","url":"https://aceacademictutors.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the free consultation work?","acceptedAnswer":{"@type":"Answer","text":"It’s a relaxed 15-minute video call where we get to know your child’s needs, answer your questions, and introduce a tutor we think is the right fit. There’s no cost, no card required, and no obligation to continue."}},{"@type":"Question","name":"How do you choose the right tutor?","acceptedAnswer":{"@type":"Answer","text":"We match on subject, exam board, level and personality. Every tutor is university-educated, DBS-checked and interviewed in person. If a match isn’t perfect, we’ll happily introduce someone else."}},{"@type":"Question","name":"What does it cost?","acceptedAnswer":{"@type":"Answer","text":"One-to-one lessons are £35/hour for a single weekly session, and the hourly rate drops the more sessions you book each week, down to £28/hour at five sessions a week. Pay monthly upfront to save a further 5%. Everything starts with a free consultation."}},{"@type":"Question","name":"How are lessons delivered?","acceptedAnswer":{"@type":"Answer","text":"Lessons take place in our purpose-built online classroom with live video, a shared interactive whiteboard, screen-sharing and PDFs. You’ll receive a short progress note after every session."}}]}</script>
+</head>
+<body data-page="home">
+<noscript><style>.reveal{opacity:1!important;transform:none!important}.qa .ans{max-height:none!important}</style></noscript>
+<header class="site-header" id="siteHeader">
+<div class="wrap nav">
+<div class="nav-left">
+<a href="index.html" class="brand" aria-label="Ace Academic Tutors home"><img src="assets/logo-icon.png" alt="Ace Academic Tutors" class="brand-icon"><span class="brand-word"><span class="w-ace">Ace</span><span class="w-acad">Academic</span><span class="w-tut">Tutors</span></span></a>
+<nav class="nav-links"><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="for-schools.html">For Schools</a></nav>
+</div>
+<div class="nav-right">
+<a href="contact.html" class="btn btn-primary">Book free consultation</a>
+<button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg></button>
+</div>
+</div>
+<div class="mobile-menu" id="mobileMenu"><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="for-schools.html">For Schools</a><a href="become-a-tutor.html">Become a tutor</a><a href="contact.html">Contact</a><a href="contact.html" class="btn btn-primary">Book free consultation</a></div>
+</header>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="glow" style="width:520px;height:520px;background:radial-gradient(circle,rgba(96,160,160,.16),transparent 70%);top:-160px;right:-120px;"></div>
+    <div class="glow" style="width:420px;height:420px;background:radial-gradient(circle,rgba(200,146,58,.07),transparent 70%);bottom:-180px;left:-140px;"></div>
+  </div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="pill"><span class="dot"></span> Maths · English · Science</span>
+      <h1 class="display">Tutoring that brings out<br>your child’s <span class="serif-it">best.</span></h1>
+      <p class="lead">Specialist UK tutors in <strong style="color:var(--ink);font-weight:600;">Maths, English &amp; Science</strong>, hand-matched to your child and taught live online.</p>
+      <div class="hero-cta">
+        <a href="contact.html" class="btn btn-primary btn-lg">Book a free consultation</a>
+        <a href="#how" class="btn btn-ghost btn-lg">See how it works
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="hero-trust">
+        <span class="htchip"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> DBS-checked tutors</span>
+        <span class="htchip"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Free 15-minute consultation</span>
+      </div>
+    </div>
+
+    <!-- Hero visual: live-classroom mockup -->
+    <div class="showcase">
+      <div class="sc-blob"></div>
+      <div class="sc-card" role="img" aria-label="A live one-to-one lesson in the Ace online classroom, with an interactive whiteboard, video tiles and tools.">
+        <div class="sc-bar">
+          <span class="d" style="background:#e07a5a"></span>
+          <span class="d" style="background:#e9b949"></span>
+          <span class="d" style="background:#60a0a0"></span>
+          <span class="t">Maths · Year 11 · GCSE</span>
+          <span class="live"><i></i> Live lesson</span>
+        </div>
+        <div class="sc-stage">
+          <div class="sc-board">
+            <div class="eq">Solve: <span class="hl">2x² − 5x − 3 = 0</span></div>
+            <div class="eq" style="margin-top:18px;">x = <span class="hl">(5 ± √49) / 4</span></div>
+            <div class="eq" style="margin-top:18px;color:var(--teal-600);">x = 3 &nbsp;or&nbsp; x = −½</div>
+            <div class="ann" style="top:96px;right:24px;">factorise first ✓</div>
+            <div class="ann" style="bottom:26px;left:26px;">nice work!</div>
+          </div>
+          <div class="sc-side">
+            <div class="vtile" style="background:linear-gradient(135deg,#60a0a0,#3f7a79)">JT</div>
+            <div class="vtile" style="background:linear-gradient(135deg,#6a86b0,#445f8a)">O</div>
+          </div>
+        </div>
+        <div class="sc-tools">
+          <span class="tool" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18z" stroke-linejoin="round"/></svg></span>
+          <span class="tool" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="tool" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3h20v14H2z"/><path d="M8 21h8M12 17v4" stroke-linecap="round"/></svg></span>
+          <span class="spacer"></span>
+          <span class="tool" style="background:var(--cta-grad);color:#fff;border-color:transparent;" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg></span>
+        </div>
+      </div>
+      <div class="float fa">
+        <span class="fi"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18" stroke-linecap="round" stroke-linejoin="round"/><path d="m7 14 3-3 3 2 4-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div><div class="b">Progress note sent</div><div class="s">after every lesson</div></div>
+      </div>
+      <div class="float fb">
+        <span class="fi"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div><div class="b">Matched in 48 hours</div><div class="s">to a specialist tutor</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ EXAM BOARDS ============================ -->
+<div class="boards">
+  <div class="wrap boards-in">
+    <span class="lbl">Every major exam board</span>
+    <span class="board">AQA</span>
+    <span class="board">Edexcel</span>
+    <span class="board">OCR</span>
+    <span class="board">WJEC</span>
+    <span class="board">CIE</span>
+    <span class="board">Eduqas</span>
+  </div>
+</div>
+
+<!-- ============================ HOW IT WORKS ============================ -->
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">How it works</span>
+      <h2 class="h-xl">Getting started takes<br>three simple steps</h2>
+      <p class="lead">Tell us the goal, meet your matched tutor on a free call, then start lessons.</p>
+    </div>
+    <div class="hiw">
+      <div class="hiw-rail"></div>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="node">01<span class="ring"></span></div>
+          <div class="card">
+            <span class="when"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6" stroke-linecap="round" stroke-linejoin="round"/></svg> 2-minute form or a quick call</span>
+            <h3>Tell us the goal</h3>
+            <p class="lede">Share your child’s year group, subjects and what you’re hoping to achieve.</p>
+          </div>
+        </div>
+        <div class="step reveal" style="transition-delay:.08s">
+          <div class="node">02<span class="ring"></span></div>
+          <div class="card">
+            <span class="when"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg> Matched within 48 hours</span>
+            <h3>We find the right tutor</h3>
+            <p class="lede">A real person hand-picks a specialist tutor and introduces you on a free call.</p>
+          </div>
+        </div>
+        <div class="step reveal" style="transition-delay:.16s">
+          <div class="node">03<span class="ring"></span></div>
+          <div class="card">
+            <span class="when"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18" stroke-linecap="round" stroke-linejoin="round"/><path d="m7 14 3-3 3 2 4-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Ongoing · flexible scheduling</span>
+            <h3>Lessons &amp; progress</h3>
+            <p class="lede">Lessons run live in our online classroom, with a short progress note after every one.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SUBJECTS WE TEACH ============================ -->
+<section class="section" id="tutors">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What we teach</span>
+      <h2 class="h-xl">Three core subjects,<br>taught by specialists</h2>
+      <p class="lead">We focus on three subjects, so every tutor is a genuine specialist, hand-matched to your child.</p>
+    </div>
+    <div class="subjlink-grid">
+      <a class="subjlink reveal" href="maths-tutoring.html">
+        <div class="si" style="background:linear-gradient(135deg,#60a0a0,#3f7a79)">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h3M13 12h3M8 16h3M13 16h3" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Maths</h3>
+        <p>From early numeracy to A-Level calculus, building number confidence, reasoning and exam technique step by step.</p>
+        <div class="lv"><span>KS1–KS2</span><span>KS3</span><span>GCSE</span><span>A-Level</span><span>11+</span></div>
+        <span class="go">Explore Maths tutoring <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="subjlink reveal" href="english-tutoring.html" style="transition-delay:.08s">
+        <div class="si" style="background:linear-gradient(135deg,#6a86b0,#445f8a)">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>English</h3>
+        <p>Reading, writing, language and literature, from phonics and comprehension to GCSE and A-Level essay craft.</p>
+        <div class="lv"><span>KS1–KS2</span><span>KS3</span><span>GCSE</span><span>A-Level</span><span>11+</span></div>
+        <span class="go">Explore English tutoring <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="subjlink reveal" href="science-tutoring.html" style="transition-delay:.16s">
+        <div class="si" style="background:linear-gradient(135deg,#7d9b6a,#4f7a52)">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 2h6M9 2v6l-5 9a2 2 0 0 0 1.8 3h12.4A2 2 0 0 0 20 17l-5-9V2" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Science</h3>
+        <p>Combined Science through to separate Biology, Chemistry and Physics, concepts made clear, with relentless past-paper practice.</p>
+        <div class="lv"><span>KS2</span><span>KS3</span><span>GCSE</span><span>Biology</span><span>Chemistry</span><span>Physics</span></div>
+        <span class="go">Explore Science tutoring <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+    <div class="trust-line reveal">
+      <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke-linecap="round"/><path d="M22 4 12 14.01l-3-3" stroke-linecap="round" stroke-linejoin="round"/></svg> Degree-level subject specialists</span>
+      <span class="sep"></span>
+      <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg> Enhanced DBS-checked</span>
+      <span class="sep"></span>
+      <span class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 12 0v1" stroke-linecap="round"/></svg> Hand-matched, not by algorithm</span>
+    </div>
+    <div class="center" style="margin-top:40px;">
+      <a href="services.html" class="btn btn-outline btn-lg">Explore all our services</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SOCIAL PROOF ============================ -->
+<section class="section" id="results" style="background:var(--paper-2);">
+  <div class="wrap">
+    <div class="stats-band reveal">
+      <div class="stats-grid">
+        <div class="stat"><div class="n sm">KS1<span class="u">–</span>A<span class="u">-</span>Level</div><div class="c">every stage covered, plus 11+ preparation</div></div>
+        <div class="stat"><div class="n"><span data-count="3">3</span></div><div class="c">core subjects, taught in real depth</div></div>
+        <div class="stat"><div class="n"><span data-count="48" data-suffix="h">48h</span></div><div class="c">typical time to match a specialist tutor</div></div>
+        <div class="stat"><div class="n"><span data-count="15">15</span> <span class="u">min</span></div><div class="c">free consultation, no card required</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PORTAL ============================ -->
+<section class="section" id="portal">
+  <div class="wrap">
+    <div class="portal-teaser reveal">
+      <div>
+        <span class="eyebrow" style="display:block;margin-bottom:14px;">The ACE portal</span>
+        <h2 class="h-lg" style="margin-bottom:14px;">Schedule, learn and track,<br>all in one place</h2>
+        <p class="lead">Booking and scheduling, every session tracked, clear progress and payment reports, plus a short note after every lesson.</p>
+        <div class="chips">
+          <span class="tag">Shared calendar</span>
+          <span class="tag">Session tracking</span>
+          <span class="tag">Progress notes</span>
+        </div>
+        <a href="portal.html" class="btn btn-primary btn-lg">Explore the portal
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div>
+        <img class="pt-shot" src="assets/portal-dashboard.jpeg" alt="The ACE portal dashboard with activity and financial overview" loading="lazy" width="760" height="460">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PRICING ============================ -->
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Transparent, honest pricing</span>
+      <h2 class="h-xl">Fair pricing,<br>no hidden fees.</h2>
+      <p class="lead">One-to-one tutoring, priced by how often your child comes each week, the more regular the lessons, the lower the hourly rate.</p>
+    </div>
+    <div class="price-teaser reveal">
+      <div class="pt-main">
+        <div class="pt-label">One-to-one tuition</div>
+        <div class="pt-amt">£28<span class="sm">-35 / hour</span></div>
+        <div class="pt-sub">by how many sessions a week · save up to 20% for regular sessions, and a further 5% paying monthly.</div>
+      </div>
+      <div class="pt-points">
+        <div class="pp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Free 15-minute consultation, no card required</div>
+        <div class="pp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Small-group &amp; Classroom Learning options</div>
+        <div class="pp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> 24-hour cancellation with free rescheduling</div>
+        <a href="pricing.html" class="btn btn-primary">See full pricing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FAQ ============================ -->
+<section class="section" style="background:var(--paper-2);">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Questions, answered</span>
+      <h2 class="h-xl">Everything you<br>might be wondering</h2>
+    </div>
+    <div class="faq reveal">
+      <div class="qa open">
+        <button>How does the free consultation work?<span class="pls">+</span></button>
+        <div class="ans"><p>It’s a relaxed 15-minute video call where we get to know your child’s needs, answer your questions, and introduce a tutor we think is the right fit. There’s no cost, no card required, and no obligation to continue.</p></div>
+      </div>
+      <div class="qa">
+        <button>How do you choose the right tutor?<span class="pls">+</span></button>
+        <div class="ans"><p>We match on subject, exam board, level and personality. Every tutor is university-educated, DBS-checked and interviewed in person, only the strongest applicants join the team. If a match isn’t perfect, we’ll happily introduce someone else.</p></div>
+      </div>
+      <div class="qa">
+        <button>What does it cost?<span class="pls">+</span></button>
+        <div class="ans"><p>One-to-one lessons are £35/hour for a single weekly session, and the hourly rate drops the more sessions you book each week, down to £28/hour at five sessions a week (20% off). Pay monthly upfront to save a further 5%. There are no hidden fees, and everything starts with a free consultation.</p></div>
+      </div>
+      <div class="qa">
+        <button>How are lessons delivered?<span class="pls">+</span></button>
+        <div class="ans"><p>Lessons take place in our purpose-built online classroom, live video and audio, a shared interactive whiteboard, screen-sharing and PDFs. It’s a real lesson, not just a video call. You’ll receive a short progress note after every session so you always know how your child is getting on.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FINAL CTA ============================ -->
+<section class="section-sm">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div class="in">
+        <h2 class="h-xl">Give your child a tutor<br>they’ll look forward to.</h2>
+        <p>Start with a free 15-minute consultation. We’ll understand the goal, introduce the right tutor, and you decide where to go from there.</p>
+        <div class="row">
+          <a href="contact.html" class="btn btn-primary btn-lg">Book a free consultation</a>
+          <a href="about.html" class="btn btn-outline btn-lg" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.25)">How it works</a>
+        </div>
+        <div class="micro">No card required · Matched within 48 hours · Cancel anytime</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="footer-grid">
+<div class="footer-col">
+<img src="assets/logo-reversed.png" alt="Ace Academic Tutors logo" style="height:62px;width:auto;display:block;">
+<p style="margin-top:18px;max-width:34ch;color:#9fb0ae;font-size:14.5px;line-height:1.7;">Expert online tutoring in Maths, English &amp; Science, KS1 to A-Level and 11+. Personalised lessons in a real interactive classroom.</p>
+<div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;"><span class="tag" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:#cfe3e1;">DBS-checked tutors</span><span class="tag" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:#cfe3e1;">Maths · English · Science</span></div>
+<div class="footer-social" style="margin-top:20px;display:flex;gap:12px;">
+<a href="https://www.facebook.com/profile.php?id=61563738669588" aria-label="Ace Academic Tutors on Facebook" target="_blank" rel="noopener"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
+<a href="https://www.instagram.com/aceacademictutors" aria-label="Ace Academic Tutors on Instagram" target="_blank" rel="noopener"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+<a href="https://www.linkedin.com/company/ace-academic-tutors" aria-label="Ace Academic Tutors on LinkedIn" target="_blank" rel="noopener"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.76V1.74C24 .78 23.2 0 22.22 0z"/></svg></a>
+</div>
+</div>
+<div class="footer-col"><h5>Explore</h5><a href="about.html">About us</a><br><a href="services.html">Services</a><br><a href="portal.html">The portal</a><br><a href="pricing.html">Pricing</a><br><a href="for-schools.html">For Schools</a><br><a href="become-a-tutor.html">Become a tutor</a></div>
+<div class="footer-col"><h5>Subjects</h5><a href="maths-tutoring.html">Maths tutoring</a><br><a href="english-tutoring.html">English tutoring</a><br><a href="science-tutoring.html">Science tutoring</a><br><a href="11-plus-tutoring.html">11+ preparation</a></div>
+<div class="footer-col"><h5>Get in touch</h5><a href="contact.html">Book a free consultation</a><br><a href="tel:+447454905330">07454 905330</a><br><a href="mailto:info@aceacademictutors.com">info@aceacademictutors.com</a><br><a href="https://portal.aceacademictutors.com" target="_blank" rel="noopener">Family &amp; tutor portal</a><address style="font-style:normal;margin-top:14px;color:#9fb0ae;font-size:13.5px;line-height:1.7;">Ace Academic Tutors Ltd<br>61 Lower Mardyke Avenue<br>Rainham, RM13 8PR</address></div>
+</div>
+<div class="footer-bottom"><span>© <span data-year>2026</span> Ace Academic Tutors Ltd · Registered in England &amp; Wales, Company No.&nbsp;15925436</span><span style="display:flex;gap:22px;flex-wrap:wrap;"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="safeguarding.html">Safeguarding</a></span></div>
+</div>
+</footer>
+
+<script src="assets/chrome.js"></script>
+<script>
+  /* ---------- portal feature tabs ---------- */
+  const pfTabs=document.getElementById('pfTabs');
+  if(pfTabs){
+    pfTabs.addEventListener('click',e=>{
+      const b=e.target.closest('.pf-tab'); if(!b)return;
+      pfTabs.querySelectorAll('.pf-tab').forEach(x=>{x.classList.remove('on');x.setAttribute('aria-selected','false');});
+      b.classList.add('on'); b.setAttribute('aria-selected','true');
+      document.querySelectorAll('.pf-view').forEach(v=>v.classList.toggle('on',v.dataset.view===b.dataset.tab));
+    });
+  }
+
+  /* ---------- FAQ accordion ---------- */
+  document.querySelectorAll('.qa').forEach((qa,i)=>{
+    const btn=qa.querySelector('button'), ans=qa.querySelector('.ans');
+    const id='faq-ans-'+i; ans.id=id;
+    btn.setAttribute('aria-expanded', qa.classList.contains('open')?'true':'false');
+    btn.setAttribute('aria-controls', id);
+    btn.addEventListener('click',()=>{
+      const open=qa.classList.contains('open');
+      document.querySelectorAll('.qa').forEach(x=>{x.classList.remove('open');x.querySelector('.ans').style.maxHeight=null;x.querySelector('button').setAttribute('aria-expanded','false');});
+      if(!open){qa.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';btn.setAttribute('aria-expanded','true');}
+    });
+  });
+  // open the first by default
+  const firstAns=document.querySelector('.qa.open .ans'); if(firstAns) firstAns.style.maxHeight=firstAns.scrollHeight+'px';
+</script>
+</body>
+</html>

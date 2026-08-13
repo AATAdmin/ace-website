@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="assets/site.webmanifest">
+<meta name="theme-color" content="#60a0a0">
+<title>Services, Ace Academic Tutors</title>
+<meta name="description" content="One-to-one tutoring, small-group sessions and exam preparation in Maths, English and Science. KS1 to A-Level.">
+<link rel="canonical" href="https://aceacademictutors.com/services.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Ace Academic Tutors">
+<meta property="og:title" content="Services, Ace Academic Tutors">
+<meta property="og:description" content="One-to-one tutoring, small-group sessions and exam preparation in Maths, English and Science. KS1 to A-Level.">
+<meta property="og:url" content="https://aceacademictutors.com/services.html">
+<meta property="og:image" content="https://aceacademictutors.com/assets/logo-full.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Services, Ace Academic Tutors">
+<meta name="twitter:description" content="One-to-one tutoring, small-group sessions and exam preparation in Maths, English and Science. KS1 to A-Level.">
+<meta name="twitter:image" content="https://aceacademictutors.com/assets/logo-full.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .page-hero{padding:72px 0 28px;text-align:center;position:relative;overflow:hidden;}
+  .page-hero .glow{position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(96,160,160,.12),transparent 70%);top:-220px;left:50%;transform:translateX(-50%);z-index:0;}
+  .page-hero .in{position:relative;z-index:2;max-width:760px;margin:0 auto;}
+  .page-hero .eyebrow{display:block;margin-bottom:16px;}
+  .page-hero h1{margin-bottom:20px;}
+  .page-hero .lead{max-width:54ch;margin:0 auto;}
+  .breadcrumb{font-size:13.5px;color:var(--muted);margin-bottom:22px;}
+  .breadcrumb a:hover{color:var(--teal-700);}
+
+  .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  .svc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:32px;box-shadow:var(--sh-sm);position:relative;transition:transform .18s,box-shadow .18s;}
+  .svc:hover{transform:translateY(-4px);box-shadow:var(--sh-lg);}
+  .svc .si{width:54px;height:54px;border-radius:15px;background:var(--teal-50);border:1px solid var(--teal-100);display:flex;align-items:center;justify-content:center;color:var(--teal-600);margin-bottom:20px;}
+  .svc h3{font-size:23px;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+  .svc p{font-size:15px;color:var(--body);line-height:1.6;margin-bottom:16px;}
+  .svc ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;}
+  .svc li{display:flex;align-items:flex-start;gap:9px;font-size:14px;color:var(--ink-2);}
+  .svc li svg{width:16px;height:16px;color:var(--teal-500);flex-shrink:0;margin-top:2px;}
+  .svc.soon{background:var(--paper-2);}
+
+  .subj-split{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .subj-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px;box-shadow:var(--sh-sm);}
+  .subj-card .sh{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
+  .subj-card .si{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0;}
+  .subj-card h3{font-size:21px;}
+  .subj-card p{font-size:14.5px;color:var(--body);line-height:1.55;margin-bottom:16px;}
+  .subj-card .lv{display:flex;flex-wrap:wrap;gap:7px;}
+  .subj-card .lv span{font-size:12.5px;font-weight:500;color:var(--teal-700);background:var(--teal-50);border:1px solid var(--teal-100);border-radius:var(--r-pill);padding:5px 11px;}
+
+  .levels{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+  .level-pill{display:flex;flex-direction:column;align-items:center;gap:3px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:18px 26px;box-shadow:var(--sh-xs);min-width:120px;}
+  .level-pill .lt{font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink);}
+  .level-pill .la{font-size:12.5px;color:var(--muted);}
+  .level-pill.strong{border-color:var(--teal-300);box-shadow:var(--sh-sm);}
+  .level-pill.strong .lt{color:var(--teal-700);}
+
+  .board-row{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;}
+  .board-badge{font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:14px 24px;box-shadow:var(--sh-xs);}
+
+  .cta-band{background:linear-gradient(140deg,#4d8c8c 0%,#3a6e6d 55%,#2f5a59 100%);border-radius:var(--r-xl);padding:64px 56px;position:relative;overflow:hidden;text-align:center;}
+  .cta-band::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 120% at 50% 0%,rgba(255,255,255,.16),transparent 60%);}
+  .cta-band .inr{position:relative;z-index:2;max-width:640px;margin:0 auto;}
+  .cta-band h2{color:#fff;}
+  .cta-band p{color:rgba(255,255,255,.74);margin:18px auto 30px;max-width:48ch;}
+  .cta-band .row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+  @media(max-width:900px){.svc-grid{grid-template-columns:1fr;}.subj-split{grid-template-columns:1fr;}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Ace Academic Tutors","alternateName":"Ace Academic Tutors Ltd","url":"https://aceacademictutors.com/","logo":"https://aceacademictutors.com/assets/logo-icon.png","image":"https://aceacademictutors.com/assets/logo-full.png","email":"info@aceacademictutors.com","telephone":"+44 7454 905330","address":{"@type":"PostalAddress","streetAddress":"61 Lower Mardyke Avenue","addressLocality":"Rainham","postalCode":"RM13 8PR","addressCountry":"GB"},"areaServed":"GB","sameAs":["https://www.facebook.com/profile.php?id=61563738669588","https://www.instagram.com/aceacademictutors","https://www.linkedin.com/company/ace-academic-tutors"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Services, Ace Academic Tutors","description":"One-to-one tutoring, small-group sessions and exam preparation in Maths, English and Science. KS1 to A-Level.","url":"https://aceacademictutors.com/services.html","isPartOf":{"@type":"WebSite","name":"Ace Academic Tutors","url":"https://aceacademictutors.com/"}}</script>
+</head>
+<body data-page="services">
+<div id="site-header-slot"></div>
+
+<section class="page-hero">
+  <div class="glow"></div>
+  <div class="wrap in">
+    <div class="breadcrumb"><a href="index.html">Home</a> · Services</div>
+    <span class="eyebrow">Our services</span>
+    <h1 class="display">Focused tutoring,<br>done <span class="serif-it">properly.</span></h1>
+    <p class="lead">We specialise in Maths, English and Science, and deliver them through personalised lessons in a real, interactive online classroom.</p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" style="padding-top:40px;">
+  <div class="wrap">
+    <div class="svc-grid">
+      <div class="svc reveal">
+        <div class="si"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 12 0v1" stroke-linecap="round"/><path d="M19 8v6M22 11h-6" stroke-linecap="round"/></svg></div>
+        <h3>One-to-one tutoring</h3>
+        <p>Fully personalised lessons built around a single student, their goals, their pace, their gaps. Our most popular service and where the fastest progress happens.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Matched to subject, level &amp; personality</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Progress notes after every lesson</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Discounts for more sessions per week</li>
+        </ul>
+      </div>
+      <div class="svc reveal" style="transition-delay:.06s">
+        <div class="si"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Small-group sessions</h3>
+        <p>Collaborative, level-matched groups for students who thrive learning alongside peers, all the structure of one-to-one, at a friendlier price.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Carefully level-matched groups</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Collaborative problem-solving</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> More affordable than one-to-one</li>
+        </ul>
+      </div>
+      <div class="svc reveal" style="transition-delay:.12s">
+        <div class="si"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Exam &amp; revision preparation</h3>
+        <p>Focused GCSE and A-Level preparation built on past papers, exam technique and a clear revision plan for the weeks that count.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Past papers marked live</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Exam technique &amp; timing</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Personalised revision roadmap</li>
+        </ul>
+      </div>
+      <div class="svc soon reveal" style="transition-delay:.18s">
+        <div class="si"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3" stroke-linecap="round"/></svg></div>
+        <h3>Classroom Learning <span class="tag">Soon</span></h3>
+        <p>Structured, syllabus-based online group classes of up to 10 students, affordable, sociable and rigorous. Launching soon at £25/hour per student.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Up to 10 students per class</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Structured around the syllabus</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> <a href="contact.html" style="color:var(--teal-700);font-weight:600;">Register your interest ›</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUBJECTS -->
+<section class="section" style="background:var(--paper-2);">
+  <div class="wrap">
+    <div class="sec-head reveal" style="max-width:680px;margin:0 auto 50px;text-align:center;">
+      <span class="eyebrow" style="display:block;margin-bottom:14px;">Three core subjects</span>
+      <h2 class="h-xl">Deep, not wide</h2>
+      <p class="lead" style="margin-top:14px;">We deliberately specialise in Maths, English and Science so every tutor is a genuine subject expert.</p>
+    </div>
+    <div class="subj-split">
+      <div class="subj-card reveal">
+        <div class="sh"><div class="si" style="background:linear-gradient(135deg,#60a0a0,#3f7a79)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h3M13 12h3M8 16h3M13 16h3" stroke-linecap="round"/></svg>
+        </div><h3>Maths</h3></div>
+        <p>From early numeracy to A-Level calculus, building number confidence, reasoning and exam technique step by step.</p>
+        <div class="lv"><span>KS1-KS2</span><span>KS3</span><span>GCSE</span><span>A-Level</span><span>11+</span></div>
+      </div>
+      <div class="subj-card reveal" style="transition-delay:.08s">
+        <div class="sh"><div class="si" style="background:linear-gradient(135deg,#6a86b0,#445f8a)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke-linejoin="round"/></svg>
+        </div><h3>English</h3></div>
+        <p>Reading, writing, language and literature, from phonics and comprehension to GCSE and A-Level essay craft.</p>
+        <div class="lv"><span>KS1-KS2</span><span>KS3</span><span>GCSE Lang</span><span>GCSE Lit</span><span>A-Level</span><span>11+</span></div>
+      </div>
+      <div class="subj-card reveal" style="transition-delay:.16s">
+        <div class="sh"><div class="si" style="background:linear-gradient(135deg,#7d9b6a,#4f7a52)">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 2h6M9 2v6l-5 9a2 2 0 0 0 1.8 3h12.4A2 2 0 0 0 20 17l-5-9V2" stroke-linejoin="round"/></svg>
+        </div><h3>Science</h3></div>
+        <p>Combined Science through to separate Biology, Chemistry and Physics, concepts made clear, with relentless past-paper practice.</p>
+        <div class="lv"><span>KS2</span><span>KS3</span><span>GCSE</span><span>Biology</span><span>Chemistry</span><span>Physics</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEVELS -->
+<section class="section-sm">
+  <div class="wrap">
+    <div class="center reveal">
+      <p class="eyebrow" style="margin-bottom:20px;">KS1 to A-Level, plus 11+ · every major exam board</p>
+      <div class="board-row">
+        <span class="board-badge">AQA</span><span class="board-badge">Edexcel</span><span class="board-badge">OCR</span><span class="board-badge">WJEC</span><span class="board-badge">Eduqas</span><span class="board-badge">CIE</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-sm">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div class="inr">
+        <h2 class="h-xl">Find the right tutor<br>for your child.</h2>
+        <p>Tell us the subject and level on a free 15-minute consultation, and we’ll match a specialist within 48 hours.</p>
+        <div class="row">
+          <a href="contact.html" class="btn btn-primary btn-lg">Book a free consultation</a>
+          <a href="pricing.html" class="btn btn-outline btn-lg" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.25)">See pricing</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer-slot"></div>
+<script src="assets/chrome.js"></script>
+</body>
+</html>
