@@ -14,6 +14,24 @@ Kept current by the implementing chat on every push to `main`.
 - **Read exact current source:**
   `https://raw.githubusercontent.com/AATAdmin/ace-website/main/<file>`
 
+## ⚠ The site is currently HOME PAGE ONLY
+
+Everything except `index.html` is hidden from the public while the site is rebuilt.
+
+- **`_redirects`** sends all 14 other pages to `/` with a 302. The URLs stay alive,
+  so nothing 404s and nothing loses its history.
+- Every hidden page carries `noindex, follow`.
+- `sitemap.xml` lists the home page only.
+- **`index.html`'s header and footer deliberately diverge from the other 14 pages.**
+  Its nav, footer link columns and legal links are stripped, and every booking CTA
+  points at `tel:+447454905330` rather than the hidden `contact.html`. The other
+  pages keep their full chrome, so restoring them brings the full nav back with them.
+
+**To bring a page back:** delete its line from `_redirects`, remove its `robots`
+meta, add it to `sitemap.xml`, and restore the matching links in `index.html`'s
+header and footer. To bring everything back at once, delete `_redirects` and restore
+`index.html` from `94a151d`.
+
 ## Pages
 
 All 15 pages have **static header and footer inlined** and render fully with
