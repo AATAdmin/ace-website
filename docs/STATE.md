@@ -49,6 +49,11 @@ deleted and every page is reachable again.
   viewport. **Whenever one of those three files changes, regenerate its token in all
   17 pages before pushing.** The generator is idempotent and strips any existing
   `?v=` first.
+- **Design note blocks live in `docs/notes/<page>.md`, not in the page source.** They
+  used to ship as HTML comments, ~36KB visible in view-source on the live site,
+  including notes on which claims were and were not evidenced. Same content, same
+  purpose: **read `docs/notes/<page>.md` before editing that page.** Short functional
+  comments (a line explaining the honeypot, or where a link goes) stay inline.
 - Static `og:` and `twitter:card` tags in every `<head>`.
 - **No em-dashes in displayed text.** En-dashes in ranges are correct.
 - British English. Relative links only (except `rel="canonical"`, which is absolute).

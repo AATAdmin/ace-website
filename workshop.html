@@ -140,34 +140,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationEvent","name":"The GCSE Maths Head Start","description":"A free 90-minute online GCSE Maths workshop for Year 10 and Year 11 students and their parents, with a free trial lesson included.","startDate":"2026-09-05T10:00:00+01:00","endDate":"2026-09-05T11:30:00+01:00","eventAttendanceMode":"https://schema.org/OnlineEventAttendanceMode","eventStatus":"https://schema.org/EventScheduled","maximumAttendeeCapacity":30,"isAccessibleForFree":true,"inLanguage":"en-GB","location":{"@type":"VirtualLocation","url":"https://aceacademictutors.com/workshop.html"},"offers":{"@type":"Offer","price":"0","priceCurrency":"GBP","availability":"https://schema.org/InStock","url":"https://aceacademictutors.com/workshop.html"},"organizer":{"@type":"Organization","name":"Ace Academic Tutors","url":"https://aceacademictutors.com/"}}</script>
 </head>
 <body data-page="workshop" data-ace-workshop-id="gcse-maths-head-start-2026-09-05">
-<!--
-  ============================================================
-  NOTE FOR CLAUDE CODE, portal-controlled event page
-  ============================================================
-  This whole page follows one workshop record from the portal.
-  GET /api/site-content -> workshops[] -> the next one that has
-  not finished. See docs/PORTAL_INTEGRATION.md
 
-  Hydrated at runtime: the name, date, time window, countdown,
-  the .ics calendar download, and the 'source' on registrations
-  (which follows the workshop id, so November sign-ups do not
-  file under September).
-
-  NOT hydrated, because crawlers read them before scripts run.
-  Publishing a genuinely NEW workshop needs a commit here for:
-    - <title>, description, canonical
-    - og: and twitter: tags
-    - the EducationEvent JSON-LD block
-    - data-ace-workshop-id and data-ace-until on <body>/<section>
-    - the "Year 10 and Year 11" subhead and the form's year options
-  Changing the date or capacity of an EXISTING workshop needs no
-  commit at all.
-
-  This page deliberately has no site nav and a slim footer: it is a
-  standalone landing page, and the standard footer links to English
-  and Science, which do not belong on a Maths-only advert.
-  ============================================================
--->
 <noscript><style>.cd{display:none}</style></noscript>
 
 <div class="topbar">
