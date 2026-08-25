@@ -7,212 +7,326 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="manifest" href="assets/site.webmanifest">
 <meta name="theme-color" content="#60a0a0">
-<title>Services, Ace Academic Tutors</title>
-<meta name="description" content="One-to-one tutoring, small-group sessions and exam preparation in Maths, English and Science. KS1 to A-Level.">
+<title>How we teach: live lessons, recorded, and written up</title>
+<meta name="description" content="Small group classes taught live on our own platform, with a shared whiteboard. Every lesson is recorded, the working is saved, and a written note follows each session. All of it in one portal.">
 <link rel="canonical" href="https://aceacademictutors.com/services.html">
-<meta name="robots" content="noindex, follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_GB">
 <meta property="og:site_name" content="Ace Academic Tutors">
-<meta property="og:title" content="Services, Ace Academic Tutors">
-<meta property="og:description" content="One-to-one tutoring, small-group sessions and exam preparation in Maths, English and Science. KS1 to A-Level.">
+<meta property="og:title" content="How we teach: live lessons, recorded, and written up">
+<meta property="og:description" content="Small group classes taught live on our own platform, with a shared whiteboard. Every lesson is recorded, the working is saved, and a written note follows each session. All of it in one portal.">
 <meta property="og:url" content="https://aceacademictutors.com/services.html">
 <meta property="og:image" content="https://aceacademictutors.com/assets/logo-full.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Services, Ace Academic Tutors">
-<meta name="twitter:description" content="One-to-one tutoring, small-group sessions and exam preparation in Maths, English and Science. KS1 to A-Level.">
+<meta name="twitter:title" content="How we teach: live lessons, recorded, and written up">
+<meta name="twitter:description" content="Small group classes taught live on our own platform, with a shared whiteboard. Every lesson is recorded, the working is saved, and a written note follows each session. All of it in one portal.">
 <meta name="twitter:image" content="https://aceacademictutors.com/assets/logo-full.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <style>
-  .page-hero{padding:72px 0 28px;text-align:center;position:relative;overflow:hidden;}
-  .page-hero .glow{position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(96,160,160,.12),transparent 70%);top:-220px;left:50%;transform:translateX(-50%);z-index:0;}
-  .page-hero .in{position:relative;z-index:2;max-width:760px;margin:0 auto;}
-  .page-hero .eyebrow{display:block;margin-bottom:16px;}
-  .page-hero h1{margin-bottom:20px;}
-  .page-hero .lead{max-width:54ch;margin:0 auto;}
-  .breadcrumb{font-size:13.5px;color:var(--muted);margin-bottom:22px;}
-  .breadcrumb a:hover{color:var(--teal-700);}
+/* THE HERO SURFACE, in place of a hero image.
+   The page is about five subjects, so the background is the notation those
+   subjects are written in: real fragments, set large and very pale, drifting
+   slowly. It reads as a working surface rather than decoration, and it never
+   competes with the copy because nothing in it exceeds 9% opacity. Pure CSS,
+   no image files. */
+.chero{position:relative;overflow:hidden;isolation:isolate;}
+.surface{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden;background:
+  radial-gradient(120% 90% at 88% -10%,rgba(96,160,160,.26),transparent 60%),
+  radial-gradient(90% 80% at 4% 105%,rgba(74,95,138,.07),transparent 60%),
+  linear-gradient(180deg,var(--paper) 0%,var(--surface) 62%,var(--paper) 100%);}
+.surface::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--teal-100) 1px,transparent 1px),linear-gradient(90deg,var(--teal-100) 1px,transparent 1px);background-size:52px 52px;opacity:.75;mask-image:linear-gradient(100deg,transparent 34%,#000 74%);}
+.mk{position:absolute;font-family:'Caveat',var(--serif);font-weight:600;line-height:1;white-space:nowrap;user-select:none;letter-spacing:.01em;animation:mkDrift 26s ease-in-out infinite alternate;}
+.mk-v{display:inline-block;transform:rotate(-1.5deg);}
+.mk sub{font-size:.62em;vertical-align:sub;}
+.mk sup{position:relative;top:-.12em;}
+.mk sup{font-size:.58em;vertical-align:super;}
+.mk-i{font-weight:500;}
+@keyframes mkDrift{from{transform:translate3d(0,0,0) rotate(var(--r,0deg))}to{transform:translate3d(-6px,-16px,0) rotate(calc(var(--r,0deg) + 1.2deg))}}
+@media(prefers-reduced-motion:reduce){.mk{animation:none;}}
+@media(max-width:760px){.mk{display:none;}.surface::before{opacity:.28;}}
+.thead{position:relative;padding:56px 0 52px;}
+.thead h1{max-width:19ch;}
+.thead .lead{max-width:52ch;margin-top:18px;}
+.thead .route{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:28px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--sans);font-size:14.5px;color:var(--body);}
+.thead .route b{font-weight:600;color:var(--ink);}
+.thead .route a{font-weight:600;color:var(--teal-700);border-bottom:1px solid var(--teal-200);}
 
-  .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
-  .svc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:32px;box-shadow:var(--sh-sm);position:relative;transition:transform .18s,box-shadow .18s;}
-  .svc:hover{transform:translateY(-4px);box-shadow:var(--sh-lg);}
-  .svc .si{width:54px;height:54px;border-radius:15px;background:var(--teal-50);border:1px solid var(--teal-100);display:flex;align-items:center;justify-content:center;color:var(--teal-600);margin-bottom:20px;}
-  .svc h3{font-size:23px;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
-  .svc p{font-size:15px;color:var(--body);line-height:1.6;margin-bottom:16px;}
-  .svc ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;}
-  .svc li{display:flex;align-items:flex-start;gap:9px;font-size:14px;color:var(--ink-2);}
-  .svc li svg{width:16px;height:16px;color:var(--teal-500);flex-shrink:0;margin-top:2px;}
-  .svc.soon{background:var(--paper-2);}
+.prcintro{margin-top:14px;font-size:16.5px;color:var(--body);line-height:1.65;max-width:60ch;}
+.flow{margin-top:34px;}
+.fnodes{display:flex;align-items:stretch;gap:5px;overflow-x:auto;padding:4px 2px 12px;scrollbar-width:thin;}
+.farrow{display:flex;align-items:center;color:var(--teal-300);flex:0 0 auto;}
+.farrow svg{width:17px;height:17px;}
+.fnode{flex:1 1 0;min-width:106px;text-align:left;background:var(--surface);border:1.5px solid var(--line-2);border-radius:var(--r-md);padding:14px 15px 15px;cursor:pointer;font-family:var(--sans);position:relative;transition:border-color .15s,background .15s,box-shadow .15s;display:block;}
+.fnode:hover{border-color:var(--teal-300);box-shadow:var(--sh-xs);}
+.fnode .fn{display:block;font-family:var(--serif);font-size:13px;font-weight:600;color:var(--teal-600);margin-bottom:5px;}
+.fnode .ft{display:block;font-size:14px;font-weight:600;color:var(--ink);line-height:1.3;margin-bottom:4px;}
+.fnode .fs{display:block;font-size:11.5px;color:var(--body);line-height:1.4;}
+.fnode .fdot{position:absolute;top:11px;right:11px;width:7px;height:7px;border-radius:50%;background:var(--teal-400);}
+.fnode.on{background:var(--teal-800);border-color:var(--teal-800);box-shadow:0 6px 18px rgba(31,58,58,.18);}
+.fnode.on .fn{color:var(--teal-200);}
+.fnode.on .ft{color:#fff;}
+.fnode.on .fs{color:rgba(255,255,255,.76);}
+.fnode.on .fdot{background:var(--teal-200);}
+.fnode:focus-visible{outline:2px solid var(--teal-500);outline-offset:2px;}
+.fpanels{background:var(--surface);border:1px solid var(--line-2);border-radius:var(--r-lg);box-shadow:var(--sh-xs);}
+.fpanel{display:none;grid-template-columns:1fr 1fr;gap:32px;padding:32px 34px;align-items:center;}
+.fpanel.on{display:grid;}
+.fpb h3{font-size:22px;margin:0 0 10px;letter-spacing:-.01em;}
+.fpb p{font-size:15.5px;color:var(--body);line-height:1.7;margin:0;}
+.fpw{display:block;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--teal-700);margin-bottom:8px;}
+.prcsoon{display:inline-flex;align-items:center;gap:7px;background:var(--teal-50);border:1px solid var(--teal-100);border-radius:var(--r-pill);padding:5px 12px;margin-top:14px;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-800);}
+.prcsoon i{width:6px;height:6px;border-radius:50%;background:var(--teal-500);}
+.fpimg{aspect-ratio:16/9;border:1px dashed var(--line-2);border-radius:var(--r-sm);background:var(--paper-2);display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.03em;color:var(--body);text-align:center;padding:0 16px;line-height:1.4;}
+.fpimg.fpnone{border-style:solid;border-color:var(--line);color:var(--faint);background:var(--paper);}
+.loopnote{margin-top:38px;font-family:var(--serif);font-size:clamp(19px,2.1vw,24px);font-style:italic;font-weight:500;color:var(--ink-2);line-height:1.45;max-width:46ch;}
+@media(max-width:820px){
+  .farrow{display:none;}
+  .fnodes{display:grid;grid-template-columns:repeat(2,1fr);overflow:visible;gap:8px;}
+  .fpanel{grid-template-columns:1fr;gap:22px;padding:24px 22px;}
+}
+.strip{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:8px;}
+.strip .sl{font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-right:6px;}
+.strip a{display:inline-flex;align-items:center;background:var(--surface);border:1px solid var(--line-2);border-radius:var(--r-pill);padding:9px 17px;font-family:var(--sans);font-size:14.5px;font-weight:600;color:var(--ink-2);transition:border-color .16s,color .16s,background .16s;}
+.strip a:hover{border-color:var(--teal-400);color:var(--teal-800);background:var(--teal-50);}
 
-  .subj-split{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  .subj-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px;box-shadow:var(--sh-sm);}
-  .subj-card .sh{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
-  .subj-card .si{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0;}
-  .subj-card h3{font-size:21px;}
-  .subj-card p{font-size:14.5px;color:var(--body);line-height:1.55;margin-bottom:16px;}
-  .subj-card .lv{display:flex;flex-wrap:wrap;gap:7px;}
-  .subj-card .lv span{font-size:12.5px;font-weight:500;color:var(--teal-700);background:var(--teal-50);border:1px solid var(--teal-100);border-radius:var(--r-pill);padding:5px 11px;}
+.cband{background:var(--teal-800);position:relative;overflow:hidden;}
+.cband::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 130% at 12% 0%,rgba(96,160,160,.3),transparent 62%);}
+.cband-in{position:relative;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;padding-top:44px;padding-bottom:44px;}
+.cband h2{font-family:var(--serif);font-size:clamp(25px,3vw,34px);font-weight:600;color:#fff;line-height:1.14;letter-spacing:-.015em;margin:0 0 10px;}
+.cband p{font-size:15px;color:rgba(255,255,255,.8);line-height:1.6;max-width:56ch;margin:0;}
+.cband .btn{background:#fff;color:var(--teal-800);border-color:#fff;}
 
-  .levels{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
-  .level-pill{display:flex;flex-direction:column;align-items:center;gap:3px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:18px 26px;box-shadow:var(--sh-xs);min-width:120px;}
-  .level-pill .lt{font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink);}
-  .level-pill .la{font-size:12.5px;color:var(--muted);}
-  .level-pill.strong{border-color:var(--teal-300);box-shadow:var(--sh-sm);}
-  .level-pill.strong .lt{color:var(--teal-700);}
 
-  .board-row{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;}
-  .board-badge{font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:14px 24px;box-shadow:var(--sh-xs);}
-
-  .cta-band{background:linear-gradient(140deg,#4d8c8c 0%,#3a6e6d 55%,#2f5a59 100%);border-radius:var(--r-xl);padding:64px 56px;position:relative;overflow:hidden;text-align:center;}
-  .cta-band::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 120% at 50% 0%,rgba(255,255,255,.16),transparent 60%);}
-  .cta-band .inr{position:relative;z-index:2;max-width:640px;margin:0 auto;}
-  .cta-band h2{color:#fff;}
-  .cta-band p{color:rgba(255,255,255,.74);margin:18px auto 30px;max-width:48ch;}
-  .cta-band .row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-
-  @media(max-width:900px){.svc-grid{grid-template-columns:1fr;}.subj-split{grid-template-columns:1fr;}}
+@media(max-width:700px){.cband-in{grid-template-columns:1fr;gap:22px;}.cband .btn{justify-self:start;}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Ace Academic Tutors","alternateName":"Ace Academic Tutors Ltd","url":"https://aceacademictutors.com/","logo":"https://aceacademictutors.com/assets/logo-icon.png","image":"https://aceacademictutors.com/assets/logo-full.png","email":"info@aceacademictutors.com","telephone":"+44 7454 905330","address":{"@type":"PostalAddress","streetAddress":"61 Lower Mardyke Avenue","addressLocality":"Rainham","postalCode":"RM13 8PR","addressCountry":"GB"},"areaServed":"GB","sameAs":["https://www.facebook.com/profile.php?id=61563738669588","https://www.instagram.com/aceacademictutors","https://www.linkedin.com/company/ace-academic-tutors"]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Services, Ace Academic Tutors","description":"One-to-one tutoring, small-group sessions and exam preparation in Maths, English and Science. KS1 to A-Level.","url":"https://aceacademictutors.com/services.html","isPartOf":{"@type":"WebSite","name":"Ace Academic Tutors","url":"https://aceacademictutors.com/"}}</script>
 </head>
 <body data-page="services">
-<noscript><style>.reveal{opacity:1!important;transform:none!important}.qa .ans{max-height:none!important}</style></noscript>
+<!--
+  ============================================================
+  NOTE FOR CLAUDE CODE, tutoring
+  ============================================================
+  THE TEACHING PROCESS (.flow) is a clickable flow chart: six nodes
+  in order, each selecting a panel that explains that step and shows
+  a screenshot of it. It is a proper tablist, so arrow keys work, and
+  a <noscript> rule shows every panel at once when JS is off, which
+  means the process still reads as a plain list.
+
+  FOUR IMAGE SLOTS (.fpimg), on steps 01, 02, 04 and 05. To fill one,
+  put an <img> inside it and delete the placeholder text. Steps 03 and
+  06 carry .fpimg.fpnone instead, which says no screenshot is needed;
+  if you get a picture for one, swap the class. Any portal screenshot
+  must be the FAMILY view with dummy data, never an admin screen: the
+  old ones showed balances, margin and the names of real students.
+
+
+  ONE FLOW, NOT TWO. There used to be a "The lesson" card trio and
+  a separate "The system" step list, and they both described the
+  platform and the whiteboard. They are now one process. Do not
+  split them again: if something new needs saying, it is another
+  step or it is not on this page.
+
+  This page is about HOW we teach, not what. The subject list is a
+  routing strip at the end, not the substance: the argument is the
+  system, live teaching on our own platform, a saved whiteboard, a
+  written note, and the next lesson starting from that note.
+
+  DELETED ON PURPOSE, do not restore:
+    - the six subject cards as the main content. Subjects have
+      their own pages; repeating them here said nothing new.
+    - the stage cards (11+/GCSE/A-Level). The home chooser asks
+      stage already.
+    - lesson-type cards with prices. pricing.html owns price, and
+      duplicating figures meant hydrating them twice. There is no
+      £ on this page by design.
+
+  POSITIONING: small group classes are the DEFAULT and one-to-one
+  is bespoke. Keep that order in any new copy.
+
+  REMOVED DELIBERATELY: a "Between the lessons" section that
+  advertised three unbuilt study tools behind a "Being built now"
+  badge. Do not reinstate it, or any claim about interactive
+  revision material, self-marking practice or an accumulated
+  progress record, until those tools are live. What IS live and
+  safe to say: a written report after every lesson, the recording,
+  and the saved whiteboard.
+
+  EVERY CLAIM HERE MUST STAY TRUE. Live teaching, own platform,
+  shared whiteboard saved, recording kept, written note after each
+  session, small group teaching, taught to the exam board spec. Do
+  not add capability the portal does not have, particularly
+  anything that sounds like analytics or AI.
+
+  Do not reinstate: the free written assessment, the 15-minute
+  consultation, "matched within 48 hours", or the gold accent.
+  ============================================================
+-->
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<div class="topbar">
+<div class="wrap topbar-in">
+<a class="loc" href="workshop.html"><span style="width:7px;height:7px;border-radius:50%;background:var(--teal-200);flex-shrink:0"></span> <b style="font-weight:600">Free GCSE Maths workshop, <span data-ace="workshop.dateShort">Sat 5 September</span></b> <span class="drop" style="opacity:.7">Limited spaces</span></a>
+<a href="tel:+447454905330"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" stroke-linecap="round" stroke-linejoin="round"/></svg> 07454 905330</a>
+<a href="mailto:info@aceacademictutors.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6" stroke-linecap="round" stroke-linejoin="round"/></svg> info@aceacademictutors.com</a>
+</div>
+</div>
 <header class="site-header" id="siteHeader">
 <div class="wrap nav">
 <div class="nav-left">
 <a href="index.html" class="brand" aria-label="Ace Academic Tutors home"><img src="assets/logo-icon.png" alt="Ace Academic Tutors" class="brand-icon"><span class="brand-word"><span class="w-ace">Ace</span><span class="w-acad">Academic</span><span class="w-tut">Tutors</span></span></a>
-<nav class="nav-links"><a href="about.html">About</a><a href="services.html" class="active">Services</a><a href="pricing.html">Pricing</a><a href="for-schools.html">For Schools</a></nav>
+<nav class="nav-links"><a href="services.html" class="active">Tutoring</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="for-schools.html">For schools</a></nav>
 </div>
 <div class="nav-right">
-<a href="contact.html" class="btn btn-primary">Book free consultation</a>
+<!-- Log in goes to the portal (Vercel, separate origin, its own sign-in).
+Free trial goes to get-started.html, which files a lead. docs/PORTAL_INTEGRATION.md -->
+<a class="login" href="https://portal.aceacademictutors.com" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Log in</span></a><a href="get-started.html" class="btn btn-primary btn-pulse">Free trial lesson</a>
 <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg></button>
 </div>
 </div>
-<div class="mobile-menu" id="mobileMenu"><a href="about.html">About</a><a href="services.html" class="active">Services</a><a href="pricing.html">Pricing</a><a href="for-schools.html">For Schools</a><a href="become-a-tutor.html">Become a tutor</a><a href="contact.html">Contact</a><a href="contact.html" class="btn btn-primary">Book free consultation</a></div>
+<div class="mobile-menu" id="mobileMenu"><a href="services.html">Tutoring</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="for-schools.html">For schools</a><a href="portal.html">The portal</a><a href="https://portal.aceacademictutors.com" rel="noopener">Log in</a><a href="become-a-tutor.html">Become a tutor</a><a href="contact.html">Contact</a><a href="get-started.html" class="btn btn-primary btn-pulse">Free trial lesson</a></div>
 </header>
 
-<section class="page-hero">
-  <div class="glow"></div>
-  <div class="wrap in">
-    <div class="breadcrumb"><a href="index.html">Home</a> · Services</div>
-    <span class="eyebrow">Our services</span>
-    <h1 class="display">Focused tutoring,<br>done <span class="serif-it">properly.</span></h1>
-    <p class="lead">We specialise in Maths, English and Science, and deliver them through personalised lessons in a real, interactive online classroom.</p>
+<section class="chero thead" id="start">
+  <div class="surface" aria-hidden="true">
+    <span class="mk" style="top:6%;left:63%;font-size:clamp(36px,5.8vw,74px);color:#2f5a59;opacity:.17;--r:-6.5deg;font-weight:700;animation-duration:31s;animation-delay:0s"><span class="mk-v">x</span><sup>2</sup> + 7<span class="mk-v">x</span> + 12</span>
+    <span class="mk" style="top:20%;left:92%;font-size:clamp(44px,6.6vw,88px);color:#2f5a59;opacity:.14;--r:9deg;font-weight:500;animation-duration:26s;animation-delay:-2s">&#8730;</span>
+    <span class="mk" style="top:40%;left:67%;font-size:clamp(26px,4.4vw,54px);color:#7a4a63;opacity:.19;--r:7deg;font-weight:500;animation-duration:22s;animation-delay:-9s">metaphor</span>
+    <span class="mk" style="top:62%;left:75%;font-size:clamp(28px,4.6vw,58px);color:#4a5f8a;opacity:.18;--r:4.5deg;font-weight:600;animation-duration:24s;animation-delay:-6s"><span class="mk-v">F</span> = <span class="mk-v">ma</span></span>
   </div>
-</section>
-
-<!-- SERVICES -->
-<section class="section" style="padding-top:40px;">
   <div class="wrap">
-    <div class="svc-grid">
-      <div class="svc reveal">
-        <div class="si"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 12 0v1" stroke-linecap="round"/><path d="M19 8v6M22 11h-6" stroke-linecap="round"/></svg></div>
-        <h3>One-to-one tutoring</h3>
-        <p>Fully personalised lessons built around a single student, their goals, their pace, their gaps. Our most popular service and where the fastest progress happens.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Matched to subject, level &amp; personality</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Progress notes after every lesson</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Discounts for more sessions per week</li>
-        </ul>
-      </div>
-      <div class="svc reveal" style="transition-delay:.06s">
-        <div class="si"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Small-group sessions</h3>
-        <p>Collaborative, level-matched groups for students who thrive learning alongside peers, all the structure of one-to-one, at a friendlier price.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Carefully level-matched groups</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Collaborative problem-solving</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> More affordable than one-to-one</li>
-        </ul>
-      </div>
-      <div class="svc reveal" style="transition-delay:.12s">
-        <div class="si"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Exam &amp; revision preparation</h3>
-        <p>Focused GCSE and A-Level preparation built on past papers, exam technique and a clear revision plan for the weeks that count.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Past papers marked live</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Exam technique &amp; timing</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Personalised revision roadmap</li>
-        </ul>
-      </div>
-      <div class="svc soon reveal" style="transition-delay:.18s">
-        <div class="si"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3" stroke-linecap="round"/></svg></div>
-        <h3>Classroom Learning <span class="tag">Soon</span></h3>
-        <p>Structured, syllabus-based online group classes of up to 10 students, affordable, sociable and rigorous. Launching soon at £25/hour per student.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Up to 10 students per class</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Structured around the syllabus</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> <a href="contact.html" style="color:var(--teal-700);font-weight:600;">Register your interest ›</a></li>
-        </ul>
-      </div>
-    </div>
+    <h1 class="display">How we teach is<br>the <span class="serif-it">whole</span> point.</h1>
+    <p class="lead">Anyone can say their tutors are good. We built the teaching around a system instead: lessons taught live on our own platform, the working saved, and a written note after every session that the next lesson starts from.</p>
+    <div class="route"><b>Classes are how we teach.</b> One-to-one is available as a bespoke arrangement. <a href="pricing.html">See what it costs</a></div>
   </div>
 </section>
 
-<!-- SUBJECTS -->
 <section class="section" style="background:var(--paper-2);">
   <div class="wrap">
-    <div class="sec-head reveal" style="max-width:680px;margin:0 auto 50px;text-align:center;">
-      <span class="eyebrow" style="display:block;margin-bottom:14px;">Three core subjects</span>
-      <h2 class="h-xl">Deep, not wide</h2>
-      <p class="lead" style="margin-top:14px;">We deliberately specialise in Maths, English and Science so every tutor is a genuine subject expert.</p>
-    </div>
-    <div class="subj-split">
-      <div class="subj-card reveal">
-        <div class="sh"><div class="si" style="background:linear-gradient(135deg,#60a0a0,#3f7a79)">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h3M13 12h3M8 16h3M13 16h3" stroke-linecap="round"/></svg>
-        </div><h3>Maths</h3></div>
-        <p>From early numeracy to A-Level calculus, building number confidence, reasoning and exam technique step by step.</p>
-        <div class="lv"><span>KS1-KS2</span><span>KS3</span><span>GCSE</span><span>A-Level</span><span>11+</span></div>
+    <span class="eyebrow">The teaching process</span>
+    <h2 class="h-lg" style="margin-top:12px;">How a lesson is taught,<br>step by step</h2>
+    <p class="prcintro">The same six steps run every week, in the same order. Select any step to see what happens in it.</p>
+    <div class="flow">
+      <div class="fnodes" role="tablist" aria-label="The teaching process, step by step">
+        <button type="button" class="fnode on" role="tab" id="ftab-01" aria-controls="fpan-01" aria-selected="true" tabindex="0" data-i="0">
+          <span class="fn">01</span>
+          <span class="ft">The plan</span>
+          <span class="fs">Built from last week's report</span>
+        </button>
+        <span class="farrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h13M13 6.5 18.5 12 13 17.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <button type="button" class="fnode" role="tab" id="ftab-02" aria-controls="fpan-02" aria-selected="false" tabindex="-1" data-i="1">
+          <span class="fn">02</span>
+          <span class="ft">The lesson</span>
+          <span class="fs">Live, on a shared whiteboard</span>
+        </button>
+        <span class="farrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h13M13 6.5 18.5 12 13 17.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <button type="button" class="fnode" role="tab" id="ftab-03" aria-controls="fpan-03" aria-selected="false" tabindex="-1" data-i="2">
+          <span class="fn">03</span>
+          <span class="ft">The homework</span>
+          <span class="fs">Set on what was just taught</span>
+        </button>
+        <span class="farrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h13M13 6.5 18.5 12 13 17.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <button type="button" class="fnode" role="tab" id="ftab-04" aria-controls="fpan-04" aria-selected="false" tabindex="-1" data-i="3">
+          <span class="fn">04</span>
+          <span class="ft">The report</span>
+          <span class="fs">Written up the same day</span>
+        </button>
+        <span class="farrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h13M13 6.5 18.5 12 13 17.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <button type="button" class="fnode" role="tab" id="ftab-05" aria-controls="fpan-05" aria-selected="false" tabindex="-1" data-i="4">
+          <span class="fn">05</span>
+          <span class="ft">The week after</span>
+          <span class="fs">Their own time, with the recording</span>
+        </button>
+        <span class="farrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h13M13 6.5 18.5 12 13 17.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <button type="button" class="fnode" role="tab" id="ftab-06" aria-controls="fpan-06" aria-selected="false" tabindex="-1" data-i="5">
+          <span class="fn">06</span>
+          <span class="ft">The next lesson</span>
+          <span class="fs">Starts where the report left off</span>
+        </button>
       </div>
-      <div class="subj-card reveal" style="transition-delay:.08s">
-        <div class="sh"><div class="si" style="background:linear-gradient(135deg,#6a86b0,#445f8a)">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke-linejoin="round"/></svg>
-        </div><h3>English</h3></div>
-        <p>Reading, writing, language and literature, from phonics and comprehension to GCSE and A-Level essay craft.</p>
-        <div class="lv"><span>KS1-KS2</span><span>KS3</span><span>GCSE Lang</span><span>GCSE Lit</span><span>A-Level</span><span>11+</span></div>
-      </div>
-      <div class="subj-card reveal" style="transition-delay:.16s">
-        <div class="sh"><div class="si" style="background:linear-gradient(135deg,#7d9b6a,#4f7a52)">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 2h6M9 2v6l-5 9a2 2 0 0 0 1.8 3h12.4A2 2 0 0 0 20 17l-5-9V2" stroke-linejoin="round"/></svg>
-        </div><h3>Science</h3></div>
-        <p>Combined Science through to separate Biology, Chemistry and Physics, concepts made clear, with relentless past-paper practice.</p>
-        <div class="lv"><span>KS2</span><span>KS3</span><span>GCSE</span><span>Biology</span><span>Chemistry</span><span>Physics</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- LEVELS -->
-<section class="section-sm">
-  <div class="wrap">
-    <div class="center reveal">
-      <p class="eyebrow" style="margin-bottom:20px;">KS1 to A-Level, plus 11+ · every major exam board</p>
-      <div class="board-row">
-        <span class="board-badge">AQA</span><span class="board-badge">Edexcel</span><span class="board-badge">OCR</span><span class="board-badge">WJEC</span><span class="board-badge">Eduqas</span><span class="board-badge">CIE</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="section-sm">
-  <div class="wrap">
-    <div class="cta-band reveal">
-      <div class="inr">
-        <h2 class="h-xl">Find the right tutor<br>for your child.</h2>
-        <p>Tell us the subject and level on a free 15-minute consultation, and we’ll match a specialist within 48 hours.</p>
-        <div class="row">
-          <a href="contact.html" class="btn btn-primary btn-lg">Book a free consultation</a>
-          <a href="pricing.html" class="btn btn-outline btn-lg" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.25)">See pricing</a>
+      <div class="fpanels">
+      <div class="fpanel on" role="tabpanel" id="fpan-01" aria-labelledby="ftab-01">
+        <div class="fpb">
+          <span class="fpw">Before the lesson</span>
+          <h3>The tutor reads last week's report</h3>
+          <p>Every session is written up, so the tutor starts by reading what happened last time: what was covered, what the student found hard, and what was set as homework. The lesson is planned from that, not from a syllabus running to its own schedule.</p>
         </div>
+        <!-- IMAGE SLOT, 16:9, at least 640px wide. Replace this div with the
+             <img>, do not leave both. Portal screenshots MUST be the FAMILY
+             view with dummy data, never an admin screen. -->
+        <div class="fpimg">Report in the portal, family view</div>
+      </div>
+      <div class="fpanel" role="tabpanel" id="fpan-02" aria-labelledby="ftab-02" hidden>
+        <div class="fpb">
+          <span class="fpw">In the lesson</span>
+          <h3>Taught live, on a shared whiteboard</h3>
+          <p>Lessons are taught live in a small group on our own platform. The tutor works on a whiteboard the student can write on too, so it is a lesson rather than a broadcast, and the whole board is saved when the lesson ends.</p>
+        </div>
+        <!-- IMAGE SLOT, 16:9, at least 640px wide. Replace this div with the
+             <img>, do not leave both. -->
+        <div class="fpimg">Whiteboard shot, or a photograph of a lesson</div>
+      </div>
+      <div class="fpanel" role="tabpanel" id="fpan-03" aria-labelledby="ftab-03" hidden>
+        <div class="fpb">
+          <span class="fpw">At the end of the lesson</span>
+          <h3>Homework is set on what was just taught</h3>
+          <p>Practice goes out on exactly what the lesson covered, while it is still fresh. It is specific rather than a chapter of a book, so the student knows what they are meant to be getting better at.</p>
+        </div>
+        <div class="fpimg fpnone">No screenshot needed for this step</div>
+      </div>
+      <div class="fpanel" role="tabpanel" id="fpan-04" aria-labelledby="ftab-04" hidden>
+        <div class="fpb">
+          <span class="fpw">Straight afterwards</span>
+          <h3>The tutor writes the report</h3>
+          <p>What was covered, what went well, what needs work. It goes into the portal the same day, where the student and the parent can both read it. This is the record the next lesson is planned from, which is why it is written while the lesson is fresh.</p>
+        </div>
+        <!-- IMAGE SLOT, 16:9, at least 640px wide. Replace this div with the
+             <img>, do not leave both. Portal screenshots MUST be the FAMILY
+             view with dummy data, never an admin screen. -->
+        <div class="fpimg">A written report, family view</div>
+      </div>
+      <div class="fpanel" role="tabpanel" id="fpan-05" aria-labelledby="ftab-05" hidden>
+        <div class="fpb">
+          <span class="fpw">During the week</span>
+          <h3>The student works on it in their own time</h3>
+          <p>The recording, the saved whiteboard and the homework are all in the portal, so the lesson can be gone over again as many times as it takes. The report says what to spend that time on.</p>
+        </div>
+        <!-- IMAGE SLOT, 16:9, at least 640px wide. Replace this div with the
+             <img>, do not leave both. Portal screenshots MUST be the FAMILY
+             view with dummy data, never an admin screen. -->
+        <div class="fpimg">The portal, family view: a recording and a saved whiteboard</div>
+      </div>
+      <div class="fpanel" role="tabpanel" id="fpan-06" aria-labelledby="ftab-06" hidden>
+        <div class="fpb">
+          <span class="fpw">The following week</span>
+          <h3>It starts again from the report</h3>
+          <p>The tutor opens the note from last time and begins there. Nothing is repeated because it was already secure, and nothing is quietly dropped because everyone forgot it was a problem.</p>
+        </div>
+        <div class="fpimg fpnone">No screenshot needed for this step</div>
+      </div>
       </div>
     </div>
+    <p class="loopnote">Most tutoring starts from scratch every week. Ours starts from last week's report.</p>
   </div>
 </section>
+
+<section class="section-sm">
+  <div class="wrap">
+    <span class="eyebrow">Subjects</span>
+    <h2 class="h-lg" style="margin:12px 0 20px;">Taught by specialists</h2>
+    <div class="strip"><a href="maths-tutoring.html">Maths</a><a href="english-tutoring.html">English</a><a href="science-tutoring.html">Biology</a><a href="science-tutoring.html">Chemistry</a><a href="science-tutoring.html">Physics</a><a href="11-plus-tutoring.html">11+</a></div>
+  </div>
+</section>
+
+<div class="cband">
+  <div class="wrap cband-in">
+    <div>
+      <h2>See the system for yourself</h2>
+      <p>A free trial lesson, one full hour. It is recorded and written up like any other lesson, so you keep the note whatever you decide.</p>
+    </div>
+    <a href="get-started.html" class="btn btn-lg">Free trial lesson <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+</div>
 
 <footer class="site-footer">
 <div class="wrap">
@@ -227,13 +341,47 @@
 <a href="https://www.linkedin.com/company/ace-academic-tutors" aria-label="Ace Academic Tutors on LinkedIn" target="_blank" rel="noopener"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.76V1.74C24 .78 23.2 0 22.22 0z"/></svg></a>
 </div>
 </div>
-<div class="footer-col"><h5>Explore</h5><a href="about.html">About us</a><br><a href="services.html">Services</a><br><a href="portal.html">The portal</a><br><a href="pricing.html">Pricing</a><br><a href="for-schools.html">For Schools</a><br><a href="become-a-tutor.html">Become a tutor</a></div>
-<div class="footer-col"><h5>Subjects</h5><a href="maths-tutoring.html">Maths tutoring</a><br><a href="english-tutoring.html">English tutoring</a><br><a href="science-tutoring.html">Science tutoring</a><br><a href="11-plus-tutoring.html">11+ preparation</a></div>
-<div class="footer-col"><h5>Get in touch</h5><a href="contact.html">Book a free consultation</a><br><a href="tel:+447454905330">07454 905330</a><br><a href="mailto:info@aceacademictutors.com">info@aceacademictutors.com</a><br><a href="https://portal.aceacademictutors.com" target="_blank" rel="noopener">Family &amp; tutor portal</a><address style="font-style:normal;margin-top:14px;color:#9fb0ae;font-size:13.5px;line-height:1.7;">Ace Academic Tutors Ltd<br>61 Lower Mardyke Avenue<br>Rainham, RM13 8PR</address></div>
+<div class="footer-col"><h5>Explore</h5><a href="about.html">About</a><br><a href="services.html">Tutoring</a><br><a href="portal.html">The portal</a><br><a href="pricing.html">Pricing</a><br><a href="for-schools.html">For schools</a><br><a href="become-a-tutor.html">Become a tutor</a></div>
+<div class="footer-col"><h5>Subjects</h5><a href="maths-tutoring.html">Maths tutoring</a><br><a href="english-tutoring.html">English tutoring</a><br><a href="science-tutoring.html">Science tutoring</a><br><a href="11-plus-tutoring.html">11+ tutoring</a></div>
+<div class="footer-col"><h5>Get in touch</h5><a href="get-started.html">Free trial lesson</a><br><a href="tel:+447454905330">07454 905330</a><br><a href="mailto:info@aceacademictutors.com">info@aceacademictutors.com</a><br><a href="https://portal.aceacademictutors.com" target="_blank" rel="noopener">Log in</a></div>
 </div>
 <div class="footer-bottom"><span>© <span data-year>2026</span> Ace Academic Tutors Ltd · Registered in England &amp; Wales, Company No.&nbsp;15925436</span><span style="display:flex;gap:22px;flex-wrap:wrap;"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="safeguarding.html">Safeguarding</a></span></div>
 </div>
 </footer>
+
 <script src="assets/chrome.js"></script>
+<script src="assets/live.js"></script>
+<script>
+/* The teaching-process flow chart: a tablist. Nodes select panels, arrow keys
+   move between them, and with no JS every panel is shown in order, so the
+   process still reads as a list. */
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.fnode')),
+      pans=[].slice.call(document.querySelectorAll('.fpanel'));
+  if(!tabs.length) return;
+  function sel(i,focus){
+    tabs.forEach(function(t,j){
+      var on=j===i;
+      t.classList.toggle('on',on);
+      t.setAttribute('aria-selected',on?'true':'false');
+      t.tabIndex=on?0:-1;
+      pans[j].classList.toggle('on',on);
+      if(on){pans[j].removeAttribute('hidden');}else{pans[j].setAttribute('hidden','');}
+    });
+    if(focus) tabs[i].focus();
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){sel(i);});
+    t.addEventListener('keydown',function(e){
+      var k=e.key,n=null;
+      if(k==='ArrowRight'||k==='ArrowDown') n=(i+1)%tabs.length;
+      else if(k==='ArrowLeft'||k==='ArrowUp') n=(i-1+tabs.length)%tabs.length;
+      else if(k==='Home') n=0; else if(k==='End') n=tabs.length-1;
+      if(n!==null){e.preventDefault();sel(n,true);}
+    });
+  });
+})();
+</script>
+<noscript><style>.fpanel{display:grid!important}.fnodes{display:none}</style></noscript>
 </body>
 </html>

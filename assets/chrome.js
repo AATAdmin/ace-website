@@ -1,5 +1,23 @@
 /* ===== Ace Academic Tutors, shared site chrome (nav + footer) ===== */
 (function(){
+  /* First-touch attribution. The ad click and the enquiry are usually days and
+     several pages apart, so utm params, the landing page and the referrer are
+     recorded on the FIRST page of the visit and left alone after that.
+     get-started.html reads this when it posts an enquiry. Session-scoped, so it
+     clears with the tab and never becomes long-term tracking. */
+  try{
+    if(!sessionStorage.getItem('ace:attr')){
+      var q=new URLSearchParams(location.search), a={}, any=false;
+      ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(function(k){
+        var v=q.get(k); if(v){ a[k]=v.slice(0,200); any=true; }
+      });
+      var ref=document.referrer||'';
+      if(ref && ref.indexOf(location.origin)!==0){ a.referrer=ref.slice(0,200); any=true; }
+      if(any){ a.landing_page=location.href.slice(0,200);
+               sessionStorage.setItem('ace:attr', JSON.stringify(a)); }
+    }
+  }catch(e){}
+
   const page = document.body.dataset.page || '';
   const nav = (href,label,id)=>`<a href="${href}"${id===page?' class="active"':''}>${label}</a>`;
 
@@ -13,9 +31,9 @@
         </a>
         <nav class="nav-links">
           ${nav('about.html','About','about')}
-          ${nav('services.html','Services','services')}
+          ${nav('services.html','Tutoring','services')}
           ${nav('pricing.html','Pricing','pricing')}
-          ${nav('for-schools.html','For Schools','schools')}
+          ${nav('for-schools.html','For schools','schools')}
         </nav>
       </div>
       <div class="nav-right">
@@ -27,9 +45,9 @@
     </div>
     <div class="mobile-menu" id="mobileMenu">
       ${nav('about.html','About','about')}
-      ${nav('services.html','Services','services')}
+      ${nav('services.html','Tutoring','services')}
       ${nav('pricing.html','Pricing','pricing')}
-      ${nav('for-schools.html','For Schools','schools')}
+      ${nav('for-schools.html','For schools','schools')}
       ${nav('become-a-tutor.html','Become a tutor','tutor')}
       ${nav('contact.html','Contact','contact')}
       <a href="contact.html" class="btn btn-primary">Book free consultation</a>
@@ -58,11 +76,11 @@
         </div>
         <div class="footer-col">
           <h5>Explore</h5>
-          <a href="about.html">About us</a><br>
-          <a href="services.html">Services</a><br>
+          <a href="about.html">About</a><br>
+          <a href="services.html">Tutoring</a><br>
           <a href="portal.html">The portal</a><br>
           <a href="pricing.html">Pricing</a><br>
-          <a href="for-schools.html">For Schools</a><br>
+          <a href="for-schools.html">For schools</a><br>
           <a href="become-a-tutor.html">Become a tutor</a>
         </div>
         <div class="footer-col">
@@ -70,14 +88,14 @@
           <a href="maths-tutoring.html">Maths tutoring</a><br>
           <a href="english-tutoring.html">English tutoring</a><br>
           <a href="science-tutoring.html">Science tutoring</a><br>
-          <a href="11-plus-tutoring.html">11+ preparation</a>
+          <a href="11-plus-tutoring.html">11+ tutoring</a>
         </div>
         <div class="footer-col">
           <h5>Get in touch</h5>
           <a href="contact.html">Book a free consultation</a><br>
           <a href="tel:+447454905330">07454 905330</a><br>
           <a href="mailto:info@aceacademictutors.com">info@aceacademictutors.com</a><br>
-          <a href="https://portal.aceacademictutors.com" target="_blank" rel="noopener">Family &amp; tutor portal</a>
+          <a href="https://portal.aceacademictutors.com" target="_blank" rel="noopener">Log in</a>
           <address style="font-style:normal;margin-top:14px;color:#9fb0ae;font-size:13.5px;line-height:1.7;">
             Ace Academic Tutors Ltd<br>61 Lower Mardyke Avenue<br>Rainham, RM13 8PR
           </address>
@@ -109,6 +127,39 @@
     const onScroll=()=>sh.classList.toggle('scrolled', window.scrollY>8);
     window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
   }
+
+  /* Log in / register menu. The header ships a plain "Log in" link, and this
+     upgrades it into a small menu offering log in, register as a student, or
+     register as a tutor. Progressive: with no JS the link still goes straight
+     to the portal, which is the sensible default for a returning family. */
+  (function loginMenu(){
+    const link=document.querySelector('.nav-right .login');
+    if(!link||link.dataset.menu) return;
+    link.dataset.menu='1';
+    const wrap=document.createElement('div');
+    wrap.className='loginwrap';
+    link.parentNode.insertBefore(wrap,link);
+    wrap.appendChild(link);
+    link.setAttribute('role','button');
+    link.setAttribute('aria-haspopup','true');
+    link.setAttribute('aria-expanded','false');
+    const menu=document.createElement('div');
+    menu.className='loginmenu';
+    menu.innerHTML=
+      '<a href="https://portal.aceacademictutors.com" rel="noopener"><b>Log in</b></a>'+
+      '<div class="lmsep"></div>'+
+      '<a href="get-started.html"><b>Register as a student</b></a>'+
+      '<a href="become-a-tutor.html"><b>Register as a tutor</b></a>';
+    wrap.appendChild(menu);
+    const setOpen=(open)=>{
+      wrap.classList.toggle('open',open);
+      link.setAttribute('aria-expanded',open?'true':'false');
+    };
+    link.addEventListener('click',(e)=>{ e.preventDefault(); setOpen(!wrap.classList.contains('open')); });
+    link.addEventListener('keydown',(e)=>{ if(e.key==='Escape') setOpen(false); });
+    document.addEventListener('click',(e)=>{ if(!wrap.contains(e.target)) setOpen(false); });
+    document.addEventListener('keydown',(e)=>{ if(e.key==='Escape') setOpen(false); });
+  })();
 
   // mobile menu
   const tg=document.getElementById('navToggle'), mm=document.getElementById('mobileMenu');

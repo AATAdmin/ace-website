@@ -31,8 +31,7 @@
   --cream-deep:#e7f0ef;
 
   /* ---- accents ---- */
-  --gold:#c8923a;       /* stars / tiny highlights only */
-  --gold-soft:#e7c98a;
+  /* no gold: the palette is teal, cream and ink only */
 
   /* ---- gradients (brand tile; deeper for white text) ---- */
   --tile-grad:linear-gradient(135deg,#60a0a0,#3c7373);
@@ -128,32 +127,58 @@ p{margin:0;}
   color:var(--teal-700);background:var(--teal-50);border:1px solid var(--teal-100);
   border-radius:var(--r-pill);padding:5px 11px;
 }
-.stars{color:var(--gold);letter-spacing:1px;font-size:14px;line-height:1;}
+.stars{color:var(--teal-600);letter-spacing:1px;font-size:14px;line-height:1;}
 
 /* ---------- cards ---------- */
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-sm);}
 .card-pad{padding:30px;}
 
 /* ---------- header / nav ---------- */
+.topbar{background:var(--teal-900);color:#fff;}
+.topbar-in{display:flex;align-items:center;justify-content:flex-end;gap:26px;padding-top:9px;padding-bottom:9px;flex-wrap:wrap;}
+.topbar a,.topbar span{font-family:var(--sans);font-size:13.5px;font-weight:500;color:rgba(255,255,255,.88);display:inline-flex;align-items:center;gap:8px;}
+.topbar a:hover{color:#fff;}
+.topbar svg{width:15px;height:15px;flex-shrink:0;opacity:.8;}
+.topbar .loc{margin-right:auto;color:rgba(255,255,255,.9);}
+.topbar a.loc:hover b{border-bottom:1px solid rgba(255,255,255,.55);}
+@media(max-width:640px){.topbar-in{justify-content:center;gap:14px 18px}.topbar a,.topbar span{font-size:12.5px}.topbar .loc{margin-right:0;flex-basis:100%;justify-content:center}.topbar .loc .drop{display:none}}
 .site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .2s,box-shadow .2s;}
 .site-header.scrolled{border-bottom-color:var(--line);box-shadow:var(--sh-xs);}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;height:96px;}
-.nav-left{display:flex;align-items:center;gap:40px;min-width:0;}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;height:92px;transition:height .22s ease;}
+.site-header.scrolled .nav{height:72px;}
+.site-header.scrolled .brand-icon{height:48px;}
+.nav-left{display:flex;align-items:center;gap:30px;min-width:auto;flex-shrink:0;}
 /* real logo lockup */
-.brand{display:flex;align-items:center;gap:11px;flex-shrink:0;}
-.brand-icon{height:56px;width:auto;display:block;}
-.brand-word{font-family:var(--sans);font-size:21px;line-height:1;letter-spacing:-.005em;white-space:nowrap;display:inline-flex;gap:.12em;align-items:baseline;}
-.brand-word .w-ace{color:var(--teal-500);font-weight:500;}
-.brand-word .w-acad{color:var(--ink);font-weight:700;}
-.brand-word .w-tut{color:var(--teal-500);font-weight:500;}
-@media(max-width:520px){.brand-word{font-size:18px;}.brand-icon{height:46px;}}
-.nav-links{display:flex;align-items:center;gap:28px;}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0;}
+.brand-icon{height:62px;width:auto;display:block;transition:height .22s ease;}
+.brand-word{font-family:var(--sans);font-size:21px;line-height:1;letter-spacing:-.008em;white-space:nowrap;display:inline-flex;gap:.14em;align-items:baseline;color:var(--ink);}
+.brand-word .w-ace{font-weight:700;}
+.brand-word .w-acad{font-weight:700;}
+.brand-word .w-tut{font-weight:400;color:var(--ink-2);}
+@media(max-width:520px){.brand-word{font-size:18px;}.brand-icon{height:50px;}}
+.nav-links{display:flex;align-items:center;gap:20px;}
 .nav-links a{font-size:15px;font-weight:500;color:var(--ink-2);position:relative;padding:4px 0;white-space:nowrap;}
 .nav-links a:hover{color:var(--teal-700);}
 .nav-links a.active{color:var(--teal-700);}
 .nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--teal-400);border-radius:2px;}
-.nav-right{display:flex;align-items:center;gap:16px;}
+.nav-right{display:flex;align-items:center;gap:18px;flex-shrink:0;}
+/* The nav call to action is the loudest thing in the header: a deeper fill, a
+   sheen that sweeps across it, and a ring that breathes. No hard blink, which
+   is a seizure risk, and all of it stops for reduced-motion users. */
+.btn-pulse{position:relative;overflow:hidden;background:var(--teal-800);border-color:var(--teal-800);font-weight:700;letter-spacing:.005em;padding-left:26px;padding-right:26px;animation:btnPulse 2.2s ease-in-out infinite;}
+.btn-pulse:hover{background:var(--teal-900);border-color:var(--teal-900);}
+.btn-pulse::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:45%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.34),transparent);transform:skewX(-18deg);animation:btnSheen 3.4s ease-in-out infinite;pointer-events:none;}
+@keyframes btnPulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(96,160,160,.55),0 6px 18px rgba(47,90,89,.28);transform:scale(1);}
+  50%{box-shadow:0 0 0 10px rgba(96,160,160,0),0 8px 24px rgba(47,90,89,.34);transform:scale(1.035);}
+}
+@keyframes btnSheen{
+  0%{left:-60%;} 55%{left:130%;} 100%{left:130%;}
+}
+@media(prefers-reduced-motion:reduce){.btn-pulse,.btn-pulse::after{animation:none;}.btn-pulse::after{display:none;}}
 .nav-right .login,.nav-right>a:not(.btn){font-size:15px;font-weight:600;color:var(--ink);white-space:nowrap;}
+.nav-right a.login{display:inline-flex;align-items:center;gap:7px;}
+.nav-right a.login svg{width:15px;height:15px;opacity:.7;flex-shrink:0;}
 .nav-right .login:hover,.nav-right>a:not(.btn):hover{color:var(--teal-700);}
 .nav-toggle{display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--line-2);background:var(--surface);cursor:pointer;align-items:center;justify-content:center;flex-shrink:0;color:var(--ink);}
 .nav-toggle svg{width:22px;height:22px;}
@@ -185,11 +210,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .kicker-row{display:flex;align-items:center;gap:12px;justify-content:center;}
 .kicker-row .ln{height:1px;width:40px;background:var(--line-2);}
 
-@media(max-width:1000px){
+@media(max-width:940px){
   .nav-links{display:none;}
   .nav-right .login,.nav-right>a:not(.btn){display:none;}
   .nav-toggle{display:flex;}
-  .mobile-menu{display:block;position:fixed;inset:96px 0 auto 0;z-index:49;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:var(--sh-md);
+  .mobile-menu{display:block;position:absolute;top:100%;left:0;right:0;z-index:49;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:var(--sh-md);
     padding:14px var(--gutter) 24px;transform:translateY(-12px);opacity:0;pointer-events:none;transition:transform .22s ease,opacity .22s ease;}
   .mobile-menu.open{transform:none;opacity:1;pointer-events:auto;}
   .mobile-menu a{display:block;padding:14px 6px;font-size:17px;font-weight:500;color:var(--ink);border-bottom:1px solid var(--line);}
@@ -201,3 +226,17 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   .section{padding:64px 0;}
   .footer-grid{grid-template-columns:1fr 1fr;gap:30px;}
 }
+
+/* Log in menu, built by chrome.js. Without JS the plain link remains. */
+.loginwrap{position:relative;display:flex;align-items:center;}
+.loginwrap .login{cursor:pointer;}
+.loginmenu{position:absolute;top:calc(100% + 12px);right:0;width:224px;background:var(--surface);border:1px solid var(--line-2);border-radius:var(--r-md);box-shadow:0 18px 44px rgba(31,58,58,.17),0 3px 8px rgba(31,58,58,.07);padding:8px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .16s,transform .16s,visibility .16s;z-index:60;}
+.loginwrap.open .loginmenu{opacity:1;visibility:visible;transform:none;}
+.loginmenu a{display:block;padding:10px 13px;border-radius:var(--r-sm);text-decoration:none;transition:background .14s;}
+.loginmenu a:hover{background:var(--teal-50);}
+.loginmenu a b{display:block;font-family:var(--sans);font-size:14.5px;font-weight:600;color:var(--ink);line-height:1.3;}
+.loginmenu a span{display:block;font-family:var(--sans);font-size:12.5px;color:var(--body);line-height:1.4;margin-top:2px;}
+.loginmenu .lmsep{height:1px;background:var(--line);margin:7px 5px;}
+/* Must sit after .loginwrap's own display, or the unconditional rule wins:
+   chrome.js wraps the anchor, so .nav-right>a:not(.btn) no longer matches it. */
+@media(max-width:940px){.loginwrap{display:none;}}

@@ -7,317 +7,178 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="manifest" href="assets/site.webmanifest">
 <meta name="theme-color" content="#60a0a0">
-<title>The ACE Portal | Scheduling, tracking & progress | Ace Academic Tutors</title>
-<meta name="description" content="Manage scheduling, track every session and see clear progress and payments in the ACE portal, plus a short progress note after every lesson.">
+<title>The family portal</title>
+<meta name="description" content="Every lesson recorded, the whiteboard saved, and a written note after each session. Families and tutors log in to the same portal to see schedules, notes and recordings.">
 <link rel="canonical" href="https://aceacademictutors.com/portal.html">
-<meta name="robots" content="noindex, follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_GB">
 <meta property="og:site_name" content="Ace Academic Tutors">
-<meta property="og:title" content="The ACE Portal | Ace Academic Tutors">
-<meta property="og:description" content="Scheduling, session tracking, clear progress and payments, all in one place.">
+<meta property="og:title" content="The family portal">
+<meta property="og:description" content="Every lesson recorded, the whiteboard saved, and a written note after each session. Families and tutors log in to the same portal to see schedules, notes and recordings.">
 <meta property="og:url" content="https://aceacademictutors.com/portal.html">
 <meta property="og:image" content="https://aceacademictutors.com/assets/logo-full.png">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The family portal">
+<meta name="twitter:description" content="Every lesson recorded, the whiteboard saved, and a written note after each session. Families and tutors log in to the same portal to see schedules, notes and recordings.">
+<meta name="twitter:image" content="https://aceacademictutors.com/assets/logo-full.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <style>
-  .page-hero{padding:72px 0 28px;text-align:center;position:relative;overflow:hidden;}
-  .page-hero .glow{position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(96,160,160,.12),transparent 70%);top:-220px;left:50%;transform:translateX(-50%);z-index:0;}
-  .page-hero .in{position:relative;z-index:2;max-width:740px;margin:0 auto;}
-  .page-hero .eyebrow{display:block;margin-bottom:16px;}
-  .page-hero h1{margin-bottom:18px;}
-  .page-hero .lead{max-width:54ch;margin:0 auto;}
-  .breadcrumb{font-size:13.5px;color:var(--muted);margin-bottom:22px;}
-  .breadcrumb a:hover{color:var(--teal-700);}
+.xhead{padding:56px 0 8px;}
+.xhead .eyebrow{display:block;margin-bottom:14px;}
+.xhead p{margin-top:18px;max-width:58ch;}
+.xchips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+.xchip{display:inline-flex;align-items:center;gap:8px;background:var(--teal-50);border:1px solid var(--teal-100);border-radius:var(--r-pill);padding:8px 15px;font-family:var(--sans);font-size:13.5px;font-weight:600;color:var(--teal-800);}
+.xchip svg{width:14px;height:14px;flex-shrink:0;}
 
-  .portal-wrap{display:grid;grid-template-columns:.82fr 1.18fr;gap:30px;align-items:stretch;}
-  .pf-tabs{display:flex;flex-direction:column;gap:10px;}
-  .pf-tab{display:flex;gap:14px;align-items:flex-start;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:17px 18px;cursor:pointer;transition:all .16s;width:100%;font-family:inherit;}
-  .pf-tab:hover{border-color:var(--teal-200);}
-  .pf-tab.on{border-color:var(--teal-400);box-shadow:var(--sh-sm);background:var(--teal-50);}
-  .pf-tab .pf-ic{width:40px;height:40px;border-radius:11px;background:var(--paper-2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--teal-600);flex-shrink:0;}
-  .pf-tab.on .pf-ic{background:var(--cta-grad);color:#fff;border-color:transparent;}
-  .pf-tab .pf-t{display:block;font-weight:600;font-size:15.5px;color:var(--ink);}
-  .pf-tab .pf-d{display:block;font-size:13px;color:var(--muted);margin-top:4px;line-height:1.45;}
-  .pf-panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-md);overflow:hidden;}
-  .pf-view{display:none;}
-  .pf-view.on{display:block;}
-  .pf-bar{display:flex;align-items:center;gap:9px;padding:13px 18px;border-bottom:1px solid var(--line);background:var(--paper-2);}
-  .pf-bar .d{width:11px;height:11px;border-radius:50%;}
-  .pf-bar .t{margin-left:6px;font-size:13px;font-weight:600;color:var(--body);}
-  .pf-shot{display:block;width:100%;height:auto;min-height:230px;background:var(--paper-2);}
-  .pf-cap{display:flex;gap:11px;align-items:flex-start;padding:16px 18px;border-top:1px solid var(--line);background:var(--paper-2);}
-  .pf-cap svg{width:18px;height:18px;color:var(--teal-500);flex-shrink:0;margin-top:1px;}
-  .pf-cap .ct{font-size:13.5px;color:var(--ink-2);line-height:1.5;}
-  .pf-cap .ct b{color:var(--ink);font-weight:600;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px;}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:40px;}
+.cd{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px 26px;box-shadow:var(--sh-xs);}
+.cd .ci{width:46px;height:46px;border-radius:13px;background:var(--teal-50);border:1px solid var(--teal-100);display:flex;align-items:center;justify-content:center;color:var(--teal-600);margin-bottom:18px;}
+.cd .ci svg{width:22px;height:22px;}
+.cd h3{font-size:19px;margin:0 0 8px;}
+.cd p{font-size:14.5px;color:var(--body);line-height:1.6;margin:0;}
+.cd ul{list-style:none;margin:16px 0 0;padding:16px 0 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:9px;}
+.cd li{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--ink-2);line-height:1.45;}
+.cd li svg{width:15px;height:15px;color:var(--teal-500);flex-shrink:0;margin-top:3px;}
 
-  .note-feature{display:grid;grid-template-columns:1fr .9fr;gap:36px;align-items:center;margin-top:64px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-md);overflow:hidden;}
-  .note-feature .nf-l{padding:40px 12px 40px 44px;}
-  .note-feature .nf-l h3{font-size:26px;margin-bottom:12px;}
-  .note-feature .nf-l p{font-size:15px;color:var(--body);line-height:1.6;max-width:42ch;}
-  .note-feature .nf-r{padding:36px 44px 36px 12px;}
-  .note-sample{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px 24px;box-shadow:var(--sh-xs);}
-  .note-sample .ns-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
-  .note-sample .ns-top .nm{font-family:var(--serif);font-weight:600;font-size:16px;color:var(--ink);}
-  .note-sample .ns-rrow{display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-2);}
-  .note-sample .ns-rrow svg{width:16px;height:16px;color:var(--teal-500);flex-shrink:0;}
-  .note-sample .ns-rrow .rv{margin-left:auto;font-weight:600;color:var(--ink);}
-  .note-sample .ns-q{margin-top:14px;font-size:13.5px;font-style:italic;color:var(--body);line-height:1.55;font-family:var(--serif);}
-  .ns-chip{font-size:11.5px;font-weight:600;color:var(--teal-700);background:var(--teal-50);border:1px solid var(--teal-100);border-radius:var(--r-pill);padding:4px 10px;}
+.stepl{display:flex;flex-direction:column;margin-top:36px;}
+.stepl .sp{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start;padding:24px 0;border-top:1px solid var(--line);}
+.stepl .sp:last-child{border-bottom:1px solid var(--line);}
+.stepl .sn{width:46px;height:46px;border-radius:14px;background:var(--teal-800);color:#fff;font-family:var(--serif);font-size:19px;font-weight:600;display:flex;align-items:center;justify-content:center;}
+.stepl h3{font-size:19px;margin:6px 0 6px;}
+.stepl p{font-size:14.5px;color:var(--body);line-height:1.6;margin:0;max-width:64ch;}
 
-  /* ===== bespoke classroom ===== */
-  .classroom{background:var(--ink);border:1px solid #20403f;border-radius:var(--r-xl);box-shadow:var(--sh-lg);overflow:hidden;position:relative;}
-  .cr-bar{display:flex;align-items:center;gap:9px;padding:13px 18px;background:#16302f;border-bottom:1px solid #20403f;}
-  .cr-bar .d{width:11px;height:11px;border-radius:50%;}
-  .cr-bar .crumb{margin-left:6px;font-size:13px;font-weight:600;color:#bcd3d1;}
-  .cr-bar .live{margin-left:auto;display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:#ffd9c9;background:rgba(224,122,90,.16);border:1px solid rgba(224,122,90,.34);border-radius:var(--r-pill);padding:5px 11px;}
-  .cr-bar .live i{width:7px;height:7px;border-radius:50%;background:#e07a5a;animation:crpulse 1.6s ease-in-out infinite;}
-  @keyframes crpulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.7)}}
-  .cr-body{display:grid;grid-template-columns:1fr 268px;min-height:430px;}
-  .cr-board{position:relative;padding:30px 32px;background:#fbfcfb;background-image:linear-gradient(#e6efee 1px,transparent 1px),linear-gradient(90deg,#e6efee 1px,transparent 1px);background-size:30px 30px;}
-  .cr-board .lesson-tag{display:inline-block;font-size:12px;font-weight:600;color:var(--teal-700);background:var(--teal-50);border:1px solid var(--teal-100);border-radius:var(--r-pill);padding:5px 12px;margin-bottom:20px;}
-  .cr-board .eqn{font-family:var(--serif);font-size:27px;color:#1b2b2b;letter-spacing:.01em;}
-  .cr-board .eqn .hl{background:rgba(233,185,73,.32);border-radius:5px;padding:0 5px;}
-  .cr-board .eqn.muted{color:#5d7472;font-size:23px;margin-top:18px;}
-  .cr-board .drop{margin-top:24px;border:2px dashed var(--teal-300);border-radius:var(--r-md);background:rgba(96,160,160,.06);padding:16px 18px;display:flex;align-items:center;gap:13px;max-width:340px;}
-  .cr-board .drop .dchip{font-family:var(--serif);font-size:18px;color:var(--teal-800);background:#fff;border:1px solid var(--teal-200);border-radius:8px;padding:7px 12px;box-shadow:var(--sh-xs);white-space:nowrap;}
-  .cr-board .drop .dh{font-size:12.5px;color:var(--teal-700);line-height:1.4;}
-  .cr-board .vtiles{position:absolute;right:20px;bottom:20px;display:flex;gap:10px;}
-  .cr-board .vt{width:74px;height:54px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px;box-shadow:var(--sh-md);border:2px solid #fff;}
-  .cr-board .ann{position:absolute;font-family:var(--serif);font-style:italic;font-size:14px;color:#e07a5a;}
+.cband{background:var(--teal-800);position:relative;overflow:hidden;}
+.cband::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 130% at 12% 0%,rgba(96,160,160,.3),transparent 62%);}
+.cband-in{position:relative;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;padding-top:44px;padding-bottom:44px;}
+.cband h2{font-family:var(--serif);font-size:clamp(25px,3vw,34px);font-weight:600;color:#fff;line-height:1.14;letter-spacing:-.015em;margin:0 0 10px;}
+.cband p{font-size:15px;color:rgba(255,255,255,.8);line-height:1.6;max-width:56ch;margin:0;}
+.cband .btn{background:#fff;color:var(--teal-800);border-color:#fff;}
+.cband .row{display:flex;gap:12px;flex-wrap:wrap;}
+.cband .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.32);}
 
-  .cr-lib{background:#16302f;border-left:1px solid #20403f;padding:18px 16px;display:flex;flex-direction:column;gap:18px;overflow:hidden;}
-  .cr-lib .lib-h{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7fb0ad;}
-  .cr-lib .lib-h svg{width:15px;height:15px;}
-  .lib-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
-  .lib-chip{display:inline-flex;align-items:center;gap:7px;font-family:var(--serif);font-size:14.5px;color:#eaf3f2;background:#22413f;border:1px solid #315150;border-radius:8px;padding:7px 10px;cursor:grab;transition:transform .14s,border-color .14s;}
-  .lib-chip:hover{transform:translateY(-2px);border-color:var(--teal-400);}
-  .lib-chip .grip{display:flex;flex-direction:column;gap:2px;}
-  .lib-chip .grip i{width:3px;height:3px;border-radius:50%;background:#6f928f;}
-  .lib-lessons{display:flex;flex-direction:column;gap:8px;margin-top:10px;}
-  .lib-lesson{display:flex;align-items:center;gap:10px;background:#22413f;border:1px solid #315150;border-radius:10px;padding:9px 11px;cursor:grab;transition:transform .14s,border-color .14s;}
-  .lib-lesson:hover{transform:translateY(-2px);border-color:var(--teal-400);}
-  .lib-lesson .ll-ic{width:30px;height:30px;border-radius:8px;background:var(--cta-grad);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-  .lib-lesson .ll-t{font-size:12.5px;font-weight:600;color:#eaf3f2;line-height:1.2;}
-  .lib-lesson .ll-s{font-size:11px;color:#8fb0ad;margin-top:2px;}
-  .cr-tools{display:flex;align-items:center;gap:8px;padding:12px 18px;background:#16302f;border-top:1px solid #20403f;}
-  .cr-tools .tool{width:36px;height:36px;border-radius:9px;background:#22413f;border:1px solid #315150;display:flex;align-items:center;justify-content:center;color:#bcd3d1;flex-shrink:0;}
-  .cr-tools .tool.active{background:var(--cta-grad);color:#fff;border-color:transparent;}
-  .cr-tools .tool svg{width:17px;height:17px;}
-  .cr-tools .sp{flex:1;}
-  .cr-tools .timer{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:#eaf3f2;background:#22413f;border:1px solid #315150;border-radius:var(--r-pill);padding:6px 13px;white-space:nowrap;}
-  .cr-tools .timer svg{width:14px;height:14px;color:#7fb0ad;}
-
-  .cr-callouts{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px;}
-  .co{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px;box-shadow:var(--sh-sm);}
-  .co .co-ic{width:46px;height:46px;border-radius:13px;background:var(--teal-50);border:1px solid var(--teal-100);display:flex;align-items:center;justify-content:center;color:var(--teal-600);margin-bottom:16px;}
-  .co h3{font-size:18px;margin-bottom:7px;}
-  .co p{font-size:14px;color:var(--body);line-height:1.55;}
-  @media(max-width:860px){.cr-body{grid-template-columns:1fr;}.cr-lib{flex-direction:row;border-left:none;border-top:1px solid #20403f;overflow-x:auto;}.cr-callouts{grid-template-columns:1fr;}}
-
-  .cta-band{background:linear-gradient(140deg,#4d8c8c 0%,#3a6e6d 55%,#2f5a59 100%);border-radius:var(--r-xl);padding:60px 52px;position:relative;overflow:hidden;text-align:center;}
-  .cta-band::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 120% at 50% 0%,rgba(255,255,255,.16),transparent 60%);}
-  .cta-band .inr{position:relative;z-index:2;max-width:620px;margin:0 auto;}
-  .cta-band h2{color:#fff;}
-  .cta-band p{color:rgba(255,255,255,.74);margin:18px auto 28px;max-width:46ch;}
-  .cta-band .row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-
-  @media(max-width:860px){.portal-wrap{grid-template-columns:1fr;}.pf-tabs{flex-direction:row;overflow-x:auto;}.pf-tab{min-width:200px;}.pf-tab .pf-d{display:none;}}
-  @media(max-width:900px){.note-feature{grid-template-columns:1fr;}.note-feature .nf-l{padding:32px 24px 8px;}.note-feature .nf-r{padding:8px 24px 32px;}}
+@media(max-width:1000px){.grid3{grid-template-columns:1fr;}.grid2{grid-template-columns:1fr;}}
+@media(max-width:700px){.cband-in{grid-template-columns:1fr;gap:22px;}.cband .btn{justify-self:start;}.stepl .sp{grid-template-columns:1fr;gap:12px;}}
 </style>
 </head>
 <body data-page="portal">
-<noscript><style>.reveal{opacity:1!important;transform:none!important}.qa .ans{max-height:none!important}</style></noscript>
+<!--
+  ============================================================
+  NOTE FOR CLAUDE CODE, the portal explainer
+  ============================================================
+  This page EXPLAINS the portal. It is not the portal. The portal
+  itself is a separate app on Vercel at
+  https://portal.aceacademictutors.com, cross-origin, with its own
+  sign-in. Keep that distinction in nav labels and copy.
+
+  NO SCREENSHOTS on this page. The images that used to be here were
+  ADMIN screens showing bank balance, margin and named students,
+  which is why they were deleted. If a screenshot is ever added it
+  must be the family view with dummy data only.
+
+  Do not reinstate: the free written assessment, the 15-minute
+  consultation, "matched within 48 hours", or the gold accent.
+  ============================================================
+-->
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<div class="topbar">
+<div class="wrap topbar-in">
+<a class="loc" href="workshop.html"><span style="width:7px;height:7px;border-radius:50%;background:var(--teal-200);flex-shrink:0"></span> <b style="font-weight:600">Free GCSE Maths workshop, <span data-ace="workshop.dateShort">Sat 5 September</span></b> <span class="drop" style="opacity:.7">Limited spaces</span></a>
+<a href="tel:+447454905330"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" stroke-linecap="round" stroke-linejoin="round"/></svg> 07454 905330</a>
+<a href="mailto:info@aceacademictutors.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6" stroke-linecap="round" stroke-linejoin="round"/></svg> info@aceacademictutors.com</a>
+</div>
+</div>
 <header class="site-header" id="siteHeader">
 <div class="wrap nav">
 <div class="nav-left">
 <a href="index.html" class="brand" aria-label="Ace Academic Tutors home"><img src="assets/logo-icon.png" alt="Ace Academic Tutors" class="brand-icon"><span class="brand-word"><span class="w-ace">Ace</span><span class="w-acad">Academic</span><span class="w-tut">Tutors</span></span></a>
-<nav class="nav-links"><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="for-schools.html">For Schools</a></nav>
+<nav class="nav-links"><a href="services.html">Tutoring</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="for-schools.html">For schools</a></nav>
 </div>
 <div class="nav-right">
-<a href="contact.html" class="btn btn-primary">Book free consultation</a>
+<!-- Log in goes to the portal (Vercel, separate origin, its own sign-in).
+Free trial goes to get-started.html, which files a lead. docs/PORTAL_INTEGRATION.md -->
+<a class="login" href="https://portal.aceacademictutors.com" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Log in</span></a><a href="get-started.html" class="btn btn-primary btn-pulse">Free trial lesson</a>
 <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg></button>
 </div>
 </div>
-<div class="mobile-menu" id="mobileMenu"><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="for-schools.html">For Schools</a><a href="become-a-tutor.html">Become a tutor</a><a href="contact.html">Contact</a><a href="contact.html" class="btn btn-primary">Book free consultation</a></div>
+<div class="mobile-menu" id="mobileMenu"><a href="services.html">Tutoring</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="for-schools.html">For schools</a><a href="portal.html" class="active">The portal</a><a href="https://portal.aceacademictutors.com" rel="noopener">Log in</a><a href="become-a-tutor.html">Become a tutor</a><a href="contact.html">Contact</a><a href="get-started.html" class="btn btn-primary btn-pulse">Free trial lesson</a></div>
 </header>
 
-<section class="page-hero">
-  <div class="glow"></div>
-  <div class="wrap in">
-    <span class="eyebrow">The ACE classroom &amp; portal</span>
-    <h1 class="display">A real classroom,<br>built for learning</h1>
-    <p class="lead">Lessons happen in our own bespoke online classroom, and everything around them is organised in the ACE portal.</p>
-  </div>
-</section>
-
-<!-- ===================== BESPOKE CLASSROOM ===================== -->
-<section class="section" style="padding-top:32px;">
+<section class="xhead">
   <div class="wrap">
-    <div class="sec-head reveal" style="max-width:640px;margin:0 auto 40px;text-align:center;">
-      <span class="eyebrow" style="display:block;margin-bottom:12px;">Our teaching platform</span>
-      <h2 class="h-xl">Not a video call,<br>a classroom of our own</h2>
-      <p class="lead" style="margin-top:14px;">A bespoke interactive whiteboard with built-in lesson libraries, so tutors drag in the right formula, equation or ready-made lesson and teach, instead of fighting with software.</p>
-    </div>
-
-    <div class="classroom reveal">
-      <div class="cr-bar">
-        <span class="d" style="background:#e07a5a"></span><span class="d" style="background:#e9b949"></span><span class="d" style="background:#60a0a0"></span>
-        <span class="crumb">ACE Classroom · Maths · Year 11 · GCSE</span>
-        <span class="live"><i></i> Live lesson</span>
-      </div>
-      <div class="cr-body">
-        <div class="cr-board">
-          <span class="lesson-tag">Lesson: Quadratic equations</span>
-          <div class="eqn">Solve: <span class="hl">2x² − 5x − 3 = 0</span></div>
-          <div class="eqn muted">x = (−b ± √(b² − 4ac)) / 2a</div>
-          <div class="drop">
-            <span class="dchip">x = (5 ± √49) / 4</span>
-            <span class="dh">Dragged from<br>the formula library →</span>
-          </div>
-          <div class="ann" style="top:120px;right:30px;">factorise first ✓</div>
-          <div class="vtiles">
-            <div class="vt" style="background:linear-gradient(135deg,#60a0a0,#3f7a79)">JT</div>
-            <div class="vt" style="background:linear-gradient(135deg,#6a86b0,#445f8a)">O</div>
-          </div>
-        </div>
-        <aside class="cr-lib" aria-label="Lesson library">
-          <div>
-            <div class="lib-h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke-linejoin="round"/></svg> Formula library</div>
-            <div class="lib-chips">
-              <span class="lib-chip"><span class="grip"><i></i><i></i><i></i></span>a² + b² = c²</span>
-              <span class="lib-chip"><span class="grip"><i></i><i></i><i></i></span>x = −b±√… ⁄ 2a</span>
-              <span class="lib-chip"><span class="grip"><i></i><i></i><i></i></span>sin / cos / tan</span>
-              <span class="lib-chip"><span class="grip"><i></i><i></i><i></i></span>πr²</span>
-            </div>
-          </div>
-          <div>
-            <div class="lib-h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9" stroke-linecap="round"/></svg> Pre-planned lessons</div>
-            <div class="lib-lessons">
-              <div class="lib-lesson"><span class="ll-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke-linejoin="round"/></svg></span><span><span class="ll-t">Quadratics: intro</span><span class="ll-s">GCSE Maths · 12 slides</span></span></div>
-              <div class="lib-lesson"><span class="ll-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 3v18h18" stroke-linecap="round" stroke-linejoin="round"/><path d="m7 13 3-3 3 2 4-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="ll-t">Trigonometry: SOHCAHTOA</span><span class="ll-s">GCSE Maths · 9 slides</span></span></div>
-              <div class="lib-lesson"><span class="ll-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M9 2h6M9 2v6l-5 9a2 2 0 0 0 1.8 3h12.4A2 2 0 0 0 20 17l-5-9V2" stroke-linejoin="round"/></svg></span><span><span class="ll-t">Required practicals</span><span class="ll-s">GCSE Science · 8 slides</span></span></div>
-            </div>
-          </div>
-        </aside>
-      </div>
-      <div class="cr-tools">
-        <span class="tool active" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18z" stroke-linejoin="round"/></svg></span>
-        <span class="tool" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7V4h16v3M9 20h6M12 4v16" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <span class="tool" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/></svg></span>
-        <span class="tool" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6" stroke-linejoin="round"/></svg></span>
-        <span class="sp"></span>
-        <span class="timer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6" stroke-linecap="round"/></svg> Focus timer · 18:24</span>
-        <span class="tool" aria-hidden="true" style="background:var(--cta-grad);color:#fff;border-color:transparent;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg></span>
-      </div>
-    </div>
-
-    <div class="cr-callouts">
-      <div class="co reveal">
-        <div class="co-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke-linejoin="round"/></svg></div>
-        <h3>Lesson libraries</h3>
-        <p>A growing library of ready-made resources, organised by subject and level, right inside the classroom.</p>
-      </div>
-      <div class="co reveal" style="transition-delay:.08s">
-        <div class="co-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 9h14M5 9a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2M5 9v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9" stroke-linecap="round" stroke-linejoin="round"/><path d="m9 14 2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Drag-and-drop formulas</h3>
-        <p>Tutors drop the exact formula or equation onto the whiteboard in a click, no fiddly typing mid-lesson.</p>
-      </div>
-      <div class="co reveal" style="transition-delay:.16s">
-        <div class="co-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9" stroke-linecap="round"/></svg></div>
-        <h3>Pre-planned lesson types</h3>
-        <p>Structured lesson templates for key topics in Maths, English and Science, ready to teach and adapt.</p>
-      </div>
-    </div>
-
-    <div class="center" style="margin-top:38px;">
-      <a href="https://portal.aceacademictutors.com" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Open the teaching platform
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M9 7h8v8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <p style="font-size:13.5px;color:var(--muted);margin-top:12px;">The classroom lives inside the ACE portal, students and tutors join their lessons from there.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" style="padding-top:40px;background:var(--paper-2);">
-  <div class="wrap">
-    <div class="sec-head reveal" style="max-width:640px;margin:0 auto 40px;text-align:center;">
-      <span class="eyebrow" style="display:block;margin-bottom:12px;">The portal</span>
-      <h2 class="h-xl">Everything around the lesson,<br>organised</h2>
-      <p class="lead" style="margin-top:14px;">Scheduling, session tracking and clear progress and payment reports, in one place for families and tutors.</p>
-    </div>
-    <div class="portal-wrap">
-      <div class="pf-tabs" id="pfTabs" role="tablist" aria-label="ACE portal features">
-        <button class="pf-tab on" data-tab="sched" role="tab" aria-selected="true" aria-controls="pfv-sched">
-          <span class="pf-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4" stroke-linecap="round"/></svg></span>
-          <span><span class="pf-t">Scheduling</span><span class="pf-d">Every lesson in one shared calendar, colour-coded by tutor.</span></span>
-        </button>
-        <button class="pf-tab" data-tab="lessons" role="tab" aria-selected="false" aria-controls="pfv-lessons">
-          <span class="pf-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" stroke-linecap="round"/></svg></span>
-          <span><span class="pf-t">Sessions &amp; tracking</span><span class="pf-d">Each session tracked end to end, with status and history.</span></span>
-        </button>
-        <button class="pf-tab" data-tab="reports" role="tab" aria-selected="false" aria-controls="pfv-reports">
-          <span class="pf-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18" stroke-linecap="round" stroke-linejoin="round"/><path d="m7 14 3-3 3 2 4-5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <span><span class="pf-t">Dashboard &amp; reports</span><span class="pf-d">A clear overview of activity, progress and payments.</span></span>
-        </button>
-      </div>
-
-      <div class="pf-panel">
-        <div class="pf-view on" data-view="sched" id="pfv-sched" role="tabpanel">
-          <div class="pf-bar"><span class="d" style="background:#e07a5a"></span><span class="d" style="background:#e9b949"></span><span class="d" style="background:#60a0a0"></span><span class="t">Sessions calendar</span></div>
-          <img class="pf-shot" src="assets/portal-calendar.jpeg" alt="The ACE portal sessions calendar, colour-coded by tutor" loading="lazy" width="760" height="460">
-          <div class="pf-cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ct"><b>Never miss a lesson.</b> Every session sits in one shared calendar you can see at a glance, with easy rescheduling around school and life.</span></div>
-        </div>
-        <div class="pf-view" data-view="lessons" id="pfv-lessons" role="tabpanel">
-          <div class="pf-bar"><span class="d" style="background:#e07a5a"></span><span class="d" style="background:#e9b949"></span><span class="d" style="background:#60a0a0"></span><span class="t">Sessions &amp; billing</span></div>
-          <img class="pf-shot" src="assets/portal-sessions.jpeg" alt="The ACE portal sessions list with status and billing" loading="lazy" width="760" height="460">
-          <div class="pf-cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ct"><b>See every session billed and tracked, no surprises.</b> Each lesson is logged end to end with its status, so what you pay always matches what was taught.</span></div>
-        </div>
-        <div class="pf-view" data-view="reports" id="pfv-reports" role="tabpanel">
-          <div class="pf-bar"><span class="d" style="background:#e07a5a"></span><span class="d" style="background:#e9b949"></span><span class="d" style="background:#60a0a0"></span><span class="t">Dashboard</span></div>
-          <img class="pf-shot" src="assets/portal-dashboard.jpeg" alt="The ACE portal dashboard with activity and financial overview" loading="lazy" width="760" height="460">
-          <div class="pf-cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="ct"><b>The whole picture, in one place.</b> A clear overview of activity, progress and payments so you always know how things are going.</span></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- progress note feature -->
-    <div class="note-feature reveal">
-      <div class="nf-l">
-        <span class="tag" style="margin-bottom:14px;">After every lesson</span>
-        <h3>A short progress note,<br>every single time</h3>
-        <p>You’re never left wondering how it’s going. After each lesson your tutor sends a quick note on what was covered, what went well and what’s next, so you can see real momentum building.</p>
-      </div>
-      <div class="nf-r">
-        <div class="note-sample">
-          <div class="ns-top"><span class="nm">Lesson summary</span><span class="ns-chip">Maths · Year 11</span></div>
-          <div class="ns-rrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Topic covered<span class="rv">Quadratics</span></div>
-          <div class="ns-rrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Confidence<span class="rv">Improving</span></div>
-          <div class="ns-rrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Homework set<span class="rv">Past paper Q1–6</span></div>
-          <p class="ns-q">“Great session, factorising is really clicking now. Next week we’ll push into the trickier exam-style questions.”</p>
-        </div>
-      </div>
-    </div>
+    <span class="eyebrow">The portal</span>
+    <h1 class="display">Everything from<br>every lesson, kept.</h1>
+    <p class="lead">Your family gets a login. Inside it is every session your child has had: what was covered, the tutor's note, the schedule, and the recording you can watch back together.</p>
+    <div class="xchips"><span class="xchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Included with every lesson</span><span class="xchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Nothing extra to pay</span></div>
   </div>
 </section>
 
 <section class="section-sm">
   <div class="wrap">
-    <div class="cta-band reveal">
-      <div class="inr">
-        <h2 class="h-xl">Everything in one place,<br>from the very first lesson.</h2>
-        <p>Start with a free 15-minute consultation and we’ll set your family up in the portal.</p>
-        <div class="row">
-          <a href="contact.html" class="btn btn-primary btn-lg">Book a free consultation</a>
-          <a href="https://portal.aceacademictutors.com" target="_blank" rel="noopener" class="btn btn-outline btn-lg" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.25)">Go to the portal</a>
-        </div>
+    <span class="eyebrow">What parents see</span>
+    <h2 class="h-lg" style="margin-top:12px;">No need to ask how it went</h2>
+    <div class="grid3">
+      <div class="cd reveal">
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" stroke-linejoin="round"/><path d="M14 3v6h6M8 14h7M8 17.5h4" stroke-linecap="round"/></svg></div>
+        <h3>A note after every lesson</h3>
+        <p>Written by the tutor while it is fresh: what was covered, what went well, and what to work on before next time.</p>
+      </div>
+      <div class="cd reveal" style="transition-delay:.06s">
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="m10 8.5 6 3.5-6 3.5z" stroke-linejoin="round"/></svg></div>
+        <h3>The recording</h3>
+        <p>Watch a lesson back with your child, or let them rewatch an explanation the night before an exam.</p>
+      </div>
+      <div class="cd reveal" style="transition-delay:.12s">
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18" stroke-linecap="round"/></svg></div>
+        <h3>The schedule</h3>
+        <p>Lessons, changes and cancellations in one shared calendar, so nobody is guessing about Saturday.</p>
       </div>
     </div>
   </div>
 </section>
+
+<section class="section" style="background:var(--paper-2);">
+  <div class="wrap">
+    <span class="eyebrow">What students get</span>
+    <h2 class="h-lg" style="margin-top:12px;">Revision that already exists</h2>
+    <div class="grid2">
+      <div class="cd reveal">
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z" stroke-linejoin="round"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>The whiteboard, saved</h3>
+        <p>The actual working from the lesson, kept as a revision resource rather than wiped at the end of the hour.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Every worked example from every session</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Searchable by subject and date</li>
+        </ul>
+      </div>
+      <div class="cd reveal" style="transition-delay:.08s">
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2" stroke-linecap="round"/></svg></div>
+        <h3>What to do next</h3>
+        <p>Each note ends with what to practise, so the week between lessons is not guesswork.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Specific, not "revise chapter 4"</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Picked up at the start of the next lesson</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cband">
+  <div class="wrap cband-in">
+    <div>
+      <h2>Already with us?</h2>
+      <p>Log in to see notes, recordings and the schedule. If you cannot get in, call or email and we will sort it out.</p>
+    </div>
+    <div class="row">
+      <a href="https://portal.aceacademictutors.com" rel="noopener" class="btn btn-lg">Log in <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="get-started.html" class="btn btn-outline btn-ghost btn-lg">Book a free trial</a>
+    </div>
+  </div>
+</div>
 
 <footer class="site-footer">
 <div class="wrap">
@@ -332,25 +193,15 @@
 <a href="https://www.linkedin.com/company/ace-academic-tutors" aria-label="Ace Academic Tutors on LinkedIn" target="_blank" rel="noopener"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.76V1.74C24 .78 23.2 0 22.22 0z"/></svg></a>
 </div>
 </div>
-<div class="footer-col"><h5>Explore</h5><a href="about.html">About us</a><br><a href="services.html">Services</a><br><a href="portal.html">The portal</a><br><a href="pricing.html">Pricing</a><br><a href="for-schools.html">For Schools</a><br><a href="become-a-tutor.html">Become a tutor</a></div>
-<div class="footer-col"><h5>Subjects</h5><a href="maths-tutoring.html">Maths tutoring</a><br><a href="english-tutoring.html">English tutoring</a><br><a href="science-tutoring.html">Science tutoring</a><br><a href="11-plus-tutoring.html">11+ preparation</a></div>
-<div class="footer-col"><h5>Get in touch</h5><a href="contact.html">Book a free consultation</a><br><a href="tel:+447454905330">07454 905330</a><br><a href="mailto:info@aceacademictutors.com">info@aceacademictutors.com</a><br><a href="https://portal.aceacademictutors.com" target="_blank" rel="noopener">Family &amp; tutor portal</a><address style="font-style:normal;margin-top:14px;color:#9fb0ae;font-size:13.5px;line-height:1.7;">Ace Academic Tutors Ltd<br>61 Lower Mardyke Avenue<br>Rainham, RM13 8PR</address></div>
+<div class="footer-col"><h5>Explore</h5><a href="about.html">About</a><br><a href="services.html">Tutoring</a><br><a href="portal.html">The portal</a><br><a href="pricing.html">Pricing</a><br><a href="for-schools.html">For schools</a><br><a href="become-a-tutor.html">Become a tutor</a></div>
+<div class="footer-col"><h5>Subjects</h5><a href="maths-tutoring.html">Maths tutoring</a><br><a href="english-tutoring.html">English tutoring</a><br><a href="science-tutoring.html">Science tutoring</a><br><a href="11-plus-tutoring.html">11+ tutoring</a></div>
+<div class="footer-col"><h5>Get in touch</h5><a href="get-started.html">Free trial lesson</a><br><a href="tel:+447454905330">07454 905330</a><br><a href="mailto:info@aceacademictutors.com">info@aceacademictutors.com</a><br><a href="https://portal.aceacademictutors.com" target="_blank" rel="noopener">Log in</a></div>
 </div>
 <div class="footer-bottom"><span>© <span data-year>2026</span> Ace Academic Tutors Ltd · Registered in England &amp; Wales, Company No.&nbsp;15925436</span><span style="display:flex;gap:22px;flex-wrap:wrap;"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="safeguarding.html">Safeguarding</a></span></div>
 </div>
 </footer>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"The ACE Portal","description":"Scheduling, session tracking, progress and payments in one place.","url":"https://aceacademictutors.com/portal.html","isPartOf":{"@type":"WebSite","name":"Ace Academic Tutors","url":"https://aceacademictutors.com/"}}</script>
+
 <script src="assets/chrome.js"></script>
-<script>
-  const pfTabs=document.getElementById('pfTabs');
-  if(pfTabs){
-    pfTabs.addEventListener('click',e=>{
-      const b=e.target.closest('.pf-tab'); if(!b)return;
-      pfTabs.querySelectorAll('.pf-tab').forEach(x=>{x.classList.remove('on');x.setAttribute('aria-selected','false');});
-      b.classList.add('on'); b.setAttribute('aria-selected','true');
-      document.querySelectorAll('.pf-view').forEach(v=>v.classList.toggle('on',v.dataset.view===b.dataset.tab));
-    });
-  }
-</script>
+<script src="assets/live.js"></script>
 </body>
 </html>

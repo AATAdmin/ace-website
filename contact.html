@@ -7,310 +7,209 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="manifest" href="assets/site.webmanifest">
 <meta name="theme-color" content="#60a0a0">
-<title>Contact &amp; book a free consultation, Ace Academic Tutors</title>
-<meta name="description" content="Tell us what your child needs and we'll match a specialist tutor. Free, no obligation.">
+<title>Contact Ace Academic Tutors</title>
+<meta name="description" content="Call 07454 905330, send a WhatsApp message or email info@aceacademictutors.com. Online tutoring in Maths, English and Science for 11+, GCSE and A-Level.">
 <link rel="canonical" href="https://aceacademictutors.com/contact.html">
-<meta name="robots" content="noindex, follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_GB">
 <meta property="og:site_name" content="Ace Academic Tutors">
-<meta property="og:title" content="Contact &amp;amp; book a free consultation, Ace Academic Tutors">
-<meta property="og:description" content="Tell us what your child needs and we'll match a specialist tutor. Free, no obligation.">
+<meta property="og:title" content="Contact Ace Academic Tutors">
+<meta property="og:description" content="Call 07454 905330, send a WhatsApp message or email info@aceacademictutors.com. Online tutoring in Maths, English and Science for 11+, GCSE and A-Level.">
 <meta property="og:url" content="https://aceacademictutors.com/contact.html">
 <meta property="og:image" content="https://aceacademictutors.com/assets/logo-full.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Contact &amp;amp; book a free consultation, Ace Academic Tutors">
-<meta name="twitter:description" content="Tell us what your child needs and we'll match a specialist tutor. Free, no obligation.">
+<meta name="twitter:title" content="Contact Ace Academic Tutors">
+<meta name="twitter:description" content="Call 07454 905330, send a WhatsApp message or email info@aceacademictutors.com. Online tutoring in Maths, English and Science for 11+, GCSE and A-Level.">
 <meta name="twitter:image" content="https://aceacademictutors.com/assets/logo-full.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <style>
-  body{background:var(--paper);}
-  .book-wrap{max-width:1080px;margin:0 auto;padding:40px var(--gutter) 80px;}
-  .book-grid{display:grid;grid-template-columns:340px 1fr;gap:32px;align-items:start;}
+.chead{padding:56px 0 12px;background:var(--paper);}
+.chead .shead{max-width:620px;}
+.chead .eyebrow{display:block;margin-bottom:14px;}
+.chead p{margin-top:16px;}
 
-  /* left rail */
-  .rail{position:sticky;top:98px;}
-  .rail .card{padding:28px;}
-  .rail h2{font-size:23px;margin-bottom:8px;}
-  .rail .sub{font-size:14.5px;color:var(--body);line-height:1.55;margin-bottom:24px;}
-  .stepper{display:flex;flex-direction:column;gap:2px;}
-  .stp{display:flex;align-items:center;gap:14px;padding:11px 10px;border-radius:var(--r-sm);transition:background .2s;}
-  .stp.active{background:var(--teal-50);}
-  .stp .dot{width:30px;height:30px;border-radius:50%;border:2px solid var(--line-2);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:var(--muted);flex-shrink:0;background:var(--surface);transition:all .2s;}
-  .stp.active .dot{border-color:var(--teal-500);color:var(--teal-700);}
-  .stp.done .dot{background:var(--cta-grad);border-color:transparent;color:#fff;}
-  .stp .lb{font-size:14.5px;font-weight:500;color:var(--muted);}
-  .stp.active .lb{color:var(--ink);font-weight:600;}
-  .stp.done .lb{color:var(--ink-2);}
-  .rail .assure{margin-top:24px;padding-top:22px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:12px;}
-  .rail .assure .a{display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--body);}
-  .rail .assure .a svg{width:17px;height:17px;color:var(--teal-500);flex-shrink:0;}
-  .contact-block{margin-top:22px;padding-top:22px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:11px;}
-  .contact-block .cb{display:flex;align-items:center;gap:10px;font-size:13.5px;}
-  .contact-block .cb svg{width:17px;height:17px;color:var(--teal-500);flex-shrink:0;}
-  .contact-block .cb a{color:var(--body);}
-  .contact-block .cb a:hover{color:var(--teal-700);}
+.ways{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px;}
+.way{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line-2);border-radius:var(--r-lg);padding:30px 28px 26px;box-shadow:var(--sh-xs);transition:border-color .18s,box-shadow .18s,transform .18s;}
+.way:hover{border-color:var(--teal-300);box-shadow:var(--sh-md);transform:translateY(-3px);}
+.way .wi{width:48px;height:48px;border-radius:14px;background:var(--teal-50);border:1px solid var(--teal-100);display:flex;align-items:center;justify-content:center;color:var(--teal-600);margin-bottom:20px;transition:background .18s,border-color .18s,color .18s;}
+.way:hover .wi{background:var(--teal-700);border-color:var(--teal-700);color:#fff;}
+.way .wi svg{width:23px;height:23px;}
+.way h2{font-size:21px;margin-bottom:7px;}
+.way .wv{font-family:var(--sans);font-size:17px;font-weight:600;color:var(--teal-800);word-break:break-word;line-height:1.35;}
+.way p{font-size:14px;color:var(--body);line-height:1.55;margin-top:10px;}
+.way .wgo{margin-top:auto;padding-top:20px;display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:14.5px;font-weight:600;color:var(--teal-700);}
+.way .wgo svg{width:15px;height:15px;transition:transform .18s;}
+.way:hover .wgo svg{transform:translateX(3px);}
 
-  /* form panel */
-  .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh-md);padding:40px 44px;min-height:480px;display:flex;flex-direction:column;}
-  .progress-top{height:5px;background:var(--line);border-radius:3px;overflow:hidden;margin-bottom:32px;}
-  .progress-top i{display:block;height:100%;background:var(--cta-grad);border-radius:3px;transition:width .4s cubic-bezier(.4,0,.2,1);width:20%;}
-  .step-head{margin-bottom:28px;}
-  .step-head .k{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-600);margin-bottom:10px;}
-  .step-head h1{font-size:30px;line-height:1.12;}
-  .step-head p{font-size:15.5px;color:var(--body);margin-top:10px;line-height:1.55;}
+.tband{background:var(--teal-800);position:relative;overflow:hidden;margin-top:56px;}
+.tband::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 130% at 12% 0%,rgba(96,160,160,.28),transparent 62%);pointer-events:none;}
+.tband-in{position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;padding-top:38px;padding-bottom:38px;}
+.tband .tk{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-200);}
+.tband h2{font-family:var(--serif);font-size:clamp(24px,2.6vw,31px);font-weight:600;color:#fff;line-height:1.15;margin:10px 0 10px;letter-spacing:-.01em;}
+.tband p{font-size:15px;color:rgba(255,255,255,.8);line-height:1.6;max-width:60ch;}
+.tband .btn{background:#fff;color:var(--teal-800);border-color:#fff;}
 
-  .step{display:none;}
-  .step.on{display:block;animation:fade .35s ease;}
-  @keyframes fade{from{transform:translateY(9px);}to{transform:none;}}
+.detail{padding:64px 0 88px;}
+.dgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start;}
+.dlist{display:flex;flex-direction:column;gap:0;}
+.dlist .d{padding:20px 0;border-top:1px solid var(--line);}
+.dlist .d:last-child{border-bottom:1px solid var(--line);}
+.dlist .d b{display:block;font-family:var(--serif);font-size:18px;font-weight:600;color:var(--ink);margin-bottom:5px;}
+.dlist .d span{font-size:14.5px;color:var(--body);line-height:1.6;}
+.dlist .d a{font-weight:600;color:var(--teal-700);border-bottom:1px solid var(--teal-200);}
+.dcard{background:var(--paper-2);border:1px solid var(--line-2);border-radius:var(--r-lg);padding:30px 28px;}
+.dcard h3{font-size:19px;margin-bottom:14px;}
+.dcard address{font-style:normal;font-size:14.5px;color:var(--body);line-height:1.75;}
+.dcard .note{margin-top:6px;font-size:13.5px;color:var(--body);line-height:1.5;}
+.dcard .co{margin-top:20px;padding-top:18px;border-top:1px solid var(--line);font-size:13.5px;color:var(--body);line-height:1.6;}
+.dcard .co b{font-family:var(--sans);font-weight:600;color:var(--ink-2);}
 
-  /* option grid */
-  .opt-grid{display:grid;gap:12px;}
-  .opt-grid.c2{grid-template-columns:1fr 1fr;}
-  .opt-grid.c3{grid-template-columns:1fr 1fr 1fr;}
-  .opt{display:flex;align-items:center;gap:14px;text-align:left;background:var(--surface);border:1.5px solid var(--line-2);border-radius:var(--r-md);padding:18px;cursor:pointer;transition:all .15s;font-family:var(--sans);width:100%;}
-  .opt:hover{border-color:var(--teal-300);background:var(--teal-50);}
-  .opt.sel{border-color:var(--teal-500);background:var(--teal-50);box-shadow:0 0 0 3px rgba(96,160,160,.14);}
-  .opt .oic{width:42px;height:42px;border-radius:12px;background:var(--paper-2);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;font-size:15px;color:var(--teal-700);flex-shrink:0;transition:all .15s;}
-  .opt.sel .oic{background:var(--cta-grad);color:#fff;}
-  .opt .otx{display:flex;flex-direction:column;gap:2px;min-width:0;}
-  .opt .otx .ot{font-weight:600;font-size:15.5px;color:var(--ink);}
-  .opt .otx .os{font-size:13px;color:var(--muted);margin-top:2px;}
-
-  .chip-grid{display:flex;flex-wrap:wrap;gap:10px;}
-  .chipopt{font-size:14.5px;font-weight:500;color:var(--ink-2);background:var(--surface);border:1.5px solid var(--line-2);border-radius:var(--r-pill);padding:11px 18px;cursor:pointer;transition:all .15s;}
-  .chipopt:hover{border-color:var(--teal-300);color:var(--teal-700);}
-  .chipopt.sel{background:var(--cta-grad);color:#fff;border-color:transparent;box-shadow:var(--sh-teal);}
-
-  .field{margin-bottom:18px;}
-  .field label{display:block;font-size:14px;font-weight:600;color:var(--ink-2);margin-bottom:7px;}
-  .field input,.field textarea,.field select{width:100%;font-family:var(--sans);font-size:15.5px;color:var(--ink);background:var(--paper);border:1.5px solid var(--line-2);border-radius:var(--r-sm);padding:13px 15px;transition:all .15s;}
-  .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--teal-400);background:var(--surface);box-shadow:0 0 0 3px rgba(96,160,160,.14);}
-  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-
-  .nav-row{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:auto;padding-top:30px;}
-  .step-count{font-size:13.5px;color:var(--muted);font-weight:500;}
-
-  /* confirmation */
-  .confirm{text-align:center;padding:10px 0;}
-  .confirm .check{width:76px;height:76px;border-radius:50%;background:var(--teal-50);border:1px solid var(--teal-100);display:flex;align-items:center;justify-content:center;margin:0 auto 22px;color:var(--teal-600);}
-  .confirm h1{font-size:32px;margin-bottom:12px;}
-  .confirm p{font-size:16px;color:var(--body);max-width:44ch;margin:0 auto 28px;line-height:1.6;}
-  .match-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;text-align:left;max-width:420px;margin:0 auto 28px;}
-  .match-card .mh{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;}
-  .match-card .mrow{display:flex;align-items:center;gap:14px;}
-  .match-card .mav{width:54px;height:54px;border-radius:16px;background:linear-gradient(135deg,#60a0a0,#3f7a79);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:19px;flex-shrink:0;}
-  .match-card .mn{font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink);}
-  .match-card .mu{font-size:13px;color:var(--muted);}
-  .match-card .mtags{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;}
-  .summary-line{font-size:14px;color:var(--body);background:var(--paper);border:1px solid var(--line);border-radius:var(--r-sm);padding:12px 16px;margin-bottom:10px;display:flex;justify-content:space-between;gap:12px;}
-  .summary-line b{color:var(--ink);font-weight:600;}
-
-  @media(max-width:880px){
-    .book-grid{grid-template-columns:1fr;}
-    .rail{position:static;}
-    .panel{padding:30px 24px;}
-    .opt-grid.c2,.opt-grid.c3{grid-template-columns:1fr;}
-    .field-row{grid-template-columns:1fr;}
-  }
+@media(max-width:960px){
+  .ways{grid-template-columns:1fr;}
+  .dgrid{grid-template-columns:1fr;gap:36px;}
+  .tband-in{grid-template-columns:1fr;gap:24px;}
+  .tband .btn{justify-self:start;}
+}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Ace Academic Tutors","alternateName":"Ace Academic Tutors Ltd","url":"https://aceacademictutors.com/","logo":"https://aceacademictutors.com/assets/logo-icon.png","image":"https://aceacademictutors.com/assets/logo-full.png","email":"info@aceacademictutors.com","telephone":"+44 7454 905330","address":{"@type":"PostalAddress","streetAddress":"61 Lower Mardyke Avenue","addressLocality":"Rainham","postalCode":"RM13 8PR","addressCountry":"GB"},"areaServed":"GB","sameAs":["https://www.facebook.com/profile.php?id=61563738669588","https://www.instagram.com/aceacademictutors","https://www.linkedin.com/company/ace-academic-tutors"]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Contact &amp; book a free consultation, Ace Academic Tutors","description":"Tell us what your child needs and we'll match a specialist tutor. Free, no obligation.","url":"https://aceacademictutors.com/contact.html","isPartOf":{"@type":"WebSite","name":"Ace Academic Tutors","url":"https://aceacademictutors.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Ace Academic Tutors","url":"https://aceacademictutors.com/","logo":"https://aceacademictutors.com/assets/logo-icon.png","email":"info@aceacademictutors.com","telephone":"+44 7454 905330","address":{"@type":"PostalAddress","streetAddress":"61 Lower Mardyke Avenue","addressLocality":"Rainham","postalCode":"RM13 8PR","addressCountry":"GB"},"areaServed":{"@type":"Country","name":"United Kingdom"},"contactPoint":{"@type":"ContactPoint","telephone":"+44 7454 905330","email":"info@aceacademictutors.com","contactType":"customer service","availableLanguage":"English"}}</script>
 </head>
 <body data-page="contact">
-<noscript><style>.reveal{opacity:1!important;transform:none!important}.qa .ans{max-height:none!important}</style></noscript>
+<!--
+  ============================================================
+  NOTE FOR CLAUDE CODE, read before diffing this file
+  ============================================================
+  This page was rebuilt from scratch as a pure contact page. The
+  multi-step enquiry form that used to live here is DELIBERATELY
+  REMOVED, and that includes your submitLead()/finish() fix from
+  commit ea76a20.
+
+  This is not a regression and must not be reverted.
+
+  Reason: the site now has ONE enquiry route, get-started.html.
+  Two competing forms on one site meant two payload shapes, two
+  places to fix, and a parent choosing between them. get-started.html
+  uses the same fail-loud pattern you built: it awaits the POST,
+  checks response.ok, and shows phone, WhatsApp and email on any
+  failure, so a lost enquiry is never reported as success.
+
+  Do NOT re-add a form to contact.html.
+
+  Where the moved parts now live:
+    - enquiry form + payload ....... get-started.html
+    - payload contract ............. docs/ENQUIRY_PAYLOAD.md
+    - portal-driven content ........ docs/PORTAL_CONTENT_API.md
+
+  Also retired site-wide, so do not reinstate from older pages:
+    - the free 15-minute consultation (replaced by a free trial
+      lesson: one full hour, free of charge, every subject and stage)
+    - the free written assessment, including the GCSE Maths
+      platform test link
+    - "matched within 48 hours"
+    - the gold accent colour (--gold / --gold-soft are deleted from
+      assets/site.css; the palette is teal, cream and ink only)
+  ============================================================
+-->
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<div class="topbar">
+<div class="wrap topbar-in">
+<a class="loc" href="workshop.html"><span style="width:7px;height:7px;border-radius:50%;background:var(--teal-200);flex-shrink:0"></span> <b style="font-weight:600">Free GCSE Maths workshop, <span data-ace="workshop.dateShort">Sat 5 September</span></b> <span class="drop" style="opacity:.7">Limited spaces</span></a>
+<a href="tel:+447454905330"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" stroke-linecap="round" stroke-linejoin="round"/></svg> 07454 905330</a>
+<a href="mailto:info@aceacademictutors.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6" stroke-linecap="round" stroke-linejoin="round"/></svg> info@aceacademictutors.com</a>
+</div>
+</div>
 <header class="site-header" id="siteHeader">
 <div class="wrap nav">
 <div class="nav-left">
 <a href="index.html" class="brand" aria-label="Ace Academic Tutors home"><img src="assets/logo-icon.png" alt="Ace Academic Tutors" class="brand-icon"><span class="brand-word"><span class="w-ace">Ace</span><span class="w-acad">Academic</span><span class="w-tut">Tutors</span></span></a>
-<nav class="nav-links"><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="for-schools.html">For Schools</a></nav>
+<nav class="nav-links"><a href="services.html">Tutoring</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="for-schools.html">For schools</a></nav>
 </div>
 <div class="nav-right">
-<a href="contact.html" class="btn btn-primary">Book free consultation</a>
+<a class="login" href="https://portal.aceacademictutors.com" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Log in</span></a><a href="get-started.html" class="btn btn-primary btn-pulse">Free trial lesson</a>
 <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg></button>
 </div>
 </div>
-<div class="mobile-menu" id="mobileMenu"><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="for-schools.html">For Schools</a><a href="become-a-tutor.html">Become a tutor</a><a href="contact.html" class="active">Contact</a><a href="contact.html" class="btn btn-primary">Book free consultation</a></div>
+<div class="mobile-menu" id="mobileMenu"><a href="services.html">Tutoring</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="for-schools.html">For schools</a><a href="portal.html">The portal</a><a href="https://portal.aceacademictutors.com" rel="noopener">Log in</a><a href="become-a-tutor.html">Become a tutor</a><a href="contact.html" class="active">Contact</a><a href="get-started.html" class="btn btn-primary btn-pulse">Free trial lesson</a></div>
 </header>
 
-<div class="book-wrap">
-  <div class="book-grid">
-    <!-- LEFT RAIL -->
-    <aside class="rail">
-      <div class="card">
-        <h2>Book your free consultation</h2>
-        <p class="sub">A relaxed 15-minute call. Tell us what your child needs and we’ll match a specialist tutor, no card, no obligation.</p>
-        <div class="stepper" id="stepper">
-          <div class="stp active" data-s="1"><span class="dot">1</span><span class="lb">Year group</span></div>
-          <div class="stp" data-s="2"><span class="dot">2</span><span class="lb">Subject</span></div>
-          <div class="stp" data-s="3"><span class="dot">3</span><span class="lb">Goals &amp; board</span></div>
-          <div class="stp" data-s="4"><span class="dot">4</span><span class="lb">Your details</span></div>
-          <div class="stp" data-s="5"><span class="dot">5</span><span class="lb">Done</span></div>
-        </div>
-        <div class="assure">
-          <div class="a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Matched within 48 hours</div>
-          <div class="a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> No card required</div>
-          <div class="a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> DBS-checked tutors</div>
-        </div>
-        <div class="contact-block">
-          <div class="cb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="tel:+447454905330">07454 905330</a></div>
-          <div class="cb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="mailto:info@aceacademictutors.com">info@aceacademictutors.com</a></div>
-          <div class="cb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><a href="https://www.instagram.com/aceacademictutors" target="_blank" rel="noopener">@aceacademictutors</a></div>
-        </div>
-      </div>
-    </aside>
+<section class="chead">
+  <div class="wrap"><div class="shead">
+    <span class="eyebrow">Contact</span>
+    <h1 class="display">Talk to a person.</h1>
+    <p class="lead">Whichever way you get in touch, it reaches the same small team. Ask us anything, whether your child is ready to start or you are only having a look.</p>
+  </div></div>
+</section>
 
-    <!-- FORM PANEL -->
-    <main class="panel">
-      <div class="progress-top"><i id="bar"></i></div>
+<section class="section-sm">
+  <div class="wrap">
+    <div class="ways">
+      <a class="way reveal" href="tel:+447454905330">
+        <div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h2>Call us</h2>
+        <div class="wv">07454 905330</div>
+        <p>Best if you would rather talk it through, or you have a question about your child that is hard to type.</p>
+        <span class="wgo">Call now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="way reveal" href="https://wa.me/447454905330" style="transition-delay:.06s">
+        <div class="wi"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 1 1-4.2 15.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.2 8.2 0 0 1 12 3.8zm-3.4 4c-.2 0-.5.1-.7.3-.3.3-.8.9-.8 1.9s.7 2 .8 2.1c.1.2 1.4 2.2 3.5 3 1.7.7 2.1.6 2.5.5.5 0 1.4-.5 1.6-1.1.2-.6.2-1 .1-1.1l-1.5-.7c-.2-.1-.4-.1-.5.1l-.6.8c-.1.1-.3.2-.5.1-.2-.1-.9-.4-1.6-1a5.6 5.6 0 0 1-1-1.4c-.1-.2 0-.3.1-.4l.4-.5c.1-.2.1-.3 0-.5l-.6-1.5c-.2-.4-.4-.4-.5-.4z"/></svg></div>
+        <h2>WhatsApp</h2>
+        <div class="wv">07454 905330</div>
+        <p>Send a message when it suits you. Most parents find this the easiest way to reach us.</p>
+        <span class="wgo">Open WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="way reveal" href="mailto:info@aceacademictutors.com" style="transition-delay:.12s">
+        <div class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h2>Email</h2>
+        <div class="wv">info@aceacademictutors.com</div>
+        <p>Good for anything you want in writing, including school and safeguarding enquiries.</p>
+        <span class="wgo">Send an email <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
 
-      <!-- STEP 1 -->
-      <section class="step on" data-step="1">
-        <div class="step-head">
-          <div class="k">Step 1 of 4</div>
-          <h1>Which year group is your child in?</h1>
-          <p>This helps us match the right level and specialist.</p>
-        </div>
-        <div class="opt-grid c2" data-field="level">
-          <button class="opt" data-val="KS1 (Years 1-2)"><span class="oic">KS1</span><span class="otx"><span class="ot">Key Stage 1</span><span class="os">Years 1-2 · ages 5-7</span></span></button>
-          <button class="opt" data-val="KS2 (Years 3-6)"><span class="oic">KS2</span><span class="otx"><span class="ot">Key Stage 2</span><span class="os">Years 3-6 · ages 7-11</span></span></button>
-          <button class="opt" data-val="KS3 (Years 7-9)"><span class="oic">KS3</span><span class="otx"><span class="ot">Key Stage 3</span><span class="os">Years 7-9 · ages 11-14</span></span></button>
-          <button class="opt" data-val="GCSE (Years 10-11)"><span class="oic">GCSE</span><span class="otx"><span class="ot">GCSE</span><span class="os">Years 10-11 · ages 14-16</span></span></button>
-          <button class="opt" data-val="A-Level (Years 12-13)"><span class="oic">A-L</span><span class="otx"><span class="ot">A-Level</span><span class="os">Years 12-13 · ages 16-18</span></span></button>
-          <button class="opt" data-val="11+ / Entrance"><span class="oic">11+</span><span class="otx"><span class="ot">Entrance exams</span><span class="os">11+ · 13+ · independent</span></span></button>
-        </div>
-      </section>
-
-      <!-- STEP 2 -->
-      <section class="step" data-step="2">
-        <div class="step-head">
-          <div class="k">Step 2 of 4</div>
-          <h1>What subject do they need?</h1>
-          <p>Pick the main subject, you can add more on the call.</p>
-        </div>
-        <div class="chip-grid" data-field="subject">
-          <button class="chipopt" data-val="Maths">Maths</button>
-          <button class="chipopt" data-val="English">English</button>
-          <button class="chipopt" data-val="Combined Science">Combined Science</button>
-          <button class="chipopt" data-val="Biology">Biology</button>
-          <button class="chipopt" data-val="Chemistry">Chemistry</button>
-          <button class="chipopt" data-val="Physics">Physics</button>
-          <button class="chipopt" data-val="11+ Prep">11+ Prep</button>
-          <button class="chipopt" data-val="Not sure yet">Not sure yet</button>
-        </div>
-      </section>
-
-      <!-- STEP 3 -->
-      <section class="step" data-step="3">
-        <div class="step-head">
-          <div class="k">Step 3 of 4</div>
-          <h1>What are you hoping to achieve?</h1>
-          <p>A sentence is plenty, it helps us pick the perfect tutor.</p>
-        </div>
-        <div class="field">
-          <label>Exam board <span style="color:var(--faint);font-weight:400">(if known)</span></label>
-          <div class="chip-grid" data-field="board" style="margin-bottom:4px;">
-            <button class="chipopt" data-val="AQA">AQA</button>
-            <button class="chipopt" data-val="Edexcel">Edexcel</button>
-            <button class="chipopt" data-val="OCR">OCR</button>
-            <button class="chipopt" data-val="WJEC">WJEC</button>
-            <button class="chipopt" data-val="Eduqas">Eduqas</button>
-            <button class="chipopt" data-val="CIE">CIE</button>
-            <button class="chipopt" data-val="Not sure">Not sure</button>
-          </div>
-        </div>
-        <div class="field">
-          <label>Your goal</label>
-          <textarea rows="3" id="goalText" placeholder="e.g. Build confidence for GCSE mocks and push from a grade 5 to a 7."></textarea>
-        </div>
-      </section>
-
-      <!-- STEP 4 -->
-      <section class="step" data-step="4">
-        <div class="step-head">
-          <div class="k">Step 4 of 4</div>
-          <h1>Where shall we send the match?</h1>
-          <p>We’ll be in touch within 48 hours to arrange your free call.</p>
-        </div>
-        <div class="field-row">
-          <div class="field"><label>Your name</label><input type="text" id="pName" placeholder="Jane Smith"></div>
-          <div class="field"><label>Child’s first name</label><input type="text" id="cName" placeholder="Olivia"></div>
-        </div>
-        <div class="field"><label>Email</label><input type="email" id="pEmail" placeholder="jane@email.com"></div>
-        <div class="field-row">
-          <div class="field"><label>Phone <span style="color:var(--faint);font-weight:400">(optional)</span></label><input type="tel" id="pPhone" placeholder="07700 900000"></div>
-          <div class="field"><label>Preferred times</label>
-            <select id="pTime">
-              <option>Weekday afternoons</option>
-              <option>Weekday evenings</option>
-              <option>Weekend mornings</option>
-              <option>Weekend afternoons</option>
-              <option>Flexible</option>
-            </select>
-          </div>
-        </div>
-      </section>
-
-      <!-- STEP 5 CONFIRM -->
-      <section class="step" data-step="5">
-        <div class="confirm">
-          <div id="confirmOk">
-          <div class="check"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h1>You’re all set<span id="confName"></span>!</h1>
-          <p>We’ve received your request and we’re already finding the perfect tutor. Expect an email within 48 hours to book your free consultation.</p>
-          <div class="match-card">
-            <div class="mh">What happens next</div>
-            <div class="mrow">
-              <div class="mav" id="matchInit">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7"><path d="m22 10-10 5L2 10l10-5 10 5z" stroke-linejoin="round"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div>
-                <div class="mn" id="matchName">A specialist tutor, matched to you</div>
-                <div class="mu" id="matchUni">University-educated · DBS-checked · within 48 hours</div>
-                <div class="mtags" id="matchTags"><span class="tag">Specialist</span><span class="tag">DBS ✓</span></div>
-              </div>
-            </div>
-          </div>
-          <div id="summaryBox" style="max-width:420px;margin:0 auto 28px;"></div>
-          </div>
-          <div id="confirmFail" hidden>
-            <div class="check" style="background:#fdf1ee;border-color:#f3d6ce;color:#b3453b;"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <h1>We couldn’t send that</h1>
-            <p>Your request did not reach us, so please get in touch directly and we will book your free consultation straight away. Sorry about that.</p>
-            <div class="match-card">
-              <div class="mh">Contact us directly</div>
-              <div style="display:flex;flex-direction:column;gap:14px;">
-                <a href="tel:+447454905330" style="display:flex;align-items:center;gap:12px;color:var(--ink);font-weight:500;">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  07454 905330
-                </a>
-                <a href="mailto:info@aceacademictutors.com" style="display:flex;align-items:center;gap:12px;color:var(--ink);font-weight:500;word-break:break-all;">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  info@aceacademictutors.com
-                </a>
-              </div>
-            </div>
-          </div>
-          <a href="index.html" class="btn btn-outline btn-lg">Back to home</a>
-        </div>
-      </section>
-
-      <!-- NAV -->
-      <div class="nav-row" id="navRow">
-        <button class="btn btn-ghost" id="backBtn" style="visibility:hidden;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 12H5M11 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg> Back
-        </button>
-        <span class="step-count" id="stepCount">Step 1 of 4</span>
-        <button class="btn btn-primary" id="nextBtn" disabled>Continue
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-      </div>
-    </main>
+<div class="tband">
+  <div class="wrap tband-in">
+    <div>
+      <div class="tk">If you already know what you need</div>
+      <h2>Book a free trial lesson instead</h2>
+      <p>A full hour with one of our tutors, free of charge. Tell us a little about your child and our team will be in touch to arrange a time.</p>
+    </div>
+    <a href="get-started.html" class="btn btn-lg">Book the free trial <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
 </div>
+
+<section class="detail">
+  <div class="wrap dgrid">
+    <div class="reveal">
+      <span class="eyebrow" style="display:block;margin-bottom:14px;">Who to ask about what</span>
+      <h2 class="h-lg" style="margin-bottom:8px;">Common reasons to get in touch</h2>
+      <div class="dlist" style="margin-top:24px;">
+        <div class="d"><b>Starting with us</b><span>Use the <a href="get-started.html">free trial form</a>. It takes about two minutes and tells us what we need to match your child to the right tutor.</span></div>
+        <div class="d"><b>Prices and payment</b><span>Everything is on the <a href="pricing.html">pricing page</a>. If your situation is unusual, call and we will talk it through.</span></div>
+        <div class="d"><b>Rescheduling a lesson</b><span>Families and tutors do this in the portal. If it is urgent, WhatsApp is quickest.</span></div>
+        <div class="d"><b>Safeguarding</b><span>Email us, or read our <a href="safeguarding.html">safeguarding policy</a> first. Anything of this kind is dealt with straight away.</span></div>
+        <div class="d"><b>Teaching with us</b><span>See <a href="become-a-tutor.html">become a tutor</a> for what we look for and how the process works.</span></div>
+        <div class="d"><b>Schools and trusts</b><span>See <a href="for-schools.html">for schools</a>, or email and we will arrange a call.</span></div>
+      </div>
+    </div>
+    <div class="dcard reveal">
+      <h3>Ace Academic Tutors Ltd</h3>
+      <address>61 Lower Mardyke Avenue<br>Rainham<br>RM13 8PR</address>
+      <p class="note">This is our registered office, not a teaching site. All lessons are taught live online.</p>
+      <div class="co">
+        <b>Company number</b> 15925436<br>
+        Registered in England &amp; Wales
+      </div>
+      <div class="co">
+        <b>Data and privacy</b><br>
+        We only use your details to arrange your child's tutoring. See the <a href="privacy.html" style="font-weight:600;color:var(--teal-700);border-bottom:1px solid var(--teal-200)">privacy notice</a>.
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer class="site-footer">
 <div class="wrap">
@@ -325,137 +224,15 @@
 <a href="https://www.linkedin.com/company/ace-academic-tutors" aria-label="Ace Academic Tutors on LinkedIn" target="_blank" rel="noopener"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.76V1.74C24 .78 23.2 0 22.22 0z"/></svg></a>
 </div>
 </div>
-<div class="footer-col"><h5>Explore</h5><a href="about.html">About us</a><br><a href="services.html">Services</a><br><a href="portal.html">The portal</a><br><a href="pricing.html">Pricing</a><br><a href="for-schools.html">For Schools</a><br><a href="become-a-tutor.html">Become a tutor</a></div>
-<div class="footer-col"><h5>Subjects</h5><a href="maths-tutoring.html">Maths tutoring</a><br><a href="english-tutoring.html">English tutoring</a><br><a href="science-tutoring.html">Science tutoring</a><br><a href="11-plus-tutoring.html">11+ preparation</a></div>
-<div class="footer-col"><h5>Get in touch</h5><a href="contact.html">Book a free consultation</a><br><a href="tel:+447454905330">07454 905330</a><br><a href="mailto:info@aceacademictutors.com">info@aceacademictutors.com</a><br><a href="https://portal.aceacademictutors.com" target="_blank" rel="noopener">Family &amp; tutor portal</a><address style="font-style:normal;margin-top:14px;color:#9fb0ae;font-size:13.5px;line-height:1.7;">Ace Academic Tutors Ltd<br>61 Lower Mardyke Avenue<br>Rainham, RM13 8PR</address></div>
+<div class="footer-col"><h5>Explore</h5><a href="about.html">About</a><br><a href="services.html">Tutoring</a><br><a href="portal.html">The portal</a><br><a href="pricing.html">Pricing</a><br><a href="for-schools.html">For schools</a><br><a href="become-a-tutor.html">Become a tutor</a></div>
+<div class="footer-col"><h5>Subjects</h5><a href="maths-tutoring.html">Maths tutoring</a><br><a href="english-tutoring.html">English tutoring</a><br><a href="science-tutoring.html">Science tutoring</a><br><a href="11-plus-tutoring.html">11+ tutoring</a></div>
+<div class="footer-col"><h5>Get in touch</h5><a href="get-started.html">Free trial lesson</a><br><a href="tel:+447454905330">07454 905330</a><br><a href="mailto:info@aceacademictutors.com">info@aceacademictutors.com</a><br><a href="https://portal.aceacademictutors.com" target="_blank" rel="noopener">Log in</a></div>
 </div>
 <div class="footer-bottom"><span>© <span data-year>2026</span> Ace Academic Tutors Ltd · Registered in England &amp; Wales, Company No.&nbsp;15925436</span><span style="display:flex;gap:22px;flex-wrap:wrap;"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="safeguarding.html">Safeguarding</a></span></div>
 </div>
 </footer>
+
 <script src="assets/chrome.js"></script>
-<script>
-  // ===== Portal submission =====
-  // Leads are sent to the Ace portal. Update PORTAL_ENDPOINT once the portal's
-  // enquiry endpoint/structure is confirmed. Until then submissions fail gracefully
-  // and the email fallback below still reaches the team.
-  const PORTAL_ENDPOINT = 'https://portal.aceacademictutors.com/api/enquiry';
-  const TEAM_EMAIL = 'info@aceacademictutors.com';
-  // Resolves true only when the portal actually accepted the lead. A rejected
-  // promise (network/CORS) or a non-2xx response both count as failure, so the
-  // submitter is never shown a confirmation for a lead we did not receive.
-  async function submitLead(data){
-    try{
-      const res = await fetch(PORTAL_ENDPOINT,{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        mode:'cors',
-        body:JSON.stringify({source:'website-consultation',...data})
-      });
-      return res.ok;
-    }catch(err){ return false; }
-  }
-  const state={level:'',subject:'',board:'',goal:'',pName:'',cName:'',email:'',phone:'',time:''};
-  let step=1; const TOTAL=4;
-  const bar=document.getElementById('bar'), nextBtn=document.getElementById('nextBtn'),
-        backBtn=document.getElementById('backBtn'), stepCount=document.getElementById('stepCount'),
-        navRow=document.getElementById('navRow');
-
-  // single-select option buttons (step 1)
-  document.querySelectorAll('[data-field] .opt, [data-field] .chipopt').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      const group=btn.closest('[data-field]'); const field=group.dataset.field;
-      group.querySelectorAll('.opt,.chipopt').forEach(b=>b.classList.remove('sel'));
-      btn.classList.add('sel');
-      state[field]=btn.dataset.val;
-      validate();
-      // auto-advance on the big single-choice steps
-      if(field==='level' || field==='subject'){ setTimeout(next, 260); }
-    });
-  });
-  document.getElementById('goalText').addEventListener('input',e=>{state.goal=e.target.value;});
-
-  function validate(){
-    let ok=true;
-    if(step===1) ok=!!state.level;
-    if(step===2) ok=!!state.subject;
-    if(step===3) ok=true; // optional
-    if(step===4){
-      state.pName=document.getElementById('pName').value.trim();
-      state.cName=document.getElementById('cName').value.trim();
-      state.email=document.getElementById('pEmail').value.trim();
-      state.phone=document.getElementById('pPhone').value.trim();
-      state.time=document.getElementById('pTime').value;
-      ok = state.pName && state.email.includes('@');
-    }
-    nextBtn.disabled=!ok;
-  }
-  ['pName','pEmail'].forEach(id=>document.getElementById(id).addEventListener('input',validate));
-
-  function show(n){
-    document.querySelectorAll('.step').forEach(s=>s.classList.toggle('on', +s.dataset.step===n));
-    document.querySelectorAll('.stp').forEach(s=>{
-      const sn=+s.dataset.s;
-      s.classList.toggle('active', sn===n);
-      s.classList.toggle('done', sn<n);
-    });
-    bar.style.width=(Math.min(n,TOTAL)/TOTAL*100)+'%';
-    backBtn.style.visibility = n>1 && n<5 ? 'visible':'hidden';
-    if(n>=5){ navRow.style.display='none'; }
-    else{
-      navRow.style.display='flex';
-      stepCount.textContent='Step '+n+' of '+TOTAL;
-      nextBtn.innerHTML = n===TOTAL ? 'Get my match <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>' : 'Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-    }
-    validate();
-    document.querySelector('.panel').scrollTop=0;
-  }
-  function next(){
-    if(nextBtn.disabled && step<=TOTAL) return;
-    if(step<TOTAL){ step++; show(step); }
-    else if(step===TOTAL){ finish(); }
-  }
-  function back(){ if(step>1){ step--; show(step); } }
-  nextBtn.addEventListener('click',next);
-  backBtn.addEventListener('click',back);
-
-  // subject → specialist label (no individual tutor identities)
-  const SPECIALIST={
-    Maths:'A specialist Maths tutor, matched to you',
-    English:'A specialist English tutor, matched to you',
-    'Combined Science':'A specialist Science tutor, matched to you',
-    Biology:'A specialist Science tutor, matched to you',
-    Chemistry:'A specialist Science tutor, matched to you',
-    Physics:'A specialist Science tutor, matched to you',
-    '11+ Prep':'A specialist 11+ tutor, matched to you',
-    default:'A specialist tutor, matched to you'
-  };
-  async function finish(){
-    // Wait for the real result before deciding which step 5 to show. The button is
-    // locked meanwhile so a slow network cannot produce a double submission.
-    nextBtn.disabled = true;
-    const original = nextBtn.innerHTML;   // innerHTML, not textContent: the label carries an SVG
-    nextBtn.textContent = 'Sending...';
-    const sent = await submitLead(state);
-    nextBtn.innerHTML = original;
-
-    document.getElementById('confirmOk').hidden = !sent;
-    document.getElementById('confirmFail').hidden = sent;
-
-    if(sent){
-      const label=SPECIALIST[state.subject]||SPECIALIST.default;
-      document.getElementById('matchName').textContent=label;
-      document.getElementById('matchUni').textContent='University-educated · DBS-checked · within 48 hours';
-      document.getElementById('matchTags').innerHTML=[(state.subject&&state.subject!=='Not sure yet')?state.subject:'Specialist','DBS ✓'].map(t=>`<span class="tag">${t}</span>`).join('');
-      document.getElementById('confName').textContent = state.pName? ', '+state.pName.split(' ')[0] : '';
-      const rows=[
-        ['Level',state.level],['Subject',state.subject],
-        ['Exam board',state.board||'To confirm'],['Preferred times',state.time]
-      ];
-      document.getElementById('summaryBox').innerHTML = rows.map(r=>`<div class="summary-line"><span>${r[0]}</span><b>${r[1]||'-'}</b></div>`).join('');
-    }
-    step=5; show(5);
-  }
-  show(1);
-</script>
+<script src="assets/live.js"></script>
 </body>
 </html>

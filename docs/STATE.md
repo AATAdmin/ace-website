@@ -1,7 +1,7 @@
 # Site state
 
 **Read this before proposing any change.** It is the authoritative record of what is
-in the repo right now. Do not infer current state from memory or from an earlier
+in the repo right now. Do not infer current state from memory or an earlier
 conversation. If this file and your recollection disagree, this file is right.
 
 Kept current by the implementing chat on every push to `main`.
@@ -14,89 +14,75 @@ Kept current by the implementing chat on every push to `main`.
 - **Read exact current source:**
   `https://raw.githubusercontent.com/AATAdmin/ace-website/main/<file>`
 
-## ⚠ The site is currently HOME PAGE ONLY
-
-Everything except `index.html` is hidden from the public while the site is rebuilt.
-
-- **`_redirects`** sends all 14 other pages to `/` with a 302. The URLs stay alive,
-  so nothing 404s and nothing loses its history.
-- Every hidden page carries `noindex, follow`.
-- `sitemap.xml` lists the home page only.
-- **`index.html`'s header and footer deliberately diverge from the other 14 pages.**
-  Its nav, footer link columns and legal links are stripped, and every booking CTA
-  points at `tel:+447454905330` rather than the hidden `contact.html`. The other
-  pages keep their full chrome, so restoring them brings the full nav back with them.
-
-**To bring a page back:** delete its line from `_redirects`, remove its `robots`
-meta, add it to `sitemap.xml`, and restore the matching links in `index.html`'s
-header and footer. To bring everything back at once, delete `_redirects` and restore
-`index.html` from `94a151d`.
-
 ## Pages
 
-All 15 pages have **static header and footer inlined** and render fully with
-JavaScript disabled. There are no `site-header-slot` / `site-footer-slot` divs left.
+**All 17 pages are live.** The home-page-only phase is over: `_redirects` has been
+deleted and every page is reachable again.
 
-| File | `data-page` | Active nav link |
-|---|---|---|
-| `index.html` | `home` | none |
-| `about.html` | `about` | About |
-| `services.html` | `services` | Services |
-| `pricing.html` | `pricing` | Pricing |
-| `for-schools.html` | `schools` | For Schools |
-| `become-a-tutor.html` | `tutor` | mobile menu only |
-| `contact.html` | `contact` | mobile menu only |
-| `portal.html` | `portal` | none |
-| `maths-tutoring.html` | `maths` | none |
-| `english-tutoring.html` | `english` | none |
-| `science-tutoring.html` | `science` | none |
-| `11-plus-tutoring.html` | `elevenplus` | none |
-| `privacy.html` | `privacy` | none, noindex |
-| `terms.html` | `terms` | none, noindex |
-| `safeguarding.html` | `safeguarding` | none, noindex |
+`index` `services` `pricing` `get-started` `about` `workshop` `portal` `for-schools`
+`become-a-tutor` `contact` `maths-tutoring` `english-tutoring` `science-tutoring`
+`11-plus-tutoring` `privacy` `terms` `safeguarding`
 
-`assets/`: `site.css`, `chrome.js`, `site.webmanifest`, `favicon.png`,
-`apple-touch-icon.png`, `logo-full.png`, `logo-icon.png`, `logo-reversed.png`,
-`portal-dashboard.jpeg`, `portal-calendar.jpeg`, `portal-sessions.jpeg`.
-Plus `robots.txt` and `sitemap.xml` at root. `image-slot.js` is deliberately gone.
+- `get-started.html` is the **only enquiry route**. `contact.html` has no form, by
+  design. `get-started` is `noindex` and out of the sitemap.
+- `privacy`, `terms`, `safeguarding` are **unreviewed template text**, `noindex`, and
+  out of the sitemap pending legal review.
+- `workshop.html` has **no site header**, deliberately: it is a campaign landing page.
+  It does carry the footer.
+- `sitemap.xml` carries 13 URLs.
 
 ## Conventions
 
-- **`chrome.js` no longer injects chrome.** It still owns the mobile menu, header
-  scroll shadow, reveal-on-scroll, counters and the `[data-year]` refresh. Its slot
-  injection is a dead no-op and its active-link pass is idempotent. Leave it loaded.
-- Header and footer markup is **duplicated verbatim across all 15 pages**. Change one,
-  change all fifteen, or it drifts.
-- Every page carries the `<noscript>` style line directly above `<header>`.
-- Every page has static `og:` and `twitter:card` tags in `<head>`. Keep them static so
-  link previews work without JS.
-- **No em-dashes in displayed text.** En-dashes in ranges ("Years 3–6") are correct.
-- Relative links only. No absolute `https://aceacademictutors.com/...` in `href`.
+- Chrome is **inlined**, not injected. Header, nav and footer are duplicated verbatim
+  across the pages that have them. Change one, change all.
+- Every page renders fully with **JavaScript disabled**. Verify before pushing.
+- `assets/chrome.js` owns the mobile menu, scroll shadow, reveals, counters,
+  `[data-year]`, and first-touch attribution capture. It no longer injects chrome.
+- `assets/live.js` hydrates portal-driven values. **Every such value is also baked
+  into the HTML**, so a page is correct with no JS and no portal. Never delete a baked
+  value and rely on the fetch.
+- Static `og:` and `twitter:card` tags in every `<head>`.
+- **No em-dashes in displayed text.** En-dashes in ranges are correct.
+- British English. Relative links only (except `rel="canonical"`, which is absolute).
+- `site.css` defines only `a{color:inherit}` — there is no base link colour, so an
+  anchor dropped into styled prose becomes invisible. Give the component its own
+  colour, or do the deliberate base-colour pass across every page.
+
+## The enquiry route
+
+`get-started.html` posts to `https://portal.aceacademictutors.com/api/enquiry`.
+**This endpoint exists and works** — verified end to end returning `201 {ok:true}`.
+
+- Payload is **flat snake_case**: `name`, `email`, `phone`, `child_name`,
+  `year_group`, `subject`, `message`, `campaign`, `company`, plus `utm_*`,
+  `landing_page`, `referrer`. A nested payload 400s as missing name and contact.
+- `company` is a **required honeypot** — must exist in the markup and stay empty.
+- Everything the form captures beyond the contact fields is written into `message`
+  (2000 char cap), because the portal stores one free-text field.
+- Only a 2xx counts as success. On failure the form shows phone and email.
+- Attribution is **first-touch**, captured by `chrome.js` into `sessionStorage`
+  (`ace:attr`) on the first page of a visit.
+- Serving the site on `http://127.0.0.1:5180` posts to **ACE Test Centre**, not the
+  live org. Use that origin for any form testing.
 
 ## Open items
 
-- **`POST /api/enquiry` does not exist** on the portal. `contact.html` posts to it and
-  correctly falls back to phone + email on any non-2xx or network failure. Until the
-  endpoint is built, every submission takes the fallback path, so enquiries arrive by
-  phone and email only. Needs CORS for both apex and www, plus rate limiting.
-- `privacy.html`, `terms.html`, `safeguarding.html` are **unreviewed template text**,
-  carrying `noindex, follow` and excluded from `sitemap.xml` pending legal review.
-- `sitemap.xml` `lastmod` values all read `2026-06-02` and are stale.
-- Testimonials: none with consent yet, so no testimonial section ships.
-
-## Handoff format
-
-**Design → implementer.** State the goal, the SHA you read, and then either:
-- a **complete file** (preferred for page redesigns; no string matching to go wrong), or
-- **exact old → new strings** for small edits.
-
-Say what must not change. Do not assert what is currently in the repo; read it.
-
-**Implementer → Design.** Report the commit SHA, screenshots of affected pages at
-desktop and mobile widths, anything implemented differently from the request and why,
-and any discrepancy found against the request's assumptions.
+- **`GET /api/site-content` does not exist yet.** It would make workshop dates,
+  enrolling classes and prices editable from the portal instead of in HTML.
+  Contracts: `docs/PORTAL_CONTENT_API.md`, `docs/PRICING_FROM_PORTAL.md`.
+- Package purchase / subscription links are switched off pending somewhere to send
+  people. Contract: `docs/PACKAGES_AND_SUBSCRIPTIONS.md`.
+- No email notification fires on a new enquiry; leads land in the portal only.
+- Legal review of the three legal pages. Once done, remove `noindex` and add them to
+  `sitemap.xml`. The privacy notice predates the `filledBy` / `guardian` / `over18`
+  fields and does not cover a student enrolling on their own behalf.
+- Four screenshot slots in `services.html` await real images. **Any portal screenshot
+  must be the family view with dummy data, never an admin screen.**
+- `for-schools.html` is thin.
+- `sitemap.xml` `lastmod` values are stale.
+- Each page carries an HTML comment note block recording its decisions. These ship in
+  public page source (~40KB). Whether to keep them there is an open question.
 
 ## Out of scope
 
-`D:\cc_projects\ace-website` is an unrelated, undeployed Next.js site. It is not this
-project and nothing from it ships here.
+`D:\cc_projects\ace-website` is an unrelated, undeployed Next.js site. Not this project.
