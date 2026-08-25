@@ -41,6 +41,14 @@ deleted and every page is reachable again.
 - `assets/live.js` hydrates portal-driven values. **Every such value is also baked
   into the HTML**, so a page is correct with no JS and no portal. Never delete a baked
   value and rely on the fetch.
+- **Asset URLs are content-versioned.** `site.css`, `chrome.js` and `live.js` are
+  referenced as `assets/<file>?v=<md5-8>`. Pages serves HTML with `max-age=0` but
+  assets with `max-age=14400`, so an unversioned filename lets a browser pair new
+  markup with four-hour-old CSS. That happened at launch: the old stylesheet had no
+  `.topbar` rules and the topbar SVGs, which carry no width or height, filled the
+  viewport. **Whenever one of those three files changes, regenerate its token in all
+  17 pages before pushing.** The generator is idempotent and strips any existing
+  `?v=` first.
 - Static `og:` and `twitter:card` tags in every `<head>`.
 - **No em-dashes in displayed text.** En-dashes in ranges are correct.
 - British English. Relative links only (except `rel="canonical"`, which is absolute).
