@@ -40,8 +40,8 @@
    inside prose, check it is not the same colour as the text around it. */
 .prose a,.corp .cn a,.corp .cv a,.sys p a,.band .bd a,.terms .tm p a,.sglist span a,.closeq p a,.fix p a{color:var(--teal-700);font-weight:600;}
 .prose a:hover,.corp .cn a:hover,.corp .cv a:hover,.sys p a:hover,.terms .tm p a:hover,.sglist span a:hover,.closeq p a:hover,.fix p a:hover{color:var(--teal-900);}
-.sysgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:20px;margin-top:34px;}
-.sysgrid.four{grid-template-columns:repeat(auto-fit,minmax(380px,1fr));}
+.sysgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(268px,100%),1fr));gap:20px;margin-top:34px;}
+.sysgrid.four{grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr));}
 .sys{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px 26px 28px;box-shadow:var(--sh-xs);}
 .sys .si{width:44px;height:44px;border-radius:13px;background:var(--teal-50);border:1px solid var(--teal-100);display:flex;align-items:center;justify-content:center;color:var(--teal-600);margin-bottom:16px;}
 .sys .si svg{width:22px;height:22px;}
