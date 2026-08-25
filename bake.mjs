@@ -26,7 +26,7 @@
  * good deployment serving. The alternative, writing empty FAQ sections over a
  * working site because an API call timed out, is the worse outcome by a distance.
  */
-import { readFileSync, writeFileSync, existsSync } from 'node:fs'
+import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs'
 
 const ENDPOINT = process.env.SITE_CONTENT_ENDPOINT
   || 'https://portal.aceacademictutors.com/api/public/site-content'
@@ -133,6 +133,88 @@ function faqSchema(rows) {
   return `<script type="application/ld+json">\n${json}\n</script>`
 }
 
+/**
+ * The Google rating strip: "Rated 5.0 from 11 reviews on Google", with the stars
+ * beside it. It sits on EVERY page, twice on some, which is exactly why it went
+ * stale -- the founder's eleventh review landed and seventeen files still said
+ * ten.
+ *
+ * This is the one thing the bake rewrites without comment markers, because the
+ * markup is its own marker: `<span class="gt">` appears nowhere else, and adding
+ * thirty comment pairs by hand across seventeen files would be more fragile than
+ * matching the class.
+ *
+ * The stars are matched as part of the PAIR (a `.gs` immediately followed by a
+ * `.gt`) rather than on their own, because `.gs` is also the star row inside each
+ * review card and those must keep their own per-review rating.
+ */
+// NOTE THE TEMPERED `(?:(?!</span>)[\s\S])*` RATHER THAN `.*?` WITH THE s FLAG.
+// The lazy version looked equivalent and was not: when a `.gs` did NOT have a
+// `.gt` after it -- which is every star row inside a review card -- the engine
+// backtracked, kept extending across the newlines, and matched all the way to
+// the NEXT rating strip further down the page. Replacing that match deleted
+// every review card in between. It took index.html from three reviews to none.
+// The tempered form cannot cross its own closing tag, so a `.gs` that is not
+// immediately followed by a `.gt` simply fails to match, which is correct.
+const RATING_STRIP =
+  /<span class="gs"[^>]*>(?:(?!<\/span>)[\s\S])*<\/span>(\s*)<span class="gt">(?:(?!<\/span>)[\s\S])*<\/span>/g
+
+// Structural fingerprint of a page. The rating strip rewrite touches every HTML
+// file in the repo, including ones with no markers at all, so it gets a guard
+// that the marker-bounded rewrites do not need: if a replacement changes the
+// number of review cards, quotes, questions or answers on a page, something
+// matched far more than it should have and the build stops.
+const fingerprint = (html) => ({
+  cards: (html.match(/class="rv-c"/g) || []).length,
+  quotes: (html.match(/<blockquote>/g) || []).length,
+  details: (html.match(/<details/g) || []).length,
+  answers: (html.match(/class="fq-a"/g) || []).length,
+})
+
+function ratingStrip(google, gap) {
+  // Round for the stars only. The number beside them stays exact, so a 4.8 shows
+  // five stars and says 4.8 rather than quietly rounding the claim itself.
+  const filled = Math.max(0, Math.min(5, Math.round(google.rating)))
+  const rating = Number(google.rating).toFixed(1)
+  const n = google.reviewCount
+  return `<span class="gs" aria-hidden="true">${STAR.repeat(filled)}</span>${gap}`
+    + `<span class="gt">Rated <b>${rating}</b> from <b>${n}</b> review${n === 1 ? '' : 's'} on Google</span>`
+}
+
+/** Write the rating strip into every page that carries one. */
+function bakeRatingStrips(google) {
+  let files = 0
+  let strips = 0
+  for (const file of readdirSync('.').filter((f) => f.endsWith('.html'))) {
+    const before = readFileSync(file, 'utf-8')
+    let found = 0
+    const after = before.replace(RATING_STRIP, (_m, gap) => {
+      found += 1
+      return ratingStrip(google, gap)
+    })
+    if (!found) continue
+    strips += found
+
+    // The guard. A rating strip is two spans; rewriting one must not change how
+    // many reviews or questions the page has. If it did, the pattern over-matched
+    // and the safe move is to fail the build with the previous deploy still live.
+    const a = fingerprint(before)
+    const b = fingerprint(after)
+    for (const k of Object.keys(a)) {
+      if (a[k] !== b[k]) {
+        fail(`${file}: rewriting the rating strip changed ${k} from ${a[k]} to ${b[k]}. `
+          + 'The pattern matched more than the strip. Nothing has been published.')
+      }
+    }
+
+    if (after !== before) {
+      writeFileSync(file, after, 'utf-8')
+      files += 1
+    }
+  }
+  return { files, strips }
+}
+
 function reviewsHtml(rows) {
   const cards = rows.map((r) => [
     '      <div class="rv-c">',
@@ -223,6 +305,19 @@ async function main() {
       written += 1
       console.log(`  ${file.padEnd(24)} ${reviews.length} review${reviews.length === 1 ? '' : 's'}`)
     }
+  }
+
+  // ── the Google rating strip, on every page ────────────────────────────────
+  if (payload.google && Number.isFinite(payload.google.rating) && payload.google.reviewCount != null) {
+    const { files, strips } = bakeRatingStrips(payload.google)
+    written += files
+    console.log(`  rating strip             ${payload.google.rating.toFixed(1)} from `
+      + `${payload.google.reviewCount} reviews, ${strips} strip${strips === 1 ? '' : 's'}`
+      + (files ? ` (${files} file${files === 1 ? '' : 's'} written)` : ' (unchanged)'))
+    if (strips === 0) warnings.push('no rating strip found on any page, so the Google rating was not written')
+  } else {
+    // Silence beats a wrong number: leave whatever the pages already say.
+    warnings.push('no Google rating set in the portal, so the rating strip was left alone')
   }
 
   if (warnings.length) {
