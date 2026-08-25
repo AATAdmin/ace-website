@@ -305,3 +305,21 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .areas li{font-family:var(--sans);font-size:13px;font-weight:500;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:var(--r-pill);padding:6px 13px;}
 .areas .an{margin:16px 0 0;font-size:13.5px;color:var(--body);line-height:1.6;}
 @media(max-width:900px){.loc2{grid-template-columns:1fr;gap:26px;}}
+
+/* ============================================================
+   REVIEW QUOTES, added 25 Aug 2026. Home page only.
+   Verbatim Google reviews, named and linked to the listing. This EXTENDS the
+   social-proof rule: the badge plus verbatim, attributed, linked Google review
+   quotes are permitted; invented or unverifiable testimonials remain banned.
+   NO schema markup for these: Google prohibits marking up reviews sourced from
+   third-party platforms, its own included. Display only.
+   ============================================================ */
+.rvs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:30px;}
+.rv-c{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:24px 26px;box-shadow:var(--sh-sm);display:flex;flex-direction:column;}
+.rv-c .gs{display:inline-flex;gap:2px;color:#e8a33d;margin-bottom:12px;}
+.rv-c .gs svg{width:14px;height:14px;}
+.rv-c blockquote{margin:0 0 16px;font-size:15px;line-height:1.65;color:var(--body);}
+.rv-c cite{margin-top:auto;font-style:normal;font-family:var(--sans);font-size:13.5px;font-weight:600;color:var(--ink-2);}
+.rv-c cite a{color:var(--muted);font-weight:500;}
+.rv-c cite a:hover{color:var(--teal-700);}
+@media(max-width:900px){.rvs{grid-template-columns:1fr;}}
