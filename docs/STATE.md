@@ -88,8 +88,8 @@ deleted and every page is reachable again.
 
 ## Open items
 
-- **`GET /api/site-content` does not exist yet.** It would make workshop dates,
-  enrolling classes and prices editable from the portal instead of in HTML.
+- **Prices** are still baked into HTML. Making them portal-editable is the next
+  candidate to move, using the same machinery as the FAQs below.
   Contracts: `docs/PORTAL_CONTENT_API.md`, `docs/PRICING_FROM_PORTAL.md`.
 - Package purchase / subscription links are switched off pending somewhere to send
   people. Contract: `docs/PACKAGES_AND_SUBSCRIPTIONS.md`.
@@ -107,3 +107,34 @@ deleted and every page is reachable again.
 ## Out of scope
 
 `D:\cc_projects\ace-website` is an unrelated, undeployed Next.js site. Not this project.
+
+## FAQs and reviews come from the portal (2026-08-25)
+
+The FAQ copy on `pricing`, `maths-tutoring`, `english-tutoring`, `science-tutoring`
+and `11-plus-tutoring`, and the review quotes on `index`, are no longer edited in
+these files. They live in the portal and are written in at BUILD time by
+`bake.mjs`, which Cloudflare Pages now runs as its build command.
+
+**If you are proposing a change to an FAQ answer or a review quote, say so in the
+proposal rather than editing the HTML** -- a bake overwrites it on the next deploy.
+
+`bake.mjs` may only touch the regions between these markers. Everything else in
+each file is left byte for byte alone, so the rest of the page is yours as before:
+
+    <!--ace:faq-->        ... <!--/ace:faq-->          the visible FAQ list
+    <!--ace:faq-schema--> ... <!--/ace:faq-schema-->   the FAQPage JSON-LD
+    <!--ace:reviews-->    ... <!--/ace:reviews-->      the review cards
+
+**Do not delete or move those markers.** The bake fails the build if a page has a
+visible FAQ region without a matching schema region, on purpose: visible copy whose
+structured data has drifted is worse for search than no structured data at all.
+
+Two conventions in the stored text, both handled by the bake:
+a blank line starts a new paragraph, and `[label](/path)` becomes a link
+(collapsed to just the label inside the JSON-LD, which must stay plain prose).
+
+The design of the markup is unchanged and still lives here: the bake reproduces
+the existing `<details>` / `<summary>` / `.fq-a` and `.rv-c` structure exactly. It
+was verified against the hand-written pages before it was switched on, 29 of 29
+entries byte-identical. If the design of an FAQ block should change, change it
+here and in `bake.mjs` together.
