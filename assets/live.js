@@ -9,7 +9,12 @@
    Contract: docs/PORTAL_CONTENT_API.md
    ============================================================ */
 (function(){
-  var ENDPOINT='https://portal.aceacademictutors.com/api/site-content';
+  /* /api/site-content was never built. The portal serves this at
+     /api/public/site-content, and the old path fell through the portal's
+     SPA catch-all, which answered 200 with an HTML page -- so this fetch
+     parsed a web page as JSON and failed silently on every page load since
+     the site went live. */
+  var ENDPOINT='https://portal.aceacademictutors.com/api/public/site-content';
   var CACHE_KEY='ace-site-content';
   var CACHE_MS=10*60*1000;
   var TIMEOUT_MS=4000;
@@ -78,10 +83,15 @@
   function render(data){
     var w=nextWorkshop(data);
 
-    /* scoped blocks: hidden when there is nothing to show */
-    document.querySelectorAll('[data-ace-scope="workshop"]').forEach(function(el){
-      el.hidden=!w;
-    });
+    /* Scoped blocks: hidden when there is nothing to show. Only when the portal
+       actually ANSWERED about workshops -- an absent key means it has nothing to
+       say, and the baked HTML must stand. Without this guard, connecting a portal
+       that holds no events would silently delete a live advert. */
+    if(data&&data.workshops){
+      document.querySelectorAll('[data-ace-scope="workshop"]').forEach(function(el){
+        el.hidden=!w;
+      });
+    }
     document.querySelectorAll('[data-ace-empty="workshop"]').forEach(function(el){
       el.hidden=!!w;
     });
