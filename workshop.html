@@ -350,10 +350,29 @@
     e.preventDefault();
     if(!rForm.reportValidity()) return;
     rBtn.disabled=true; rBtn.textContent='Reserving…';
-    const data=Object.fromEntries(new FormData(rForm).entries());
+    const d=Object.fromEntries(new FormData(rForm).entries());
+    /* The endpoint reads a FLAT, snake_case contract: name / email / phone /
+       year_group / subject / campaign, plus an empty `company` honeypot. This
+       form used to post its raw field names (parentName, yearGroup), none of
+       which the endpoint reads, so every registration failed validation and the
+       page showed "we could not save your details". Map it properly. */
+    const extras=[];
+    if(d.smsReminder) extras.push('Wants an SMS reminder the day before.');
+    if(d.sendRecording) extras.push('Wants the recording if they cannot attend.');
+    const payload={
+      name: d.parentName||'',
+      email: d.email||'',
+      phone: d.phone||'',
+      year_group: d.yearGroup||'',
+      subject: 'Maths',
+      campaign: WORKSHOP_ID,
+      event_slug: 'gcse-maths-head-start',
+      message: extras.join(String.fromCharCode(10)),
+      company: ''   /* honeypot: present and empty, as the endpoint requires */
+    };
     let ok=false;
     try{
-      const res=await fetch(PORTAL_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},mode:'cors',body:JSON.stringify(Object.assign({source:WORKSHOP_ID},data))});
+      const res=await fetch(PORTAL_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},mode:'cors',body:JSON.stringify(payload)});
       ok=res.ok;
     }catch(err){ ok=false; }
     if(ok){
