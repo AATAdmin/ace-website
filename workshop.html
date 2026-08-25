@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=13c0d181">
+<link rel="stylesheet" href="assets/site.css?v=7fc62266">
 <style>
 .ad{background:var(--paper-2);position:relative;overflow:hidden;display:flex;flex-direction:column;}
 .ad::before{content:"";position:absolute;inset:0;background:radial-gradient(110% 80% at 6% 0%,rgba(96,160,160,.20),transparent 60%),radial-gradient(80% 70% at 100% 100%,rgba(96,160,160,.10),transparent 58%);pointer-events:none;}
@@ -136,12 +136,19 @@
   .ag{grid-template-columns:32px 1fr;gap:14px;}
   .sticky .sd{font-size:12px;}
 }
+
+/* iOS Safari zooms the page when a focused field is under 16px, so every tap on a
+   form field forced the user to pinch back out. Phones only. */
+@media(max-width:599px){
+  .field input,.field select,.field textarea{font-size:16px;}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationEvent","name":"The GCSE Maths Head Start","description":"A free 90-minute online GCSE Maths workshop for Year 10 and Year 11 students and their parents, with a free trial lesson included.","startDate":"2026-09-05T10:00:00+01:00","endDate":"2026-09-05T11:30:00+01:00","eventAttendanceMode":"https://schema.org/OnlineEventAttendanceMode","eventStatus":"https://schema.org/EventScheduled","maximumAttendeeCapacity":30,"isAccessibleForFree":true,"inLanguage":"en-GB","location":{"@type":"VirtualLocation","url":"https://aceacademictutors.com/workshop.html"},"offers":{"@type":"Offer","price":"0","priceCurrency":"GBP","availability":"https://schema.org/InStock","url":"https://aceacademictutors.com/workshop.html"},"organizer":{"@type":"Organization","name":"Ace Academic Tutors","url":"https://aceacademictutors.com/"}}</script>
 </head>
 <body data-page="workshop" data-ace-workshop-id="gcse-maths-head-start-2026-09-05">
 
-<noscript><style>.cd{display:none}</style></noscript>
+<noscript><style>.cd{display:none}
+</style></noscript>
 
 <div class="topbar">
 <div class="wrap topbar-in">

@@ -227,6 +227,17 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   .footer-grid{grid-template-columns:1fr 1fr;gap:30px;}
 }
 
+/* Phones. At 375px the header content area is 331px but brand(227) + CTA(168) +
+   toggle(44) needs 457, so the toggle was pushed off-screen and the menu could not
+   be opened at all. The wordmark yields first: the icon still carries identity, and
+   the CTA is the conversion path. Wordmark returns at 600px. */
+@media(max-width:599px){
+  .brand-word{display:none;}
+  .nav-right{gap:10px;}
+  .nav-right .btn{padding:12px 15px;font-size:14px;}
+  .footer-grid{grid-template-columns:1fr;gap:26px;}
+}
+
 /* Log in menu, built by chrome.js. Without JS the plain link remains. */
 .loginwrap{position:relative;display:flex;align-items:center;}
 .loginwrap .login{cursor:pointer;}
