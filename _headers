@@ -1,0 +1,24 @@
+# Cloudflare Pages response headers.
+#
+# Only two headers were set before this file existed, both Cloudflare defaults.
+#
+# CSP notes. The site has inline <style> on all 17 pages and inline <script> on 5, so
+# 'unsafe-inline' is unavoidable for those two directives without a rewrite. The value
+# is in the rest: connect-src and form-action mean injected code cannot post data
+# anywhere except the portal, frame-ancestors blocks clickjacking of the enquiry form,
+# and object-src plus base-uri close two common injection routes.
+#
+# The only external resources are Google Fonts. w3.org and schema.org appear as XML
+# namespaces, not requests. Cloudflare's email-obfuscation script is served from
+# /cdn-cgi/ on this origin, so 'self' covers it.
+#
+# HSTS deliberately omits includeSubDomains: portal, internal and livekit are separate
+# services on this domain and have not been audited for it.
+
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://portal.aceacademictutors.com; form-action 'self' https://portal.aceacademictutors.com; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
+  Strict-Transport-Security: max-age=31536000
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
