@@ -148,3 +148,11 @@ ONE booking button. The trial is a checkbox on it, not a rival
                  get-started.html carrying the choice; flip the flag and it
                  goes to the portal's /register. Spec: docs/PACKAGES_AND_SUBSCRIPTIONS.md
 ```
+
+## Added 25 Aug 2026: FAQ section
+
+An FAQ section (native details/summary, no JS needed) sits before the closing CTA
+band. The answers deliberately restate NO prices; "what does it cost" links to
+pricing.html instead, so each figure keeps exactly one home. FAQPage JSON-LD in the
+head is GENERATED from the visible copy and must continue to match it exactly: if
+the copy changes, regenerate the markup.

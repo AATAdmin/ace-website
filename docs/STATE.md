@@ -55,6 +55,10 @@ deleted and every page is reachable again.
   purpose: **read `docs/notes/<page>.md` before editing that page.** Short functional
   comments (a line explaining the honeypot, or where a link goes) stay inline.
 - Static `og:` and `twitter:card` tags in every `<head>`.
+- **The Google rating is the single permitted piece of social proof.** It lives only
+  inside `[data-google-rating]`, linked to the Google listing, showing Google's own
+  live figure. No other testimonial, quote, star display or review count, anywhere.
+  Refresh the figure (currently 5.0 from 10) as part of the monthly pass.
 - **No em-dashes in displayed text.** En-dashes in ranges are correct.
 - British English. Relative links only (except `rel="canonical"`, which is absolute).
 - `site.css` defines only `a{color:inherit}` — there is no base link colour, so an

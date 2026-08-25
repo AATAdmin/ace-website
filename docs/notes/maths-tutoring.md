@@ -39,3 +39,11 @@ out and why, what must not change, and which instructions conflicted.
   consultation, "matched within 48 hours", or the gold accent.
   ============================================================
 ```
+
+## Added 25 Aug 2026: FAQ section
+
+An FAQ section (native details/summary, no JS needed) sits before the closing CTA
+band. The answers deliberately restate NO prices; "what does it cost" links to
+pricing.html instead, so each figure keeps exactly one home. FAQPage JSON-LD in the
+head is GENERATED from the visible copy and must continue to match it exactly: if
+the copy changes, regenerate the markup.

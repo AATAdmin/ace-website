@@ -112,3 +112,9 @@ out and why, what must not change, and which instructions conflicted.
         record here.
      ============================================================
 ```
+
+## Added 25 Aug 2026: local section
+
+"Based in Rainham, teaching across the UK online." The line "All lessons are taught
+online. We do not teach in person." is LOAD-BEARING: without it the list of nearby
+towns reads like a travel radius. Keep it unless the founder confirms in-person.

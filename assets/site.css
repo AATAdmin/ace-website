@@ -251,3 +251,57 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 /* Must sit after .loginwrap's own display, or the unconditional rule wins:
    chrome.js wraps the anchor, so .nav-right>a:not(.btn) no longer matches it. */
 @media(max-width:940px){.loginwrap{display:none;}}
+
+/* ============================================================
+   FAQ, added 25 Aug 2026. Used on pricing and the four subject pages.
+   Native <details>, so it opens and closes with NO JavaScript and needs no
+   script on any page. Do not replace this with a JS accordion.
+   ============================================================ */
+.faq{margin-top:34px;border-top:1px solid var(--line);}
+.faq details{border-bottom:1px solid var(--line);}
+.faq summary{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;list-style:none;cursor:pointer;padding:20px 2px;font-family:var(--serif);font-size:18.5px;font-weight:600;color:var(--ink);letter-spacing:-.01em;line-height:1.4;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary:hover{color:var(--teal-700);}
+.faq summary:focus-visible{outline:2px solid var(--teal-500);outline-offset:3px;border-radius:4px;}
+.faq .fq-i{flex:0 0 auto;width:26px;height:26px;margin-top:2px;border-radius:50%;border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;color:var(--teal-700);transition:transform .18s,background .18s,color .18s,border-color .18s;}
+.faq .fq-i svg{width:13px;height:13px;}
+.faq details[open] .fq-i{background:var(--teal-700);border-color:transparent;color:#fff;transform:rotate(45deg);}
+.faq .fq-a{padding:0 2px 22px;}
+.faq .fq-a p{font-size:15.5px;line-height:1.7;color:var(--body);margin:0 0 12px;max-width:68ch;}
+.faq .fq-a p:last-child{margin-bottom:0;}
+.faq .fq-a a{color:var(--teal-700);font-weight:600;}
+.faq .fq-a a:hover{color:var(--teal-900);}
+
+/* ============================================================
+   GOOGLE RATING, added 25 Aug 2026.
+   Evidenced and verifiable, so it is the ONE exception to the no-social-proof
+   rule. The figures live only inside [data-google-rating], so they can be
+   refreshed in one pass. Never state a rating anywhere else on the site, and
+   never add a testimonial, quote or star display that is not this component.
+   ============================================================ */
+.grate{display:inline-flex;align-items:center;gap:11px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-pill);padding:8px 16px 8px 13px;box-shadow:var(--sh-xs);font-family:var(--sans);text-decoration:none;}
+.grate:hover{border-color:var(--teal-300);}
+.grate .gg{flex:0 0 auto;width:19px;height:19px;}
+.grate .gs{display:inline-flex;gap:2px;color:#e8a33d;}
+.grate .gs svg{width:14px;height:14px;}
+.grate .gt{font-size:13.5px;font-weight:600;color:var(--ink-2);white-space:nowrap;}
+.grate .gt b{font-weight:700;color:var(--ink);}
+.grate.on-dark{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);box-shadow:none;}
+.grate.on-dark .gt{color:rgba(255,255,255,.88);}
+.grate.on-dark .gt b{color:#fff;}
+.grate.on-dark:hover{border-color:rgba(255,255,255,.4);}
+@media(max-width:420px){.grate .gt{white-space:normal;}}
+
+/* ============================================================
+   LOCAL, added 25 Aug 2026. about.html only.
+   "Based in Rainham, teaching across the UK online." It must NOT imply
+   in-person tutoring: .areas carries an explicit line saying all lessons are
+   online. Keep that line.
+   ============================================================ */
+.loc2{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:start;}
+.areas{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px 28px;}
+.areas h3{font-size:17px;margin:0 0 14px;letter-spacing:-.01em;}
+.areas ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px;}
+.areas li{font-family:var(--sans);font-size:13px;font-weight:500;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:var(--r-pill);padding:6px 13px;}
+.areas .an{margin:16px 0 0;font-size:13.5px;color:var(--body);line-height:1.6;}
+@media(max-width:900px){.loc2{grid-template-columns:1fr;gap:26px;}}
