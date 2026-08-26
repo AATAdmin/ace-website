@@ -379,7 +379,7 @@
 </footer>
 
 <script src="assets/chrome.js?v=3a15b076"></script>
-<script src="assets/live.js?v=c1ffe4a8"></script>
+<script src="assets/live.js?v=da5fb74a"></script>
 <script>
 /* ---- Get started. Three steps, then POST to the portal, which files it on the
    leads screen. Confirms only on a 2xx; otherwise shows phone, WhatsApp and
@@ -696,11 +696,23 @@
   const BAKED_GROUPS=[{level:'GCSE',subject:'Maths',year:'Years 10 and 11',priceHourly:10}];
   function openGroups(){
     const live=(window.ACE_DATA&&window.ACE_DATA.classes)||null;
-    if(!live) return BAKED_GROUPS;
-    const stageToLevel={'11plus':'11+','gcse':'GCSE','alevel':'A-Level'};
-    return live.filter(c=>c.mode==='group'&&(c.status==='enrolling'||c.status==='full'))
-               .map(c=>({level:stageToLevel[c.stage]||c.stage,subject:c.subject,year:c.year,
-                         priceHourly:c.priceHourly,priceMonthly:c.priceMonthly}));
+    if(!live||!live.length) return BAKED_GROUPS;
+    /* The portal sends `level` ("GCSE"). An older draft of the contract sent a
+       `stage` slug ("gcse"), and this read only that -- so every live class
+       mapped to level:undefined, matched nothing, and the group option simply
+       never appeared. It went unnoticed for as long as the portal sent no
+       classes at all, because the baked fallback below was doing the work.
+       Read level first, accept a stage slug if one ever arrives. */
+    const stageToLevel={'11plus':'11+','pregcse':'Pre-GCSE','gcse':'GCSE','alevel':'A-Level'};
+    const mapped=live.filter(c=>c.mode==='group'&&(c.status==='enrolling'||c.status==='full'))
+               .map(c=>({level:c.level||stageToLevel[c.stage]||c.stage,subject:c.subject,year:c.year,
+                         priceHourly:c.priceHourly,priceMonthly:c.priceMonthly}))
+               .filter(g=>g.level&&g.subject);
+    /* A payload we cannot read must not silently remove a class the site was
+       already advertising. Falling back is the safe direction: the worst case
+       is offering a class that has closed, which a human answers; the worst
+       case the other way is a booking that never happens. */
+    return mapped.length?mapped:BAKED_GROUPS;
   }
   /* Hourly is the headline where the portal gives one, monthly otherwise. */
   const groupPrice=g=>g&&g.priceHourly?('£'+g.priceHourly+' an hour')

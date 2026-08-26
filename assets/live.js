@@ -168,8 +168,41 @@
      in inline scripts that run AFTER this file. So set window.ACE_DATA at once,
      then defer the DOM work until those hooks exist, or a cache hit would apply
      before anything is listening. */
+  /* ----------------------------------------------------------------
+     ONE SHAPE FOR A CLASS.
+
+     Three pages match a live class against the stage a visitor picked, and
+     each learned a different key for it: index.html matches c.stage against
+     a slug ("gcse"), get-started.html matches c.level against a label
+     ("GCSE"), pricing.html tries c.stage and falls back to c.level. The
+     portal sends only `level`.
+
+     So the moment the portal started sending classes at all, two of those
+     three matched nothing -- and the failure was invisible, because each page
+     had a baked fallback that had been quietly doing the work while the key
+     was absent. The group option simply stopped being offered.
+
+     Rather than teach three pages a fourth convention, every class gets BOTH
+     keys here, once, before anything reads them.
+     ---------------------------------------------------------------- */
+  var LEVEL_TO_STAGE={'11+':'11plus','Pre-GCSE':'pregcse','GCSE':'gcse','A-Level':'alevel'};
+  var STAGE_TO_LEVEL={'11plus':'11+','pregcse':'Pre-GCSE','gcse':'GCSE','alevel':'A-Level'};
+  function normaliseClasses(data){
+    if(!data||!data.classes||!data.classes.length) return data;
+    data.classes=data.classes.map(function(c){
+      var level=c.level||STAGE_TO_LEVEL[c.stage]||null;
+      var stage=c.stage||LEVEL_TO_STAGE[level]||null;
+      var out={}; for(var k in c) out[k]=c[k];
+      out.level=level; out.stage=stage;
+      return out;
+    /* A class nothing can match is worse than no class: it hides the option
+       AND suppresses the baked fallback that would have shown it. */
+    }).filter(function(c){ return c.level&&c.stage; });
+    return data;
+  }
+
   function apply(data){
-    window.ACE_DATA=data||null;
+    window.ACE_DATA=normaliseClasses(data)||null;
     if(document.readyState==='loading'){
       document.addEventListener('DOMContentLoaded',function(){ render(data); });
     } else {
