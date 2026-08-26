@@ -890,7 +890,17 @@
       const res=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},mode:'cors',body:JSON.stringify(payload)});
       ok=res.ok;
     }catch(err){ ok=false; }
-    done(ok,payload);
+    /* The SCREEN gets its own shape, not the wire payload. `payload` is flat
+       snake_case because that is what POST /api/enquiry reads; the confirmation
+       needs nested, human fields. Passing the wire shape here is what broke it:
+       `p.student.fullName` threw on undefined, so a parent whose enquiry had
+       SAVED PERFECTLY sat looking at "Sending..." forever and assumed it failed. */
+    done(ok,{
+      filledBy: isStudent?'student':'parent',
+      student:  { fullName: d.studentName||'' },
+      startWith: d.startWith==='Straight into lessons'?'lessons':'trial',
+      guardian: !!(d.guardianName||d.guardianPhone||d.guardianEmail)
+    });
   });
 
   function done(ok,p){
