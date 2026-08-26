@@ -391,7 +391,7 @@
             <div class="adet" id="adetOne" hidden>
               <span class="al">How often each week?</span>
               <div class="seg" id="seg" role="group" aria-label="Sessions per week"><button type="button" data-i="0" aria-pressed="true">1</button><button type="button" data-i="1" aria-pressed="false">2</button><button type="button" data-i="2" aria-pressed="false">3</button><button type="button" data-i="3" aria-pressed="false">4</button><button type="button" data-i="4" aria-pressed="false">5</button></div>
-              <label class="upf"><input type="checkbox" id="upfront"> Pay the month upfront and take a further 5% off</label>
+              <label class="upf"><input type="checkbox" id="upfront"> Pay the month upfront and take a further <span data-ace="price.monthlyDiscount">5%</span> off</label>
               <div class="atot">
                 <div class="crow"><span id="cLabel">Billed monthly</span><b id="cMonthly">£140</b></div>
                 <div class="crow"><span>That is per week</span><b id="cWeekly">£35</b></div>
@@ -438,7 +438,7 @@
     <!--ace:faq--><div class="faq">
 <details open>
 <summary>Why does the hourly rate change with the number of sessions?<span class="fq-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span></summary>
-<div class="fq-a"><p>The more sessions a week, the lower the rate per hour, and five sessions a week is the lowest we go. Paying monthly upfront takes a further 5% off whichever rate you land on. Set the options above and the figure updates.</p></div>
+<div class="fq-a"><p>The more sessions a week, the lower the rate per hour, and five sessions a week is the lowest we go. Paying monthly upfront takes a further <span data-ace="price.monthlyDiscount">5%</span> off whichever rate you land on. Set the options above and the figure updates.</p></div>
 </details>
 <details>
 <summary>Do we pay for the trial lesson?<span class="fq-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span></summary>
@@ -526,43 +526,40 @@
      PRICING, DRIVEN BY THE CHOOSER
      Anchor rate per stage. 11+ and GCSE start at £35 an hour; A-Level
      starts at £45. The discount mechanics are identical either way:
-     5% off per extra session a week up to 20% at five, and a further
-     5% for paying the month upfront. Change an anchor here and the
-     tier cards, the calculator and the copy all follow.
+     The ladder and the upfront discount now come from the portal too
+     (pricing.oneToOne.tiers and .monthlyUpfrontDiscount), with the arrays
+     below as the no-JavaScript fallback. Change a rate or a discount in
+     the portal and the tier cards, the calculator and the copy all follow.
      ------------------------------------------------------------------ */
-  /* BAKED_ANCHOR is the no-JavaScript fallback only. Once live.js has the
-     portal data, ACE_DATA.pricing.oneToOne.byLevel wins, so a rate changed in
-     the portal moves the answer column, the tier cards, the calculator and
-     every line of copy on this page together. Contract:
-     docs/PRICING_FROM_PORTAL.md. Never write a rate as a literal string. */
-  /* Pre-GCSE is Years 7 and 8: the same rate as 11+ and GCSE, taught to a
-     different age group, which is why it is a stage of its own rather than
-     a note under GCSE. */
-  const BAKED_ANCHOR={'11+':35,'Pre-GCSE':35,'GCSE':35,'A-Level':45};
-  function anchors(){
-    const o=window.ACE_DATA&&window.ACE_DATA.pricing&&window.ACE_DATA.pricing.oneToOne;
-    const live=o&&o.byLevel;
-    if(!live) return BAKED_ANCHOR;
-    const out=Object.assign({},BAKED_ANCHOR);
-    Object.keys(BAKED_ANCHOR).forEach(k=>{ if(typeof live[k]==='number'&&live[k]>0) out[k]=live[k]; });
-    return out;
-  }
-  const rateFor=s=>anchors()[s]||BAKED_ANCHOR.GCSE;
-  const lowestRate=()=>{const A=anchors();return Math.min.apply(null,Object.keys(A).map(k=>A[k]));};
-  const TIERS=[
-    {n:'Starter',f:'1 session a week',off:0},
-    {n:'Growth',f:'2 sessions a week',off:.05},
-    {n:'Essential',f:'3 sessions a week',off:.10,pop:true},
-    {n:'Accelerated',f:'4 sessions a week',off:.15},
-    {n:'Ultimate',f:'5 sessions a week',off:.20}
+  /* THE PRICE MODEL LIVES IN live.js (window.ACE_PRICE), loaded immediately
+     above this script. It owns the rates, the ladder and the upfront discount
+     for every page on the site, so pricing.html and get-started.html can no
+     longer answer the same family's price differently. Its BAKED_ values are
+     the portal-unreachable fallback; the true no-JavaScript fallback is the
+     text in the markup. Contract: docs/PRICING_FROM_PORTAL.md. */
+  const P=window.ACE_PRICE;
+  const rateFor=s=>P.rateFor(s);
+  /* The names and the "most popular" flag stay here on purpose: those are
+     editorial, not commercial, and the portal has no field for them. Only the
+     DISCOUNT comes down the wire. */
+  const TIER_NAMES=[
+    {n:'Starter',f:'1 session a week'},
+    {n:'Growth',f:'2 sessions a week'},
+    {n:'Essential',f:'3 sessions a week',pop:true},
+    {n:'Accelerated',f:'4 sessions a week'},
+    {n:'Ultimate',f:'5 sessions a week'}
   ];
+  const tiers=()=>{const L=P.ladder();return TIER_NAMES.map((t,i)=>({...t,off:L[i]}));};
+  const upfrontOff=()=>P.upfront();
+  const pctText=r=>P.pct(r);
   const money=n=>n.toFixed(2).replace(/\.00$/,'');
   const hrs=i=>(i+1)*4;
   let stage='GCSE', idx=2, stagePicked=false;
-  const plans=()=>TIERS.map(t=>({...t,d:t.off?Math.round(t.off*100)+'% off':'',hr:rateFor(stage)*(1-t.off)}));
+  const plans=()=>tiers().map(t=>({...t,d:t.off?pctText(t.off)+' off':'',hr:rateFor(stage)*(1-t.off)}));
 
   function paintCalc(){
-    const p=plans()[idx], hr=upfront.checked?p.hr*0.95:p.hr,
+    const uo=upfrontOff();
+    const p=plans()[idx], hr=upfront.checked?p.hr*(1-uo):p.hr,
           total=hr*hrs(idx), weekly=total/4;
     if(type==='one'&&stagePicked){
       /* the headline tracks the frequency they picked, so the two can never
@@ -570,7 +567,7 @@
       ansK.textContent='One-to-one, '+stage;
       ansAmt.textContent='£'+money(hr);
       ansUnit.textContent='an hour';
-      ansSub.textContent=p.f+(p.d?(', '+p.d+(upfront.checked?' and 5% for paying upfront':'')):'')+'.';
+      ansSub.textContent=p.f+(p.d?(', '+p.d+(upfront.checked?(' and '+pctText(uo)+' for paying upfront'):'')):'')+'.';
     }
     /* Totals only. The frequency and discount are stated in the headline
        above, so restating them here would be a second home for the same fact. */
@@ -793,7 +790,9 @@
   /* Step 2 cannot be answered before step 1, by mouse or by keyboard. */
   sopts.forEach(b=>b.addEventListener('click',()=>{if(!type)return;pickStage(b.dataset.stage);}));
   /* a price changed in the portal reaches a page already open */
-  document.addEventListener('ace:data',()=>{paintChips();if(type&&stagePicked)paintAnswer();});
+  /* A live ladder moves the tier cards and the calculator as well as the
+     chips, so repaint everything the portal can now reach. */
+  document.addEventListener('ace:data',()=>{paintChips();paintCalc();if(type&&stagePicked)paintAnswer();});
 
   paintChips();
   /* disable the stage buttons on load: until a lesson type is chosen they are

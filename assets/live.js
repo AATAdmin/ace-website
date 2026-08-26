@@ -14,6 +14,103 @@
      SPA catch-all, which answered 200 with an HTML page -- so this fetch
      parsed a web page as JSON and failed silently on every page load since
      the site went live. */
+  /* ----------------------------------------------------------------
+     THE PRICE MODEL, in one place.
+
+     pricing.html and get-started.html both quote one-to-one rates, and
+     both used to work them out themselves: one from a table of tiers,
+     the other from the formula "5% per extra session". Two
+     implementations of one commercial policy, so a non-linear ladder set
+     in the portal would have made the two pages disagree about the same
+     family's price.
+
+     They now both read this. The BAKED_ values are the portal-unreachable
+     fallback and must stay equal to what the static HTML says; the true
+     no-JavaScript fallback is the text in the markup, which this only
+     ever overwrites once real values have landed.
+     ---------------------------------------------------------------- */
+  var BAKED_ANCHOR={'11+':35,'Pre-GCSE':35,'GCSE':35,'A-Level':45};
+  /* Index is sessions-a-week minus one. One a week is the full rate by
+     definition, which is why it is a 0 here and not a portal setting. */
+  var BAKED_LADDER=[0,.05,.10,.15,.20];
+  var BAKED_UPFRONT=.05;
+
+  var oneToOne=function(){
+    var d=window.ACE_DATA;
+    return (d&&d.pricing&&d.pricing.oneToOne)||null;
+  };
+  var isRate=function(n){ return typeof n==='number'&&n>=0&&n<1; };
+
+  window.ACE_PRICE={
+    BAKED_ANCHOR:BAKED_ANCHOR,
+    BAKED_LADDER:BAKED_LADDER,
+    BAKED_UPFRONT:BAKED_UPFRONT,
+
+    /* The full hourly rate per level, at one session a week. */
+    anchors:function(){
+      var o=oneToOne(), live=o&&o.byLevel, out={};
+      for(var k in BAKED_ANCHOR) out[k]=BAKED_ANCHOR[k];
+      if(live) for(var j in out) if(typeof live[j]==='number'&&live[j]>0) out[j]=live[j];
+      return out;
+    },
+    rateFor:function(level){
+      var A=this.anchors();
+      return A[level]||A.GCSE||BAKED_ANCHOR.GCSE;
+    },
+
+    /* Discounts by position: index 0 is one session a week. A portal ladder
+       is honoured only when it is the same five rungs in the same order,
+       because the tier cards and the segmented control are indexed by
+       position -- a shorter ladder would shift every card one place. */
+    ladder:function(){
+      var o=oneToOne(), live=o&&o.tiers, out=BAKED_LADDER.slice();
+      if(!Array.isArray(live)||live.length!==out.length) return out;
+      for(var i=0;i<live.length;i++){
+        var row=live[i];
+        if(!row||row.sessionsPerWeek!==i+1||!isRate(row.discount)) return BAKED_LADDER.slice();
+        out[i]=row.discount;
+      }
+      return out;
+    },
+    /* Sessions a week -> the discount off the hourly rate. Anything outside
+       the ladder is clamped to its ends rather than extrapolated: a made-up
+       sixth rung would be a price nobody has agreed to offer. */
+    discountFor:function(sessions){
+      var L=this.ladder(), i=Math.round(sessions)-1;
+      if(!(i>=0)) return 0;
+      return L[Math.min(i,L.length-1)];
+    },
+    deepest:function(){
+      var L=this.ladder(), m=0;
+      for(var i=0;i<L.length;i++) if(L[i]>m) m=L[i];
+      return m;
+    },
+    /* Taken off after the ladder, for paying the month upfront. */
+    upfront:function(){
+      var o=oneToOne(), d=o&&o.monthlyUpfrontDiscount;
+      return isRate(d)?d:BAKED_UPFRONT;
+    },
+
+    /* The hourly rate a family actually pays. One function, so the two
+       pages can no longer answer this differently. */
+    hourly:function(level,sessions,payUpfront){
+      var hr=this.rateFor(level)*(1-this.discountFor(sessions));
+      return payUpfront?hr*(1-this.upfront()):hr;
+    },
+
+    /* The range printed in prose: cheapest level at the deepest rung, to
+       the dearest level at full rate. Never hardcode this -- A-Level is
+       not £28-35. */
+    bandFor:function(level){
+      var A=this.anchors(), off=1-this.deepest(), a=level&&A[level], all=[];
+      if(a) return {lo:Math.round(a*off),hi:Math.round(a)};
+      for(var k in A) all.push(A[k]);
+      return {lo:Math.round(Math.min.apply(null,all)*off),hi:Math.round(Math.max.apply(null,all))};
+    },
+    pct:function(rate){ return Math.round(rate*100)+'%'; },
+    money:function(n){ return n.toFixed(2).replace(/\.00$/,''); }
+  };
+
   var ENDPOINT='https://portal.aceacademictutors.com/api/public/site-content';
   var CACHE_KEY='ace-site-content';
   var CACHE_MS=10*60*1000;
@@ -146,14 +243,23 @@
     var p=data&&data.pricing;
     if(p&&p.oneToOne){
       /* byLevel is the source: the full hourly rate per level. The displayed
-         range spans every level, from the cheapest at five sessions a week
-         (20% off, so 0.8x) to the dearest at full rate. min/max are honoured
-         if the portal sends them, so an editorial range can still override. */
+         range spans every level, from the cheapest at the deepest rung of the
+         ladder to the dearest at full rate. min/max are honoured if the portal
+         sends them, so an editorial range can still override. */
       var bl=p.oneToOne.byLevel, lo=p.oneToOne.min, hi=p.oneToOne.max;
+      /* The deepest discount on the ladder. Falls back to 20%, which is what
+         the ladder has always bottomed out at -- guessing 0 here would print a
+         floor price nobody is offered. */
+      var deepest=0.2, tl=p.oneToOne.tiers;
+      if(Array.isArray(tl)&&tl.length){
+        var offs=tl.map(function(t){return t&&t.discount;})
+                   .filter(function(d){return typeof d==='number'&&d>=0&&d<1;});
+        if(offs.length) deepest=Math.max.apply(null,offs);
+      }
       if(bl){
         var vals=Object.keys(bl).map(function(k){return bl[k];}).filter(function(v){return typeof v==='number'&&v>0;});
         if(vals.length){
-          if(lo==null) lo=Math.round(Math.min.apply(null,vals)*0.8);
+          if(lo==null) lo=Math.round(Math.min.apply(null,vals)*(1-deepest));
           if(hi==null) hi=Math.round(Math.max.apply(null,vals));
         }
       }
@@ -162,6 +268,14 @@
       document.querySelectorAll('[data-ace="price.oneToOneFull"]').forEach(function(el){
         el.textContent=r+' an '+(p.oneToOne.unit||'hour');
       });
+      /* The upfront discount appears in prose on several pages ("a further 5%
+         off"). Written as a percentage so a change of policy does not leave the
+         sentence contradicting the calculator two inches below it. */
+      var mu=p.oneToOne.monthlyUpfrontDiscount;
+      if(typeof mu==='number'&&mu>=0&&mu<1){
+        var mtxt=Math.round(mu*100)+'%';
+        document.querySelectorAll('[data-ace="price.monthlyDiscount"]').forEach(function(el){ el.textContent=mtxt; });
+      }
     }
 
     document.dispatchEvent(new CustomEvent('ace:data',{detail:data}));

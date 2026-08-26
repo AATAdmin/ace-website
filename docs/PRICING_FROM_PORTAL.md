@@ -1,17 +1,21 @@
-# Pricing must come from the portal, not the HTML
+# Pricing comes from the portal, not the HTML
 
-**For Claude Code.** Every price on the marketing site is currently baked into
-the HTML. Some of it is already tagged for hydration, some is not, and one page
-computes its own figures in JavaScript. That means a price change in the portal
-updates some pages and silently leaves others stale, which is the worst of the
-three possible states.
+**Status: done.** Every price a visitor can see on the marketing site is now set
+in the portal, at **Website -> Prices**, and reaches the live site through
+`/api/public/content` within about a minute. No commit, no deploy.
 
-This note lists every remaining baked price, what the endpoint needs to return,
-and the order to do it in.
+It was not always so, and the shape of the old problem explains most of the
+decisions below: prices were baked into the HTML, some of it tagged for
+hydration and some not, and `pricing.html` and `get-started.html` each computed
+their own ladder. A price change updated some pages and silently left others
+stale, which is the worst of the three possible states.
+
+This note is the contract: what the endpoint returns, where the numbers are
+edited, and the two rules that keep it from going back.
 
 ## What already works
 
-`assets/live.js` fetches `GET /api/site-content` on every page, caches it in
+`assets/live.js` fetches `GET /api/public/site-content` on every page, caches it in
 `sessionStorage` for ten minutes, and replaces the text of any `[data-ace]`
 element. If the fetch fails, the baked HTML stands, so a portal outage never
 breaks a page. Keys it already handles:
@@ -25,55 +29,49 @@ breaks a page. Keys it already handles:
 | `class.summary` | "GCSE Maths, Years 10 and 11, starting 12 September" |
 | `price.oneToOne` | "£28–35" |
 | `price.oneToOneFull` | "£28–35 an hour" |
+| `price.monthlyDiscount` | "5%" (the further discount for paying a month upfront) |
 
 Tagged and working: `services.html` (class price, class summary, one-to-one
 range), the subject pages' class band, `pricing.html`'s group figure.
 
-## What is still baked
+## Where each figure now comes from
 
-Audited across all 15 pages. These are the untagged prices:
+| Figure | Source | Mechanism |
+|---|---|---|
+| One-to-one hourly rate, per level | `web_price_11plus` / `_pre_gcse` / `_gcse` / `_a_level` | `byLevel` -> `ACE_PRICE.rateFor()` |
+| Discount per extra lesson a week | `web_discount_2` … `web_discount_5` | `tiers` -> `ACE_PRICE.ladder()` |
+| Monthly-upfront discount | `web_price_monthly_discount` | `monthlyUpfrontDiscount` -> `ACE_PRICE.upfront()` and the `price.monthlyDiscount` tag |
+| The advertised range in prose | derived, never stored | `ACE_PRICE.bandFor()` and `price.oneToOne` |
+| The group class | `web_group_*` | `classes[0]` -> the `class.*` tags |
 
-**`pricing.html`** is the important one. It does not just print figures, it
-**computes** them: a `PLANS` array in the inline script holds the £35 to £28
-anchors, derives every per-session tier, applies the 5% monthly discount, and
-drives the calculator. So the page cannot simply be tagged; it needs the anchors
-themselves to come from the endpoint.
+All of them are rows in `app_settings`, scoped to the org, seeded by migrations
+`20261147` and `20261148` to exactly what the site said at the time -- so wiring
+this up changed no published price, it only moved where the number is edited.
 
-- `£35` and `£28` anchors in `PLANS`
-- the derived monthly figures (`£378`, `£94.50` appear in the baked HTML)
-- the 5% monthly-upfront discount rate
+Discounts are stored as **rates** (`0.05`), not percentages (`5`). The portal
+screen shows percent and converts at the input, so there is one convention in
+the database and no chance of a `5` being read as 500%.
 
-**`index.html`** — `£10` and `£28–35` inside the course chooser's JavaScript
-(`BAKED_GROUPS`, `rate()`). These already prefer `window.ACE_DATA` when it
-exists, so they degrade correctly; they are the fallback, not a bug. Leave them.
+## What the endpoint returns
 
-**`get-started.html`** — `£10` and `£28–35` in the lesson-type pill descriptions
-and `BAKED_GROUPS`. Same pattern as index: fallbacks. Worth tagging the pill
-text so a live price shows there too.
-
-**`become-a-tutor.html`** — the only `£28-35` on that page is inside an HTML
-comment warning not to imply the parent rate is what a tutor is paid. Not
-displayed. Leave it alone.
-
-## What the endpoint needs to return
-
-The site reads `pricing` and `classes`. To retire the last baked figures,
-`pricing` needs the anchors rather than only the range:
+The site reads `pricing` and `classes`. Both now come from the portal; this is
+the live shape, not a proposal.
 
 ```json
 {
   "pricing": {
     "oneToOne": {
-      "min": 28,
-      "max": 35,
       "unit": "hour",
+      "byLevel": { "11+": 35, "Pre-GCSE": 35, "GCSE": 35, "A-Level": 45 },
       "tiers": [
-        { "sessionsPerWeek": 1, "hourly": 35 },
-        { "sessionsPerWeek": 2, "hourly": 33 },
-        { "sessionsPerWeek": 3, "hourly": 31 },
-        { "sessionsPerWeek": 4, "hourly": 30 },
-        { "sessionsPerWeek": 5, "hourly": 28 }
+        { "sessionsPerWeek": 1, "discount": 0 },
+        { "sessionsPerWeek": 2, "discount": 0.05 },
+        { "sessionsPerWeek": 3, "discount": 0.10 },
+        { "sessionsPerWeek": 4, "discount": 0.15 },
+        { "sessionsPerWeek": 5, "discount": 0.20 }
       ],
+      "min": 28,
+      "max": 45,
       "monthlyUpfrontDiscount": 0.05
     }
   },
@@ -89,20 +87,74 @@ The site reads `pricing` and `classes`. To retire the last baked figures,
 }
 ```
 
-The tier list matters. `pricing.html` currently derives the middle tiers by
-interpolation, and if the business ever wants a non-linear ladder the site will
-be wrong in a way nobody notices.
+### `tiers` carries a discount, not an hourly rate
 
-## Order to build in
+An earlier draft of this document specified `{ sessionsPerWeek, hourly }`. That
+was wrong, and the reason is worth keeping: there are four levels, so an hourly
+ladder is four ladders, and the moment one of them is edited without the others
+the page quotes a discount that does not exist at that level. A discount
+composes with `byLevel` instead, so one ladder serves every level and there is
+exactly one number per commercial decision.
 
-1. **Return `pricing.oneToOne.tiers` and `monthlyUpfrontDiscount`.** Then change
-   `pricing.html` so `PLANS` is built from `window.ACE_DATA` when present and
-   falls back to the current array when not. One change, and the whole page plus
-   the calculator follow the portal.
-2. **Tag the `get-started.html` pill descriptions** with `class.price` and
-   `price.oneToOneFull`.
-3. **Add an admin screen** for the one-to-one ladder and the group class, so a
-   price change is a portal action and never a commit.
+One session a week is a rung with `discount: 0` rather than an omission. It is
+the full rate by definition, and a settable "0%" would let the anchor price
+disagree with itself.
+
+### The ladder is honoured only whole
+
+`live.js` accepts a live ladder only when it is the same five rungs in the same
+order, and falls back to the baked one otherwise. The tier cards and the
+segmented control are indexed by position, so a four-rung ladder would shift
+every card one place to the left rather than fail visibly.
+
+### One implementation, in `live.js`
+
+`pricing.html` and `get-started.html` both quote one-to-one rates. Each used to
+work them out itself -- one from a table of tiers, the other from the formula
+"5% off per extra session" -- so they agreed only for as long as the ladder
+happened to be a flat 5% a step. The first non-linear ladder would have made the
+two pages quote the same family different numbers.
+
+Both now read `window.ACE_PRICE`, defined at the top of `live.js`, which is
+loaded synchronously above every page script:
+
+```js
+ACE_PRICE.rateFor(level)                  // full hourly rate
+ACE_PRICE.ladder()                        // [0, .05, .10, .15, .20]
+ACE_PRICE.discountFor(sessionsPerWeek)
+ACE_PRICE.upfront()                       // monthly-upfront discount
+ACE_PRICE.hourly(level, sessions, upfront)// what a family actually pays
+ACE_PRICE.bandFor(level)                  // { lo, hi } for prose
+ACE_PRICE.pct(rate)                       // "5%"
+```
+
+**Never compute a price outside it.** `qa/price-ladder-sync.mjs` in the portal
+repo asserts the two pages agree at every rung on a deliberately non-linear
+ladder, and fails on any script error either page throws while painting.
+
+## Build order, and where it got to
+
+1. ~~**Return `pricing.oneToOne.tiers` and `monthlyUpfrontDiscount`.**~~ Done.
+   `readPricing()` in the portal's `api/public/content.js` sends both, from
+   `app_settings` keys prefixed `web_`.
+2. ~~**Tag the `get-started.html` pill descriptions.**~~ Done differently, and
+   better: the pills are painted by the page's own script through `ACE_PRICE`,
+   so they follow a portal change without a `data-ace` round trip. The tags are
+   still the right mechanism for prose, and `price.monthlyDiscount` was added
+   for the "a further 5% off" sentences.
+3. ~~**Add an admin screen.**~~ Done. Portal -> Website -> Prices
+   (`src/features/siteContent/PricingPanel.jsx`). Four level rates, the
+   four-rung ladder, the monthly-upfront discount and the advertised group
+   class, with a preview of what a parent will be quoted.
+
+### What is still baked, and will go stale
+
+The `<meta name="description">` tags and the FAQPage JSON-LD on `pricing.html`
+carry literal figures ("from £35 an hour, falling to £28... a further 5%").
+Those are served to crawlers before any script runs, so `live.js` cannot fix
+them, and `bake.mjs` does not touch them today. **A price change in the portal
+will not update them.** Either add a marker region to `bake.mjs` the way the FAQ
+regions work, or accept that they need a hand edit when a headline price moves.
 
 ## Two rules to keep
 
@@ -155,7 +207,7 @@ range editorially. If they are absent the site computes them.
 ### How a price change reaches the site
 
 1. The rate changes in the portal.
-2. `live.js` fetches `/api/site-content`, sets `window.ACE_DATA`, updates
+2. `live.js` fetches `/api/public/site-content`, sets `window.ACE_DATA`, updates
    every `[data-ace="price.*"]` element, then fires `ace:data`.
 3. `get-started.html` listens for `ace:data` and re-runs `syncPlan()`, so the
    pill range and the quote update on a page that is already open.

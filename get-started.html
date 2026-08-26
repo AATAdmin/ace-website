@@ -293,7 +293,7 @@
               </div>
               <div class="f wide rv" data-rv id="fBilling" hidden><label>And how would you like to pay?</label>
                 <div class="pills two">
-                  <label class="pill"><input type="radio" name="billing" value="Monthly upfront"><span class="pt">Monthly, upfront</span><span class="pd" id="bdUp">5% off the rate</span></label>
+                  <label class="pill"><input type="radio" name="billing" value="Monthly upfront"><span class="pt">Monthly, upfront</span><span class="pd" id="bdUp"><span data-ace="price.monthlyDiscount">5%</span> off the rate</span></label>
                   <label class="pill"><input type="radio" name="billing" value="Billed monthly"><span class="pt">Billed monthly</span><span class="pd" id="bdMo">Standard rate</span></label>
                 </div>
                 <div class="ltnote" id="planSum"></div>
@@ -555,42 +555,27 @@
   /* ------------------------------------------------------------------
      THE ONE-TO-ONE PLAN
      Sessions a week and how they want to pay, asked here so the lead
-     arrives with the package already chosen. Rates mirror pricing.html:
-     11+ and GCSE start at £35 an hour, A-Level at £45, 5% off per extra
-     session a week to 20% at five, and a further 5% for paying the month
-     upfront. THESE ANCHORS MUST MATCH pricing.html. Both pages should
-     read them from the portal once /api/site-content carries rates,
-     see docs/PRICING_FROM_PORTAL.md.
+     arrives with the package already chosen.
+
+     THE PRICES ARE NOT WORKED OUT HERE. This page used to apply its own
+     formula -- "5% off per extra session" -- while pricing.html read a
+     table of tiers. Two implementations of one commercial policy, so a
+     ladder set in the portal that was not a flat 5% a step would have made
+     the two pages quote the same family different numbers. Both now read
+     window.ACE_PRICE from live.js, which is loaded immediately above.
+     Contract: docs/PRICING_FROM_PORTAL.md.
      ------------------------------------------------------------------ */
-  /* The full-rate hourly price per level: what one session a week costs.
-     BAKED_ANCHOR is the fallback only. When live.js has loaded portal data,
-     ACE_DATA.prices.oneToOne overrides it, so changing a rate in the portal
-     changes this form, its quote and the pill range with no code edit.
-     Contract: docs/PRICING_FROM_PORTAL.md. */
-  const BAKED_ANCHOR={'11+':35,'Pre-GCSE':35,'GCSE':35,'A-Level':45};
-  function anchors(){
-    const o=window.ACE_DATA&&window.ACE_DATA.pricing&&window.ACE_DATA.pricing.oneToOne;
-    const live=o&&o.byLevel;
-    if(!live) return BAKED_ANCHOR;
-    const out=Object.assign({},BAKED_ANCHOR);
-    Object.keys(BAKED_ANCHOR).forEach(k=>{ if(typeof live[k]==='number'&&live[k]>0) out[k]=live[k]; });
-    return out;
-  }
-  /* Five sessions a week is 20% off, so the bottom of a level's range is
-     0.8 x its full rate. Never hardcode the range: A-Level is not £28-35. */
-  function bandFor(level){
-    const A=anchors(), a=level&&A[level];
-    if(a) return {lo:Math.round(a*0.8),hi:Math.round(a)};
-    const all=Object.keys(A).map(k=>A[k]);
-    return {lo:Math.round(Math.min.apply(null,all)*0.8),hi:Math.round(Math.max.apply(null,all))};
-  }
+  const P=window.ACE_PRICE;
+  const bandFor=level=>P.bandFor(level);
+  /* "£28-45 an hour" before a level is picked, "£28-35" after. A level with
+     one rate at every rung would read "£35 an hour" rather than "£35-35". */
   const bandText=level=>{const b=bandFor(level);return b.lo===b.hi?('£'+b.hi+' an hour'):('£'+b.lo+'–'+b.hi+' an hour');};
   const money=n=>n.toFixed(2).replace(/\.00$/,'');
   const planBox=document.getElementById('fPlan'), billBox=document.getElementById('fBilling');
   const PKG_INTEREST={sessions:'',billing:''};
   function rates(){
-    const a=anchors()[picked('level')]||35, s=+picked('sessions')||0,
-          hr=a*(1-0.05*Math.max(0,s-1)), up=hr*0.95;
+    const lvl=picked('level'), s=+picked('sessions')||0,
+          a=P.rateFor(lvl), hr=P.hourly(lvl,s,false), up=P.hourly(lvl,s,true);
     return {a,s,hr,up,monthly:hr*s*4,monthlyUp:up*s*4};
   }
   function syncPlan(){
@@ -616,7 +601,7 @@
     /* per-session rates on the pills, so the discount is visible while choosing */
     planBox.querySelectorAll('[data-sp]').forEach(el=>{
       const n=+el.dataset.sp;
-      el.textContent='£'+money(r.a*(1-0.05*(n-1)))+'/hr';
+      el.textContent='£'+money(P.hourly(picked('level'),n,false))+'/hr';
     });
     if(one&&r.s){
       document.getElementById('bdUp').textContent='£'+money(r.up)+' an hour, £'+money(r.monthlyUp)+' a month';
@@ -626,7 +611,7 @@
         ? (picked('level')||'One-to-one')+', '+r.s+' session'+(r.s>1?'s':'')+' a week, '+
           (b==='Monthly upfront'?'paid monthly upfront at £'+money(r.up):'billed monthly at £'+money(r.hr))+
           ' an hour. An estimate, confirmed before anything is charged.'
-        : 'Paying the month upfront takes a further 5% off.';
+        : 'Paying the month upfront takes a further '+P.pct(P.upfront())+' off.';
     }
     markSelected();
   }
