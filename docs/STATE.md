@@ -16,8 +16,12 @@ Kept current by the implementing chat on every push to `main`.
 
 ## Pages
 
-**All 17 pages are live.** The home-page-only phase is over: `_redirects` has been
-deleted and every page is reachable again.
+**All 17 pages are live.** The home-page-only phase is over and every page is
+reachable. `_redirects` exists again but now serves ONE purpose: 301s from the old
+WordPress URLs that Google still has indexed (`/about-ace-academic-tutors/`,
+`/registration/`, `/term-of-service/`, …) to their nearest current page. Never add
+a rule whose source path exists as a file — `_redirects` overrides static files on
+Cloudflare Pages, which is how the launch-era home-page-only trick worked.
 
 `index` `services` `pricing` `get-started` `about` `workshop` `portal` `for-schools`
 `become-a-tutor` `contact` `maths-tutoring` `english-tutoring` `science-tutoring`
@@ -64,7 +68,11 @@ deleted and every page is reachable again.
   from third-party platforms, its own included. Refresh the figure (currently 5.0
   from 10) and re-verify quoted reviews still exist as part of the monthly pass.
 - **No em-dashes in displayed text.** En-dashes in ranges are correct.
-- British English. Relative links only (except `rel="canonical"`, which is absolute).
+- British English. Relative links only (except `rel="canonical"`, which is absolute,
+  and `404.html`, which uses ROOT-relative URLs throughout — Pages serves it at any
+  URL depth, so a plain relative `assets/site.css` resolved against
+  `/some-old-path/` 404s and the page rendered unstyled with viewport-filling SVGs.
+  Keep every href/src in `404.html` starting with `/`).
 - `site.css` defines only `a{color:inherit}` — there is no base link colour, so an
   anchor dropped into styled prose becomes invisible. Give the component its own
   colour, or do the deliberate base-colour pass across every page.

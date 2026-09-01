@@ -1,0 +1,44 @@
+# Legacy WordPress URLs still indexed by Google / linked elsewhere.
+# Source list: Wayback Machine index of the old site, 2026-09-01.
+# Every source path here must NOT exist as a file in this repo:
+# _redirects overrides static files on Cloudflare Pages.
+# Current-page trailing-slash variants (/services/ etc) already 308 natively - do not add them.
+
+/about-ace-academic-tutors /about 301
+/about-ace-academic-tutors/* /about 301
+/contact-us /contact 301
+/contact-us/* /contact 301
+/1-to-1-tutoring /services 301
+/1-to-1-tutoring/* /services 301
+/classroom-style-teaching /services 301
+/classroom-style-teaching/* /services 301
+/small-group-sessions /services 301
+/small-group-sessions/* /services 301
+/services-2 /services 301
+/services-2/* /services 301
+/privacy-policy /privacy 301
+/privacy-policy/* /privacy 301
+/term-of-service /terms 301
+/term-of-service/* /terms 301
+/registration /get-started 301
+/registration/* /get-started 301
+/signup /get-started 301
+/signup/* /get-started 301
+/testimonials / 301
+/testimonials/* / 301
+/testimonials-2 / 301
+/testimonials-2/* / 301
+/faq /pricing 301
+/faq/* /pricing 301
+/faqs /pricing 301
+/faqs/* /pricing 301
+/faq_categories/* /pricing 301
+/shop /pricing 301
+/shop/* /pricing 301
+/product-category/* /pricing 301
+/instructor/* /about 301
+/login https://portal.aceacademictutors.com/ 301
+/login/* https://portal.aceacademictutors.com/ 301
+/forgot-password https://portal.aceacademictutors.com/ 301
+/forgot-password/* https://portal.aceacademictutors.com/ 301
+/tutor/* https://portal.aceacademictutors.com/ 301
