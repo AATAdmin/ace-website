@@ -1,0 +1,16 @@
+# Ace Academic Tutors
+> Online tutoring in Maths, English and Science for UK students, KS1 to A-Level and 11+.
+> Small group GCSE classes at £10 an hour and one-to-one tutoring from £35 an hour
+> (£28 at five sessions a week). Live lessons on our own platform: recorded, whiteboard
+> saved, and a written report after every lesson. DBS-checked, university-educated tutors.
+> Free trial lesson. Phone 07454 905330. Based in Rainham, East London; students UK-wide.
+
+## Pages
+- [Pricing](https://aceacademictutors.com/pricing): plans and per-hour prices
+- [Maths tutoring](https://aceacademictutors.com/maths-tutoring): 11+, GCSE, A-Level
+- [English tutoring](https://aceacademictutors.com/english-tutoring)
+- [Science tutoring](https://aceacademictutors.com/science-tutoring): Biology, Chemistry, Physics
+- [11+ preparation](https://aceacademictutors.com/11-plus-tutoring)
+- [How it works](https://aceacademictutors.com/services)
+- [For schools](https://aceacademictutors.com/for-schools)
+- [Start a free trial](https://aceacademictutors.com/get-started)
