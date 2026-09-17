@@ -41,7 +41,9 @@ Cloudflare Pages, which is how the launch-era home-page-only trick worked.
   across the pages that have them. Change one, change all.
 - Every page renders fully with **JavaScript disabled**. Verify before pushing.
 - `assets/chrome.js` owns the mobile menu, scroll shadow, reveals, counters,
-  `[data-year]`, and first-touch attribution capture. It no longer injects chrome.
+  `[data-year]`, first-touch attribution capture, and the tel/WhatsApp tap beacon
+  (one anonymous `sendBeacon` per tap to the portal's `?kind=click` counter —
+  aggregates only, nothing personal). It no longer injects chrome.
 - `assets/live.js` hydrates portal-driven values. **Every such value is also baked
   into the HTML**, so a page is correct with no JS and no portal. Never delete a baked
   value and rely on the fetch.

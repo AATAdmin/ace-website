@@ -193,4 +193,17 @@
   },{threshold:.4});
   document.querySelectorAll('[data-count]').forEach(el=>cObs.observe(el));
   setTimeout(()=>document.querySelectorAll('[data-count]').forEach(el=>{ if(el.textContent.replace(/\D/g,'')==='0'||el.textContent==='0'){ window.aceCount(el);} }),2600);
+
+  // Tap counters (SEO system Q5): a phone or WhatsApp tap sends one tiny beacon
+  // to the portal, which keeps an anonymous (day, kind, page) tally. No IDs, no
+  // IPs, nothing personal; sendBeacon never blocks the tap or the call itself.
+  document.addEventListener('click',(e)=>{
+    const a = e.target.closest && e.target.closest('a[href^="tel:"],a[href*="wa.me/"]');
+    if(!a || !navigator.sendBeacon) return;
+    const k = a.getAttribute('href').indexOf('tel:')===0 ? 'tel' : 'wa';
+    try{
+      navigator.sendBeacon('https://portal.aceacademictutors.com/api/public/content?kind=click',
+        JSON.stringify({k, p:location.pathname}));
+    }catch(_){/* a lost count is fine; the call matters, the tally does not */}
+  });
 })();
