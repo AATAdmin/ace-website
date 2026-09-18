@@ -46,6 +46,7 @@ const PAGE_FILES = {
   index: 'index.html',
   about: 'about.html',
   services: 'services.html',
+  'group-tuition': 'group-tuition.html',
   pricing: 'pricing.html',
   'get-started': 'get-started.html',
   'maths-tutoring': 'maths-tutoring.html',

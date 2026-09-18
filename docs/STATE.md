@@ -16,7 +16,7 @@ Kept current by the implementing chat on every push to `main`.
 
 ## Pages
 
-**All 17 pages are live.** The home-page-only phase is over and every page is
+**All 18 pages are live.** The home-page-only phase is over and every page is
 reachable. `_redirects` exists again but now serves ONE purpose: 301s from the old
 WordPress URLs that Google still has indexed (`/about-ace-academic-tutors/`,
 `/registration/`, `/term-of-service/`, …) to their nearest current page. Never add
@@ -25,7 +25,7 @@ Cloudflare Pages, which is how the launch-era home-page-only trick worked.
 
 `index` `services` `pricing` `get-started` `about` `workshop` `portal` `for-schools`
 `become-a-tutor` `contact` `maths-tutoring` `english-tutoring` `science-tutoring`
-`11-plus-tutoring` `privacy` `terms` `safeguarding`
+`11-plus-tutoring` `group-tuition` `privacy` `terms` `safeguarding`
 
 - `get-started.html` is the **only enquiry route**. `contact.html` has no form, by
   design. `get-started` is `noindex` and out of the sitemap.
@@ -33,7 +33,12 @@ Cloudflare Pages, which is how the launch-era home-page-only trick worked.
   out of the sitemap pending legal review.
 - `workshop.html` has **no site header**, deliberately: it is a campaign landing page.
   It does carry the footer.
-- `sitemap.xml` carries 13 URLs.
+- `sitemap.xml` carries 14 URLs.
+- `group-tuition.html` (added 2026-09-18) is the small group classes page, SEO cluster T1.
+  It is reachable from the FOOTER "Explore" column on every page, **not** from the top nav —
+  adding a top-nav item is a founder decision that has not been made. Its facts (price, start
+  date, class summary) carry `data-ace="class.*"` hooks so live.js keeps them in step with the
+  portal, with the current values baked in as the fallback.
 
 ## Conventions
 
@@ -61,6 +66,11 @@ Cloudflare Pages, which is how the launch-era home-page-only trick worked.
   purpose: **read `docs/notes/<page>.md` before editing that page.** Short functional
   comments (a line explaining the honeypot, or where a link goes) stay inline.
 - Static `og:` and `twitter:card` tags in every `<head>`.
+- **GOTCHA: a new page needs the per-page `<style>` block copied too.** `site.css` does NOT
+  define `.phead`, `.pchips`, `.pchip`, `.cov`/`.cv` or the responsive rules for them; each
+  content page carries them in an inline `<style>` in its own `<head>`. Omit it and the page
+  renders unstyled with viewport-filling SVG icons, exactly like the launch-era cache bug.
+  Caught on `group-tuition.html` before it shipped by looking at the rendered page.
 - **Social proof must be evidenced.** Two forms are permitted, both linked to the
   Google listing: the rating badge (`[data-google-rating]`, Google's live figure) and
   **verbatim, named quotes from real Google reviews** (home page `.rvs` section).
