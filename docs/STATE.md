@@ -35,9 +35,9 @@ Cloudflare Pages, which is how the launch-era home-page-only trick worked.
   It does carry the footer.
 - `sitemap.xml` carries 14 URLs.
 - `group-tuition.html` (added 2026-09-18) is the small group classes page, SEO cluster T1.
-  It is reachable from the FOOTER "Explore" column on every page, **not** from the top nav —
-  adding a top-nav item is a founder decision that has not been made. Its facts (price, start
-  date, class summary) carry `data-ace="class.*"` hooks so live.js keeps them in step with the
+  It is in the **top nav and mobile menu** ("Group classes"), the footer Explore column, the
+  topbar band, and the group-class block on `maths-tutoring`. Its facts (price, start date,
+  class summary) carry `data-ace="class.*"` hooks so live.js keeps them in step with the
   portal, with the current values baked in as the fallback.
 
 ## Conventions
@@ -58,7 +58,7 @@ Cloudflare Pages, which is how the launch-era home-page-only trick worked.
   markup with four-hour-old CSS. That happened at launch: the old stylesheet had no
   `.topbar` rules and the topbar SVGs, which carry no width or height, filled the
   viewport. **Whenever one of those three files changes, regenerate its token in all
-  17 pages before pushing.** The generator is idempotent and strips any existing
+  19 pages before pushing.** The generator is idempotent and strips any existing
   `?v=` first.
 - **Design note blocks live in `docs/notes/<page>.md`, not in the page source.** They
   used to ship as HTML comments, ~36KB visible in view-source on the live site,
@@ -66,6 +66,15 @@ Cloudflare Pages, which is how the launch-era home-page-only trick worked.
   purpose: **read `docs/notes/<page>.md` before editing that page.** Short functional
   comments (a line explaining the honeypot, or where a link goes) stay inline.
 - Static `og:` and `twitter:card` tags in every `<head>`.
+- **The topbar carries TWO bands that swap.** `[data-ace-scope="workshop"]` is baked
+  HIDDEN and revealed by live.js only when the portal reports an upcoming workshop;
+  `[data-ace-empty="workshop"]` is baked VISIBLE and advertises the standing Saturday
+  group class, and live.js hides it when a workshop takes over. With no JS and no portal
+  the group band shows, which is always true. **Never go back to one hardcoded band** —
+  that is how a finished workshop advertised itself on all 19 pages for 13 days.
+- **`[hidden]{display:none!important}` is load-bearing** (top of `site.css`). Component
+  rules like `.loc{display:flex}` beat the `hidden` attribute's UA style, so without it
+  `el.hidden = true` silently does nothing and every `data-ace-scope` block stays on screen.
 - **GOTCHA: a new page needs the per-page `<style>` block copied too.** `site.css` does NOT
   define `.phead`, `.pchips`, `.pchip`, `.cov`/`.cv` or the responsive rules for them; each
   content page carries them in an inline `<style>` in its own `<head>`. Omit it and the page

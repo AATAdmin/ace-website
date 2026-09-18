@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=7b47a9ee">
+<link rel="stylesheet" href="assets/site.css?v=127b1569">
 <style>
 .phead{padding:56px 0 8px;}
 .phead .eyebrow{display:block;margin-bottom:14px;color:var(--ac);}
@@ -68,6 +68,7 @@
 
 @media(max-width:1000px){.cov{grid-template-columns:1fr;}.tw{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:700px){.tw{grid-template-columns:1fr;}.cband-in{grid-template-columns:1fr;gap:22px;}.cband .btn{justify-self:start;}.gclass{grid-template-columns:1fr;}.gclass .gd{justify-self:start;}}
+.pp{font-size:16.5px;color:var(--body);line-height:1.7;max-width:62ch;margin-top:14px;}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Course","name":"Small group GCSE Maths classes","description":"Small group GCSE Maths classes taught live online, with at most ten students in a class. Two hours a week, every lesson recorded and written up.","provider":{"@id":"https://aceacademictutors.com/#org"},"url":"https://aceacademictutors.com/group-tuition","educationalLevel":"GCSE","teaches":"GCSE Mathematics","inLanguage":"en-GB","isAccessibleForFree":false,"hasCourseInstance":{"@type":"CourseInstance","courseMode":"Online","courseWorkload":"PT2H","startDate":"2026-09-12","endDate":"2027-07-31","maximumAttendeeCapacity":10,"location":{"@type":"VirtualLocation","url":"https://aceacademictutors.com/group-tuition"},"instructor":{"@id":"https://aceacademictutors.com/#org"},"offers":{"@type":"Offer","price":"10","priceCurrency":"GBP","availability":"https://schema.org/InStock","url":"https://aceacademictutors.com/get-started"}}}
@@ -109,7 +110,7 @@
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <div class="topbar">
 <div class="wrap topbar-in">
-<a class="loc" href="workshop.html"><span style="width:7px;height:7px;border-radius:50%;background:var(--teal-200);flex-shrink:0"></span> <b style="font-weight:600">Free GCSE Maths workshop, <span data-ace="workshop.dateShort">Sat 5 September</span></b> <span class="drop" style="opacity:.7">Limited spaces</span></a>
+<a class="loc" href="workshop.html" data-ace-scope="workshop" hidden><span style="width:7px;height:7px;border-radius:50%;background:var(--teal-200);flex-shrink:0"></span> <b style="font-weight:600">Free GCSE Maths workshop, <span data-ace="workshop.dateShort">Sat 5 September</span></b> <span class="drop" style="opacity:.7">Limited spaces</span></a><a class="loc" href="group-tuition.html" data-ace-empty="workshop"><span style="width:7px;height:7px;border-radius:50%;background:var(--teal-200);flex-shrink:0"></span> <b style="font-weight:600">Small group GCSE Maths classes, Saturdays</b> <span class="drop" style="opacity:.7"><span data-ace="class.price">&#163;10 an hour</span></span></a>
 <a href="tel:+447454905330"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" stroke-linecap="round" stroke-linejoin="round"/></svg> 07454 905330</a>
 <a href="mailto:info@aceacademictutors.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6" stroke-linecap="round" stroke-linejoin="round"/></svg> info@aceacademictutors.com</a>
 </div>
@@ -118,7 +119,7 @@
 <div class="wrap nav">
 <div class="nav-left">
 <a href="index.html" class="brand" aria-label="Ace Academic Tutors home"><img src="assets/logo-icon.png" alt="Ace Academic Tutors" class="brand-icon"><span class="brand-word"><span class="w-ace">Ace</span><span class="w-acad">Academic</span><span class="w-tut">Tutors</span></span></a>
-<nav class="nav-links"><a href="services.html" class="active">Tutoring</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="for-schools.html">For schools</a></nav>
+<nav class="nav-links"><a href="services.html">Tutoring</a><a href="group-tuition.html" class="active">Group classes</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="for-schools.html">For schools</a></nav>
 </div>
 <div class="nav-right">
 <!-- Log in goes to the portal (Vercel, separate origin, its own sign-in).
@@ -127,12 +128,12 @@ Free trial goes to get-started.html, which files a lead. docs/PORTAL_INTEGRATION
 <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg></button>
 </div>
 </div>
-<div class="mobile-menu" id="mobileMenu"><a href="services.html">Tutoring</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="for-schools.html">For schools</a><a href="portal.html">The portal</a><a href="https://portal.aceacademictutors.com" rel="noopener">Log in</a><a href="become-a-tutor.html">Become a tutor</a><a href="contact.html">Contact</a><a href="get-started.html" class="btn btn-primary btn-pulse">Free trial lesson</a></div>
+<div class="mobile-menu" id="mobileMenu"><a href="services.html">Tutoring</a><a href="group-tuition.html">Group classes</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="for-schools.html">For schools</a><a href="portal.html">The portal</a><a href="https://portal.aceacademictutors.com" rel="noopener">Log in</a><a href="become-a-tutor.html">Become a tutor</a><a href="contact.html">Contact</a><a href="get-started.html" class="btn btn-primary btn-pulse">Free trial lesson</a></div>
 </header>
 <section class="phead">
   <div class="wrap">
     <span class="eyebrow">Small group classes</span>
-    <h1 class="display">Ten students at most,<br>and nobody hides.</h1>
+    <h1 class="display">A class small enough<br>to teach.</h1>
     <p class="lead">A small group class costs less than one-to-one because the cost is shared, not because the teaching is thinner. The same tutors, the same platform, the same write-up afterwards. Small enough that the tutor can see who is stuck without anyone having to put their hand up.</p>
     <div class="pchips"><span class="pchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-ace="class.price">&#163;10 an hour</span></span><span class="pchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Ten students at most</span><span class="pchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Every class recorded</span></div>
   </div>
@@ -169,7 +170,7 @@ Free trial goes to get-started.html, which files a lead. docs/PORTAL_INTEGRATION
   <div class="wrap">
     <span class="eyebrow" style="color:var(--ac)">Enrolling now</span>
     <h2 class="h-lg" style="margin-top:12px;">The class running<br>at the moment</h2>
-    <p class="lead" style="margin-top:14px;">We run one small group class at a time and teach it properly, rather than advertising a timetable we cannot staff. This is the one that is open.</p>
+    <p class="pp" style="margin-top:14px;">We run one small group class at a time and teach it properly, rather than advertising a timetable we cannot staff. This is the one that is open.</p>
     <div class="cov" style="margin-top:26px;">
       <div class="cv reveal">
         <div class="cvt" data-ace="class.summary">GCSE Maths, Years 10 and 11</div>
@@ -179,7 +180,7 @@ Free trial goes to get-started.html, which files a lead. docs/PORTAL_INTEGRATION
         <p class="cvd" style="margin-top:14px;"><a href="get-started.html?subject=Maths"style="color:var(--ac);font-weight:600;">Ask about a place</a></p>
       </div>
     </div>
-    <p class="lead" style="margin-top:26px;font-size:16px;">Looking for a subject that is not listed? Tell us which one on the <a href="get-started.html"style="color:var(--ac);font-weight:600;">enquiry form</a>. A class opens when there are enough students to make the group work, and one-to-one tutoring is available in <a href="maths-tutoring.html"style="color:var(--ac);font-weight:600;">Maths</a>, <a href="english-tutoring.html"style="color:var(--ac);font-weight:600;">English</a> and <a href="science-tutoring.html"style="color:var(--ac);font-weight:600;">Science</a> in the meantime.</p>
+    <p class="pp" style="margin-top:26px;font-size:16px;">Looking for a subject that is not listed? Tell us which one on the <a href="get-started.html"style="color:var(--ac);font-weight:600;">enquiry form</a>. A class opens when there are enough students to make the group work, and one-to-one tutoring is available in <a href="maths-tutoring.html"style="color:var(--ac);font-weight:600;">Maths</a>, <a href="english-tutoring.html"style="color:var(--ac);font-weight:600;">English</a> and <a href="science-tutoring.html"style="color:var(--ac);font-weight:600;">Science</a> in the meantime.</p>
   </div>
 </section>
 
@@ -187,7 +188,7 @@ Free trial goes to get-started.html, which files a lead. docs/PORTAL_INTEGRATION
   <div class="wrap">
     <span class="eyebrow" style="color:var(--ac)">Inside the lesson</span>
     <h2 class="h-lg" style="margin-top:12px;">What the two hours<br>actually look like</h2>
-    <p class="lead" style="margin-top:14px;">A class is not a lecture with the camera on. Most of the two hours is spent working, with the tutor watching what the class produces and changing direction when it is clearly not landing.</p>
+    <p class="pp" style="margin-top:14px;">A class is not a lecture with the camera on. Most of the two hours is spent working, with the tutor watching what the class produces and changing direction when it is clearly not landing.</p>
     <div class="cov" style="margin-top:26px;">
       <div class="cv reveal">
         <div class="cvt">First</div>
@@ -205,7 +206,7 @@ Free trial goes to get-started.html, which files a lead. docs/PORTAL_INTEGRATION
         <p class="cvd">Questions in the form the exam actually asks them, because knowing a method and recognising when a question is asking for it are two different skills. Marks are lost on the second one far more often than the first.</p>
       </div>
     </div>
-    <p class="lead" style="margin-top:26px;font-size:16px;">Work set between classes is short and specific rather than a stack of pages, and the tutor sees what came back before the next class starts. Every exam board we teach to is covered: AQA, Edexcel, OCR, WJEC, CIE and Eduqas.</p>
+    <p class="pp" style="margin-top:26px;font-size:16px;">Work set between classes is short and specific rather than a stack of pages, and the tutor sees what came back before the next class starts. Every exam board we teach to is covered: AQA, Edexcel, OCR, WJEC, CIE and Eduqas.</p>
   </div>
 </section>
 
@@ -225,7 +226,7 @@ Free trial goes to get-started.html, which files a lead. docs/PORTAL_INTEGRATION
         <p class="cvd">If your child is several years behind on the foundations, a class moving at GCSE pace will not fix that, and we would rather say so than take the money. Start with one-to-one, find the gap, and move into a class once the ground is solid.</p>
       </div>
     </div>
-    <p class="lead" style="margin-top:26px;font-size:16px;">Not sure which describes your child? The free trial lesson is the cheapest way to find out, and a tutor will tell you honestly which of the two they think you need.</p>
+    <p class="pp" style="margin-top:26px;font-size:16px;">Not sure which describes your child? The free trial lesson is the cheapest way to find out, and a tutor will tell you honestly which of the two they think you need.</p>
   </div>
 </section>
 
@@ -233,7 +234,7 @@ Free trial goes to get-started.html, which files a lead. docs/PORTAL_INTEGRATION
   <div class="wrap">
     <span class="eyebrow" style="color:var(--ac)">Which one</span>
     <h2 class="h-lg" style="margin-top:12px;">Group class or<br>one-to-one?</h2>
-    <p class="lead" style="margin-top:14px;">They are not competing products, and one is not a thin version of the other. They answer different problems, and plenty of families use both.</p>
+    <p class="pp" style="margin-top:14px;">They are not competing products, and one is not a thin version of the other. They answer different problems, and plenty of families use both.</p>
     <div class="cov" style="margin-top:26px;">
       <div class="cv reveal">
         <div class="cvt">A group class</div>
@@ -300,7 +301,7 @@ Free trial goes to get-started.html, which files a lead. docs/PORTAL_INTEGRATION
 </div>
 <div class="footer-col"><h5>Explore</h5><a href="about.html">About</a><br><a href="services.html">Tutoring</a><br><a href="group-tuition.html">Group classes</a><br><a href="portal.html">The portal</a><br><a href="pricing.html">Pricing</a><br><a href="for-schools.html">For schools</a><br><a href="become-a-tutor.html">Become a tutor</a></div>
 <div class="footer-col"><h5>Subjects</h5><a href="maths-tutoring.html">Maths tutoring</a><br><a href="english-tutoring.html">English tutoring</a><br><a href="science-tutoring.html">Science tutoring</a><br><a href="11-plus-tutoring.html">11+ tutoring</a></div>
-<div class="footer-col"><h5>Get in touch</h5><a href="get-started.html">Free trial lesson</a><br><a href="tel:+447454905330">07454 905330</a><br><a href="mailto:info@aceacademictutors.com">info@aceacademictutors.com</a><br><a href="https://portal.aceacademictutors.com" target="_blank" rel="noopener">Log in</a></div>
+<div class="footer-col"><h5>Get in touch</h5><a href="get-started.html">Free trial lesson</a><br><a href="contact.html">Contact us</a><br><a href="tel:+447454905330">07454 905330</a><br><a href="mailto:info@aceacademictutors.com">info@aceacademictutors.com</a><br><a href="https://portal.aceacademictutors.com" target="_blank" rel="noopener">Log in</a></div>
 </div>
 <div class="footer-bottom"><span>© <span data-year>2026</span> Ace Academic Tutors Ltd · Registered in England &amp; Wales, Company No.&nbsp;15925436</span><span style="display:flex;gap:22px;flex-wrap:wrap;"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="safeguarding.html">Safeguarding</a></span></div>
 </div>

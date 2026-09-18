@@ -1,3 +1,7 @@
+/* The hidden attribute must win over component display rules. Without this,
+   .loc{display:flex} (and friends) silently defeat el.hidden, which is how a
+   finished workshop kept advertising itself in the topbar on every page. */
+[hidden]{display:none!important;}
 /* ==========================================================================
    ACE ACADEMIC TUTORS — design system
    Brand teal #60a0a0 + near-black #111, clean white space.
