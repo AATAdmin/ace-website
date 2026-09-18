@@ -69,6 +69,7 @@ Cloudflare Pages, which is how the launch-era home-page-only trick worked.
   purpose: **read `docs/notes/<page>.md` before editing that page.** Short functional
   comments (a line explaining the honeypot, or where a link goes) stay inline.
 - Static `og:` and `twitter:card` tags in every `<head>`.
+- **NEVER hardcode a volatile business fact.** No weekday, date, time, term, class capacity, year group or course name goes into the HTML as plain text. If the portal knows it, use the `data-ace` hook so it self-updates; if it does not, write it generically ("one set day each week", "across the school year", "places are capped"). Founder rule, 2026-09-18: these change, and frozen copy goes stale silently. The topbar advertising a finished workshop for 13 days is the worked example.
 - **The topbar carries TWO bands that swap.** `[data-ace-scope="workshop"]` is baked
   HIDDEN and revealed by live.js only when the portal reports an upcoming workshop;
   `[data-ace-empty="workshop"]` is baked VISIBLE and advertises the standing Saturday
