@@ -50,6 +50,7 @@ const PAGE_FILES = {
   pricing: 'pricing.html',
   'get-started': 'get-started.html',
   'maths-tutoring': 'maths-tutoring.html',
+  'gcse-maths-tutor': 'gcse-maths-tutor.html',
   'english-tutoring': 'english-tutoring.html',
   'science-tutoring': 'science-tutoring.html',
   '11-plus-tutoring': '11-plus-tutoring.html',

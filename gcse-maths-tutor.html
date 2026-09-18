@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="assets/site.webmanifest">
+<meta name="theme-color" content="#60a0a0">
+<title>Online GCSE Maths Tutors | Ace Academic Tutors</title>
+<meta name="description" content="One-to-one online GCSE maths tutors, plus small group classes at £10 an hour. Every lesson recorded and written up. AQA, Edexcel, OCR and WJEC.">
+<link rel="canonical" href="https://aceacademictutors.com/gcse-maths-tutor">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Ace Academic Tutors">
+<meta property="og:title" content="Online GCSE Maths Tutors">
+<meta property="og:description" content="One-to-one online GCSE maths tutors, plus small group classes at £10 an hour. Every lesson recorded and written up. AQA, Edexcel, OCR and WJEC.">
+<meta property="og:url" content="https://aceacademictutors.com/gcse-maths-tutor">
+<meta property="og:image" content="https://aceacademictutors.com/assets/logo-full.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Online GCSE Maths Tutors">
+<meta name="twitter:description" content="One-to-one online GCSE maths tutors, plus small group classes at £10 an hour. Every lesson recorded and written up. AQA, Edexcel, OCR and WJEC.">
+<meta name="twitter:image" content="https://aceacademictutors.com/assets/logo-full.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=127b1569">
+<style>
+.phead{padding:56px 0 8px;}
+.phead .eyebrow{display:block;margin-bottom:14px;color:var(--ac);}
+.phead p{margin-top:18px;max-width:56ch;}
+.pchips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+.pchip{display:inline-flex;align-items:center;gap:8px;background:var(--tint);border:1px solid var(--tintl);border-radius:var(--r-pill);padding:8px 15px;font-family:var(--sans);font-size:13.5px;font-weight:600;color:var(--ac);}
+.pchip svg{width:14px;height:14px;flex-shrink:0;}
+
+.cov{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px;}
+.cv{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px 26px;box-shadow:var(--sh-xs);}
+.cv .cvt{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--ink);letter-spacing:-.015em;line-height:1;}
+.cv .cvy{margin-top:7px;font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ac);}
+.cv .cvd{margin-top:14px;font-size:14.5px;color:var(--body);line-height:1.6;}
+.cv .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px;padding-top:18px;border-top:1px solid var(--line);}
+.cv .tag{background:var(--tint);border:1px solid var(--tintl);border-radius:var(--r-pill);padding:5px 11px;font-family:var(--sans);font-size:12.5px;font-weight:500;color:var(--ink-2);}
+
+.tw{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:40px;}
+.tw .t{display:flex;flex-direction:column;gap:8px;}
+.tw .ti{width:44px;height:44px;border-radius:13px;background:var(--tint);border:1px solid var(--tintl);display:flex;align-items:center;justify-content:center;color:var(--ac);}
+.tw .ti svg{width:21px;height:21px;}
+.tw h3{font-size:18px;margin:5px 0 0;}
+.tw p{font-size:14px;color:var(--body);line-height:1.55;}
+
+.cband{background:var(--teal-800);position:relative;overflow:hidden;}
+.cband::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 130% at 12% 0%,rgba(96,160,160,.3),transparent 62%);}
+.cband-in{position:relative;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;padding-top:44px;padding-bottom:44px;}
+.cband h2{font-family:var(--serif);font-size:clamp(25px,3vw,34px);font-weight:600;color:#fff;line-height:1.14;letter-spacing:-.015em;margin:0 0 10px;}
+.cband p{font-size:15px;color:rgba(255,255,255,.8);line-height:1.6;max-width:56ch;margin:0;}
+.cband .btn{background:#fff;color:var(--teal-800);border-color:#fff;}
+
+.gclass{display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;background:var(--surface);border:1px solid var(--teal-200);border-radius:var(--r-xl);box-shadow:var(--sh-sm);padding:26px 30px;margin-top:40px;}
+.gclass .gd{text-align:center;background:var(--teal-50);border:1px solid var(--teal-100);border-radius:var(--r-md);padding:12px 18px;}
+.gclass .gd b{display:block;font-family:var(--serif);font-size:27px;font-weight:600;color:var(--teal-800);line-height:1;}
+.gclass .gd span{display:block;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-600);margin-top:5px;}
+.gclass h3{font-size:20px;margin:0 0 6px;}
+.gclass p{font-size:14.5px;color:var(--body);line-height:1.55;margin:0;max-width:58ch;}
+
+.boards{display:flex;align-items:center;justify-content:center;gap:30px;flex-wrap:wrap;padding:30px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:48px;}
+.boards .bl{font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);}
+.boards .bb{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--ink-2);opacity:.6;}
+
+@media(max-width:1000px){.cov{grid-template-columns:1fr;}.tw{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:700px){.tw{grid-template-columns:1fr;}.cband-in{grid-template-columns:1fr;gap:22px;}.cband .btn{justify-self:start;}.gclass{grid-template-columns:1fr;}.gclass .gd{justify-self:start;}}
+.pp{font-size:16.5px;color:var(--body);line-height:1.7;max-width:62ch;margin-top:14px;}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","@id":"https://aceacademictutors.com/gcse-maths-tutor#service","name":"Online GCSE maths tutoring","serviceType":"GCSE maths tutoring","provider":{"@id":"https://aceacademictutors.com/#org"},"areaServed":{"@type":"Country","name":"United Kingdom"},"audience":{"@type":"EducationalAudience","educationalRole":"student"},"availableChannel":{"@type":"ServiceChannel","serviceUrl":"https://aceacademictutors.com/gcse-maths-tutor","availableLanguage":{"@type":"Language","name":"English"}},"description":"One-to-one online GCSE maths tutoring and small group GCSE maths classes for Years 9 to 11, taught live, recorded, and written up after every lesson."}
+</script>
+<!--ace:faq-schema--><script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Which exam board do you teach to?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Whichever one your child is sitting. We teach to AQA, Edexcel, OCR, WJEC, CIE and Eduqas, and the tutor works from that board's specification and past papers rather than a generic scheme. Tell us the board when you get in touch, and if you are not sure we can usually work it out from the school."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Foundation or Higher: which should my child be entered for?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "That is the school's decision, but it is worth understanding. Foundation is capped at grade 5 and Higher starts at grade 4, so a student sitting Higher who is not secure on the grade 4 to 5 content can come away with less than they would have on Foundation. A tutor will tell you honestly which tier the current work suggests, and what would need to change to move up."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "There is a year to go. Is that enough time?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes, and a year is more than most families think. The work is finding which earlier topics are actually causing the trouble and fixing those first, because GCSE questions lean on Key Stage 3 far more than the topic list suggests. That is what the trial lesson is for."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Do you help with the non-calculator paper?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. It is usually where marks quietly go missing, because the arithmetic has to be secure before the method can show. We practise it deliberately rather than leaving it to the mock."
+   }
+  }
+ ]
+}
+</script><!--/ace:faq-schema-->
+</head>
+<body data-page="gcse-maths" style="--ac:#2f5a59;--tint:#eef5f4;--tintl:#d5e6e4"><noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<div class="topbar">
+<div class="wrap topbar-in">
+<a class="loc" href="workshop.html" data-ace-scope="workshop" hidden><span style="width:7px;height:7px;border-radius:50%;background:var(--teal-200);flex-shrink:0"></span> <b style="font-weight:600">Free GCSE Maths workshop, <span data-ace="workshop.dateShort">Sat 5 September</span></b> <span class="drop" style="opacity:.7">Limited spaces</span></a><a class="loc" href="group-tuition.html" data-ace-empty="workshop"><span style="width:7px;height:7px;border-radius:50%;background:var(--teal-200);flex-shrink:0"></span> <b style="font-weight:600">Small group GCSE Maths classes, Saturdays</b> <span class="drop" style="opacity:.7"><span data-ace="class.price">&#163;10 an hour</span></span></a>
+<a href="tel:+447454905330"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" stroke-linecap="round" stroke-linejoin="round"/></svg> 07454 905330</a>
+<a href="mailto:info@aceacademictutors.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6" stroke-linecap="round" stroke-linejoin="round"/></svg> info@aceacademictutors.com</a>
+</div>
+</div>
+<header class="site-header" id="siteHeader">
+<div class="wrap nav">
+<div class="nav-left">
+<a href="index.html" class="brand" aria-label="Ace Academic Tutors home"><img src="assets/logo-icon.png" alt="Ace Academic Tutors" class="brand-icon"><span class="brand-word"><span class="w-ace">Ace</span><span class="w-acad">Academic</span><span class="w-tut">Tutors</span></span></a>
+<nav class="nav-links"><a href="services.html" class="active">Tutoring</a><a href="group-tuition.html">Group classes</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="for-schools.html">For schools</a></nav>
+</div>
+<div class="nav-right">
+<!-- Log in goes to the portal (Vercel, separate origin, its own sign-in).
+Free trial goes to get-started.html, which files a lead. docs/PORTAL_INTEGRATION.md -->
+<a class="login" href="https://portal.aceacademictutors.com" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Log in</span></a><a href="get-started.html" class="btn btn-primary btn-pulse">Free trial lesson</a>
+<button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg></button>
+</div>
+</div>
+<div class="mobile-menu" id="mobileMenu"><a href="services.html">Tutoring</a><a href="group-tuition.html">Group classes</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="for-schools.html">For schools</a><a href="portal.html">The portal</a><a href="https://portal.aceacademictutors.com" rel="noopener">Log in</a><a href="become-a-tutor.html">Become a tutor</a><a href="contact.html">Contact</a><a href="get-started.html" class="btn btn-primary btn-pulse">Free trial lesson</a></div>
+</header>
+<section class="phead">
+  <div class="wrap">
+    <span class="eyebrow">GCSE maths</span>
+    <h1 class="display">GCSE maths, taught to<br>the paper they sit.</h1>
+    <p class="lead">Most lost marks at GCSE are not the topic on the question. They are an earlier gap the question leans on, or a method that was learned once and never practised under time. We find which of those it is, then teach to the specification your child is actually entered for.</p>
+    <div class="pchips"><span class="pchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>AQA, Edexcel, OCR, WJEC, CIE, Eduqas</span><span class="pchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Foundation and Higher</span><span class="pchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Every lesson recorded</span></div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--ac)">Where marks go</span>
+    <h2 class="h-lg" style="margin-top:12px;">Three things that cost<br>grades at GCSE</h2>
+    <div class="cov">
+      <div class="cv reveal">
+        <div class="cvt">The older gap</div>
+        <div class="cvy">Usually Key Stage 3</div>
+        <p class="cvd">Fractions, negatives, ratio and rearranging turn up inside almost every GCSE topic. A student who is shaky on those does not fail at fractions, they fail at trigonometry, and the trigonometry gets the blame.</p>
+        <div class="tags"><span class="tag">Fractions</span><span class="tag">Negatives</span><span class="tag">Ratio</span><span class="tag">Rearranging</span></div>
+      </div>
+      <div class="cv reveal">
+        <div class="cvt">The non-calculator paper</div>
+        <div class="cvy">Paper 1</div>
+        <p class="cvd">Method marks are there to be had, but only if the arithmetic holds up long enough to show the method. This is the paper students most often leave to the mock, and the one that most rewards deliberate practice.</p>
+        <div class="tags"><span class="tag">Arithmetic fluency</span><span class="tag">Method marks</span><span class="tag">Working shown</span></div>
+      </div>
+      <div class="cv reveal">
+        <div class="cvt">Reading the question</div>
+        <div class="cvy">Worded and multi-step</div>
+        <p class="cvd">Knowing a method and recognising which question is asking for it are different skills, and the second one is what the longer questions test. We practise in the form the exam actually uses, not a tidied-up version.</p>
+        <div class="tags"><span class="tag">Worded problems</span><span class="tag">Multi-step</span><span class="tag">Exam phrasing</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--paper-2);">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--ac)">Two ways to do it</span>
+    <h2 class="h-lg" style="margin-top:12px;">One-to-one, or the<br>Saturday class</h2>
+    <p class="pp" style="margin-top:14px;">Both are taught live by a subject tutor on our own platform, both are recorded, and both come with a written note afterwards. They suit different problems.</p>
+    <div class="cov" style="margin-top:26px;">
+      <div class="cv reveal">
+        <div class="cvt">One-to-one</div>
+        <div class="cvy">The whole hour, one child</div>
+        <p class="cvd">Best when there is something specific to find and fix. The tutor can spend the entire lesson on the gap that is actually costing marks, and change direction the moment it is clear something else is underneath it. Rates are on the <a href="pricing.html"style="color:var(--ac);font-weight:600;">pricing page</a>.</p>
+      </div>
+      <div class="cv reveal">
+        <div class="cvt">Small group class</div>
+        <div class="cvy">Saturdays, ten at most</div>
+        <p class="cvd">Working through the specification across the year at a steady pace, at <span data-ace="class.priceShort">&#163;10</span> an hour. Best for a student broadly keeping up who needs the content covered properly and a fixed weekly slot. <a href="group-tuition.html"style="color:var(--ac);font-weight:600;">How the class works</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--ac)">What gets covered</span>
+    <h2 class="h-lg" style="margin-top:12px;">The whole specification,<br>in the order it depends on</h2>
+    <p class="pp">GCSE maths is usually taught as a list of topics. It is not a list: half of it rests on the other half, and the order matters more than the coverage. A tutor works out what is already secure and starts from the first thing that is not.</p>
+    <div class="cov" style="margin-top:26px;">
+      <div class="cv reveal">
+        <div class="cvt">Number and algebra</div>
+        <div class="cvy">The load-bearing half</div>
+        <p class="cvd">Fractions, percentages, indices, surds, expanding and factorising, linear and quadratic equations, simultaneous equations, rearranging formulae, sequences and inequalities. Nearly everything else on the paper is built on this, which is why a gap here shows up somewhere unrelated.</p>
+        <div class="tags"><span class="tag">Quadratics</span><span class="tag">Simultaneous equations</span><span class="tag">Indices and surds</span><span class="tag">Sequences</span></div>
+      </div>
+      <div class="cv reveal">
+        <div class="cvt">Ratio, geometry and measures</div>
+        <div class="cvy">Where worded questions live</div>
+        <p class="cvd">Ratio and proportion, similarity and congruence, angle reasoning, area and volume, Pythagoras, trigonometry, circle theorems on Higher, transformations and vectors. These carry the multi-step questions, so reading the question is as much of the skill as the method.</p>
+        <div class="tags"><span class="tag">Trigonometry</span><span class="tag">Pythagoras</span><span class="tag">Circle theorems</span><span class="tag">Vectors</span></div>
+      </div>
+      <div class="cv reveal">
+        <div class="cvt">Probability and statistics</div>
+        <div class="cvy">Often the cheapest marks</div>
+        <p class="cvd">Probability trees, Venn diagrams, averages from tables, cumulative frequency, box plots, histograms and scatter graphs. Students who are behind on algebra frequently pick up grades here first, which is worth knowing when time is short before the exam.</p>
+        <div class="tags"><span class="tag">Probability trees</span><span class="tag">Venn diagrams</span><span class="tag">Cumulative frequency</span><span class="tag">Histograms</span></div>
+      </div>
+    </div>
+    <p class="pp" style="margin-top:26px;">Past papers from your child's own board are worked under timed conditions in the run-up to the exams, because sitting a paper and knowing the content are separate skills and only one of them is practised at school.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--ac)">Before you commit</span>
+    <h2 class="h-lg" style="margin-top:12px;">See where your child<br>stands, free</h2>
+    <p class="pp" style="margin-top:14px;">There are two ways to find out what is actually going on before you pay for anything, and neither needs a card.</p>
+    <div class="cov" style="margin-top:26px;">
+      <div class="cv reveal">
+        <div class="cvt">The free maths check</div>
+        <div class="cvy">About fifteen minutes</div>
+        <p class="cvd">One sitting of questions, no sign-up. You get a score and a topic by topic picture of where your child is strong and where they are not, straight away. <a href="https://portal.aceacademictutors.com/check/ace"style="color:var(--ac);font-weight:600;">Take the free check</a>.</p>
+      </div>
+      <div class="cv reveal">
+        <div class="cvt">A free trial lesson</div>
+        <div class="cvy">One full hour</div>
+        <p class="cvd">A real lesson with a real tutor, free of charge, written up afterwards like any other. Most families use it to find the gap rather than to be sold to. <a href="get-started.html?subject=Maths&amp;level=GCSE"style="color:var(--ac);font-weight:600;">Book the trial</a>.</p>
+      </div>
+    </div>
+    <p class="pp" style="margin-top:26px;">GCSE maths is the subject we teach most: 154 lessons delivered and counting, alongside <a href="science-tutoring.html"style="color:var(--ac);font-weight:600;">science</a>, <a href="english-tutoring.html"style="color:var(--ac);font-weight:600;">English</a> and <a href="11-plus-tutoring.html"style="color:var(--ac);font-weight:600;">11+</a>. For the whole picture across Key Stage 2 to A-Level, see <a href="maths-tutoring.html"style="color:var(--ac);font-weight:600;">maths tutoring</a>.</p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--paper-2);">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--ac)">Questions</span>
+    <h2 class="h-lg" style="margin-top:12px;">Questions parents ask<br>about GCSE maths</h2>
+    <!--ace:faq--><div class="faq">
+<details open>
+<summary>Which exam board do you teach to?<span class="fq-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span></summary>
+<div class="fq-a"><p>Whichever one your child is sitting. We teach to AQA, Edexcel, OCR, WJEC, CIE and Eduqas, and the tutor works from that board's specification and past papers rather than a generic scheme. Tell us the board when you get in touch, and if you are not sure we can usually work it out from the school.</p></div>
+</details>
+<details>
+<summary>Foundation or Higher: which should my child be entered for?<span class="fq-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span></summary>
+<div class="fq-a"><p>That is the school's decision, but it is worth understanding. Foundation is capped at grade 5 and Higher starts at grade 4, so a student sitting Higher who is not secure on the grade 4 to 5 content can come away with less than they would have on Foundation. A tutor will tell you honestly which tier the current work suggests, and what would need to change to move up.</p></div>
+</details>
+<details>
+<summary>There is a year to go. Is that enough time?<span class="fq-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span></summary>
+<div class="fq-a"><p>Yes, and a year is more than most families think. The work is finding which earlier topics are actually causing the trouble and fixing those first, because GCSE questions lean on Key Stage 3 far more than the topic list suggests. That is what the trial lesson is for.</p></div>
+</details>
+<details>
+<summary>Do you help with the non-calculator paper?<span class="fq-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg></span></summary>
+<div class="fq-a"><p>Yes. It is usually where marks quietly go missing, because the arithmetic has to be secure before the method can show. We practise it deliberately rather than leaving it to the mock.</p></div>
+</details>
+</div><!--/ace:faq-->
+  </div>
+</section>
+<div class="cband">
+  <div class="wrap cband-in">
+    <div>
+      <h2>Start with a free trial lesson</h2>
+      <p>One full hour with a maths tutor, free of charge. You will see how we teach, and you get the write-up afterwards like any other lesson.</p>
+    </div>
+    <a href="get-started.html?subject=Maths&amp;level=GCSE" class="btn btn-lg">Book the free trial <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+</div>
+<footer class="site-footer">
+<div class="wrap">
+<div class="footer-grid">
+<div class="footer-col">
+<img src="assets/logo-reversed.png" alt="Ace Academic Tutors logo" style="height:62px;width:auto;display:block;">
+<p style="margin-top:18px;max-width:34ch;color:#9fb0ae;font-size:14.5px;line-height:1.7;">Expert online tutoring in Maths, English &amp; Science, KS1 to A-Level and 11+. Personalised lessons in a real interactive classroom.</p>
+<div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;"><span class="tag" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:#cfe3e1;">DBS-checked tutors</span><span class="tag" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:#cfe3e1;">Maths · English · Science</span></div>
+<div style="margin-top:18px;">
+<a class="grate on-dark" href="https://g.page/r/CbD5T7bBkTfnEBM" target="_blank" rel="noopener" data-google-rating aria-label="Rated 5.0 from 10 reviews on Google, opens the Google listing">
+<svg class="gg" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.6 12.2c0-.8-.1-1.4-.2-2H12v3.9h6c-.1 1-.8 2.5-2.2 3.5l3.4 2.6c2-1.8 3.4-4.5 3.4-8z"/><path fill="#34A853" d="M12 23c2.9 0 5.3-1 7.1-2.6l-3.4-2.6c-.9.6-2.1 1-3.7 1-2.9 0-5.3-1.9-6.2-4.5l-3.5 2.7C4.1 20.5 7.8 23 12 23z"/><path fill="#FBBC05" d="M5.8 14.3c-.2-.7-.4-1.4-.4-2.3s.1-1.6.4-2.3L2.3 7C1.5 8.5 1 10.2 1 12s.5 3.5 1.3 5l3.5-2.7z"/><path fill="#EA4335" d="M12 5.2c2 0 3.4.9 4.2 1.6l3-2.9C17.3 2.2 14.9 1 12 1 7.8 1 4.1 3.5 2.3 7l3.5 2.7C6.7 7.1 9.1 5.2 12 5.2z"/></svg>
+<span class="gs" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 20.9l1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 20.9l1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 20.9l1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 20.9l1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 20.9l1.6-7L2 9.2l7.1-.6z"/></svg></span>
+<span class="gt">Rated <b>5.0</b> from <b>14</b> reviews on Google</span>
+</a>
+</div>
+<div class="footer-social" style="margin-top:20px;display:flex;gap:12px;">
+<a href="https://www.facebook.com/profile.php?id=61563738669588" aria-label="Ace Academic Tutors on Facebook" target="_blank" rel="noopener"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
+<a href="https://www.instagram.com/aceacademictutors" aria-label="Ace Academic Tutors on Instagram" target="_blank" rel="noopener"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+<a href="https://www.linkedin.com/company/ace-academic-tutors" aria-label="Ace Academic Tutors on LinkedIn" target="_blank" rel="noopener"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.76V1.74C24 .78 23.2 0 22.22 0z"/></svg></a>
+</div>
+</div>
+<div class="footer-col"><h5>Explore</h5><a href="about.html">About</a><br><a href="services.html">Tutoring</a><br><a href="group-tuition.html">Group classes</a><br><a href="portal.html">The portal</a><br><a href="pricing.html">Pricing</a><br><a href="for-schools.html">For schools</a><br><a href="become-a-tutor.html">Become a tutor</a></div>
+<div class="footer-col"><h5>Subjects</h5><a href="maths-tutoring.html">Maths tutoring</a><br><a href="english-tutoring.html">English tutoring</a><br><a href="science-tutoring.html">Science tutoring</a><br><a href="11-plus-tutoring.html">11+ tutoring</a></div>
+<div class="footer-col"><h5>Get in touch</h5><a href="get-started.html">Free trial lesson</a><br><a href="contact.html">Contact us</a><br><a href="tel:+447454905330">07454 905330</a><br><a href="mailto:info@aceacademictutors.com">info@aceacademictutors.com</a><br><a href="https://portal.aceacademictutors.com" target="_blank" rel="noopener">Log in</a></div>
+</div>
+<div class="footer-bottom"><span>© <span data-year>2026</span> Ace Academic Tutors Ltd · Registered in England &amp; Wales, Company No.&nbsp;15925436</span><span style="display:flex;gap:22px;flex-wrap:wrap;"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="safeguarding.html">Safeguarding</a></span></div>
+</div>
+</footer>
+
+<script src="assets/chrome.js?v=aa3ba667"></script>
+<script src="assets/live.js?v=a545ed87"></script>
+</body>
+</html>

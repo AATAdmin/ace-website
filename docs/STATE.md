@@ -16,7 +16,7 @@ Kept current by the implementing chat on every push to `main`.
 
 ## Pages
 
-**All 18 pages are live.** The home-page-only phase is over and every page is
+**All 19 pages are live.** The home-page-only phase is over and every page is
 reachable. `_redirects` exists again but now serves ONE purpose: 301s from the old
 WordPress URLs that Google still has indexed (`/about-ace-academic-tutors/`,
 `/registration/`, `/term-of-service/`, …) to their nearest current page. Never add
@@ -25,7 +25,7 @@ Cloudflare Pages, which is how the launch-era home-page-only trick worked.
 
 `index` `services` `pricing` `get-started` `about` `workshop` `portal` `for-schools`
 `become-a-tutor` `contact` `maths-tutoring` `english-tutoring` `science-tutoring`
-`11-plus-tutoring` `group-tuition` `privacy` `terms` `safeguarding`
+`11-plus-tutoring` `group-tuition` `gcse-maths-tutor` `privacy` `terms` `safeguarding`
 
 - `get-started.html` is the **only enquiry route**. `contact.html` has no form, by
   design. `get-started` is `noindex` and out of the sitemap.
@@ -33,7 +33,10 @@ Cloudflare Pages, which is how the launch-era home-page-only trick worked.
   out of the sitemap pending legal review.
 - `workshop.html` has **no site header**, deliberately: it is a campaign landing page.
   It does carry the footer.
-- `sitemap.xml` carries 14 URLs.
+- `sitemap.xml` carries 15 URLs.
+- `gcse-maths-tutor.html` (added 2026-09-18) is the GCSE maths page, SEO cluster T2.
+  `maths-tutoring` is now the HUB (KS2 to A-Level overview) and links down to it from the GCSE
+  card; do not let the two drift into competing for the same query.
 - `group-tuition.html` (added 2026-09-18) is the small group classes page, SEO cluster T1.
   It is in the **top nav and mobile menu** ("Group classes"), the footer Explore column, the
   topbar band, and the group-class block on `maths-tutoring`. Its facts (price, start date,
